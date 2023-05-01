@@ -14,6 +14,7 @@
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "@react-navigation/stack": "^6.3.16",
+    "axios": "^1.4.0",
     "hermes-engine": "^0.11.0",
     "lottie-react-native": "^5.1.5",
     "moti": "^0.25.1",
@@ -26,7 +27,8 @@
     "react-native-svg": "^13.9.0",
     "react-native-svg-transformer": "^1.0.0",
     "react-native-swiper": "^1.6.0",
-    "react-native-vector-icons": "^9.2.0"
+    "react-native-vector-icons": "^9.2.0",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
