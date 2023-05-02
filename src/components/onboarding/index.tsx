@@ -1,10 +1,19 @@
 import {View, Text, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Lottie from 'lottie-react-native';
 import styles from './styles';
 import {MotiView} from 'moti';
 
 const SplashScreen = () => {
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(false);
+      console.log(show);
+    }, 2000);
+    // console.log(show);
+    // return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <View style={styles.mainView}>
       <View style={styles.splashMotiContainer}>
@@ -52,12 +61,21 @@ const SplashScreen = () => {
         </View>
       </View>
       <View style={styles.lottieStyleView}>
-        <Lottie
-          style={styles.lottieStyle}
-          source={require('../../assets/lottie/splash2.json')}
-          autoPlay
-          // loop
-        />
+        {show ? (
+          <Lottie
+            style={styles.lottieStyle}
+            source={require('../../assets/lottie/splash2.json')}
+            autoPlay
+            // loop
+          />
+        ) : (
+          <Lottie
+            style={styles.lottieStyle}
+            source={require('../../assets/lottie/splash2.json')}
+            // autoPlay
+            // loop
+          />
+        )}
       </View>
     </View>
   );

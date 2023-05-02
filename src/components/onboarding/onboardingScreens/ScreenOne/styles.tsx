@@ -39,7 +39,7 @@ const styleOne = StyleSheet.create({
   img: {
     width: 260,
     height: 180,
-    borderRadius: 40,
+    borderRadius: 10,
   },
   skipbtn: {
     // backgroundColor: 'red',

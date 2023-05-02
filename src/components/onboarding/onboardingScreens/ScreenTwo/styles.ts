@@ -42,7 +42,7 @@ const styleTwo = StyleSheet.create({
   img1View: {
     width: '100%',
     // backgroundColor: 'red',
-    marginBottom: 60,
+    marginBottom: 40,
     alignItems: 'flex-start',
     marginLeft: '12%',
   },
@@ -59,9 +59,9 @@ const styleTwo = StyleSheet.create({
     // backgroundColor: 'red',
   },
   img: {
-    width: 200,
-    height: 130,
-    borderRadius: 40,
+    width: 230,
+    height: 150,
+    borderRadius: 5,
   },
   skipbtn: {
     // backgroundColor: 'red',
