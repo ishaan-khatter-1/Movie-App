@@ -16,7 +16,16 @@ const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {
   return (
-    <Tab.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+    <Tab.Navigator
+      // screenOptions={{}}
+      initialRouteName="Home"
+      screenOptions={{
+        headerTitleAlign: 'center',
+        // headerShown: false,
+        tabBarStyle: {
+          height: 80,
+        },
+      }}>
       <Tab.Screen name="Home" component={Home} options={titleStyle} />
       <Tab.Screen name="Movie" component={Movie} />
       <Tab.Screen name="TV" component={Television} />

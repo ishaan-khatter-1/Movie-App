@@ -9,6 +9,7 @@ import SplashScreen from '../components/onboarding';
 import Dash from '../components/dashboard';
 import GetStarted from '../components/onboarding/getStarted';
 import BottomNavigation from '../components/dashboard/bottomnavigation';
+import DrawerNavigation from '../components/dashboard/Home/drawernavigation';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -22,7 +23,25 @@ const Navigation = () => {
   }, []);
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="DrawerNavigation"
+        screenOptions={{
+          headerShown: false,
+          cardStyleInterpolator: ({current, layouts}) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        }}>
         {/* <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
@@ -46,12 +65,9 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="BottomNavigation"
-          component={BottomNavigation}
-          options={{headerShown: false}}
-        />
+
         {/* <Stack.Screen name="Dash" component={Dash} /> */}
+        <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

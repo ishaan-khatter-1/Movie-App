@@ -10,7 +10,7 @@ const SplashScreen = () => {
     setTimeout(() => {
       setShow(false);
       console.log(show);
-    }, 2000);
+    }, 100);
     // console.log(show);
     // return () => clearTimeout(timeoutId);
   }, []);

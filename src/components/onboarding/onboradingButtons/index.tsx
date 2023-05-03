@@ -9,7 +9,7 @@ interface Loginbtntext {
 
 const ButtonOnboard = ({text}: Loginbtntext) => {
   const movToDashboard = () => {
-    navigate('BottomNavigation');
+    navigate('DrawerNavigation');
   };
   const {navigate} = useNavigation();
   return (
