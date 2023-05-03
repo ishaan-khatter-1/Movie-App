@@ -11,6 +11,7 @@ import ColorConstants from '../../assets/colorConstants';
 // import Drawer from '../../assets/svgIcons/drawer';
 import Drawer from '../../assets/dashboardStyles/Drawer';
 import Search from '../../assets/dashboardStyles/Search';
+import Drawericon from './Drawer';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,11 +34,13 @@ const BottomNavigation = () => {
   );
 };
 
-const titleStyle = {
+const titleStyle = ({navigation}) => ({
   // title: 'Home',
   headerStyle: {backgroundColor: ColorConstants.mainBgColor},
   headerTitleStyle: {color: ColorConstants.titleColor},
-  headerLeft: () => <Drawer />,
+  // headerLeft: () => <Drawer />,
+  headerLeft: () => <Drawericon drawerOpen={navigation} />,
+
   headerRight: () => <Search />,
-};
+});
 export default BottomNavigation;

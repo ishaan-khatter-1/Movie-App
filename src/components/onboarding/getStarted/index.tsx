@@ -27,7 +27,7 @@ const GetStarted = () => {
   }, []);
   return (
     <>
-      {/* {screenShown ? (
+      {screenShown ? (
         <BottomNavigation />
       ) : (
         <Swiper
@@ -38,15 +38,7 @@ const GetStarted = () => {
           <ScreenTwo />
           <ScreenThree />
         </Swiper>
-      )} */}
-      <Swiper
-        loop={false}
-        showsButtons={false}
-        dot={<View style={styles.activedot} />}>
-        <ScreenOne />
-        <ScreenTwo />
-        <ScreenThree />
-      </Swiper>
+      )}
     </>
   );
 };

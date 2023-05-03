@@ -1,14 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Movie from '../Movie';
-import Television from '../TV';
 import BottomNavigation from '../bottomnavigation';
-import Drawericon from '../../../components/dashboard/Drawer';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +9,10 @@ const DrawerNavigation = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
-        drawerIcon: () => <Drawericon />,
+        headerShown: false,
+        // props => console.log(props)
+        // drawerIcon: () => <Drawericon />,
+        // drawers
       }}
       // drawerIcon={() => null}
       // drawerStyle={{
