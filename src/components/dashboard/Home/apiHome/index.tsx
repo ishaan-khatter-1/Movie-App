@@ -12,6 +12,7 @@ import axios from 'axios';
 import styles from './styles';
 import {BASE_IMG_URL} from '../../../../services';
 import Carousel from 'react-native-reanimated-carousel';
+import UpgradePlanSlider from '../../../Slider';
 
 const fetchMovies = async () => {
   const apiRes = await axios.get(
@@ -21,7 +22,7 @@ const fetchMovies = async () => {
 };
 
 const ApiHomeOne = () => {
-  const width = Dimensions.get('window').width * 0.7;
+  const width = Dimensions.get('window').width;
   // const height = Dimensions.get('window').width * 1;
   const height = width * 1.5;
 
@@ -56,7 +57,8 @@ const ApiHomeOne = () => {
         renderItem={renderFunc}
         width={width}
         height={height}
-        // parallaxScrollingScale={0.9}
+        // modeConfig={}
+        parallaxScrollingScale={0.9}
         // autoPlay={true}
         loop
         // pagingEnabled
@@ -66,6 +68,8 @@ const ApiHomeOne = () => {
         // sliderWidth={300}
         // itemWidth={300}
       />
+
+      {/* {data !== undefined ? <UpgradePlanSlider data={data} /> : null} */}
     </View>
   );
 };

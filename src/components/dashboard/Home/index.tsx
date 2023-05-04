@@ -4,6 +4,7 @@ import ApiHomeOne from './apiHome';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import DrawerNavigation from './drawernavigation';
+import UpgradePlanSlider from '../../Slider';
 const Home = () => {
   const {navigate} = useNavigation();
   const menuDrawer = () => {
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.apiImg}>
+        {/* <UpgradePlanSlider /> */}
         <ApiHomeOne />
       </View>
       <View style={styles.btnClickOne}>

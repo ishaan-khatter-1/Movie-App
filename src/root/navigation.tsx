@@ -10,6 +10,8 @@ import Dash from '../components/dashboard';
 import GetStarted from '../components/onboarding/getStarted';
 import BottomNavigation from '../components/dashboard/bottomnavigation';
 import DrawerNavigation from '../components/dashboard/Home/drawernavigation';
+import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
+import About from '../components/dashboard/Drawer/DrawerScreens/About';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -68,6 +70,8 @@ const Navigation = () => {
 
         {/* <Stack.Screen name="Dash" component={Dash} /> */}
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
+        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );

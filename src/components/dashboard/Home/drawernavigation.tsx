@@ -1,26 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomNavigation from '../bottomnavigation';
+import CustomDrawer from '../Drawer/CustomDrawer';
+import {Text} from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
     <Drawer.Navigator
+      drawerContent={props => <CustomDrawer />}
       screenOptions={{
         headerShown: false,
-        // props => console.log(props)
-        // drawerIcon: () => <Drawericon />,
-        // drawers
-      }}
-      // drawerIcon={() => null}
-      // drawerStyle={{
-      //   backgroundColor: '#fff',
-      //   width: 240,
-      // }}
-      // drawerType="permanent"
-      drawerContent={() => null}>
+      }}>
       <Drawer.Screen name="BottomNavigation" component={BottomNavigation} />
     </Drawer.Navigator>
   );

@@ -12,27 +12,36 @@ import ColorConstants from '../../assets/colorConstants';
 import Drawer from '../../assets/dashboardStyles/Drawer';
 import Search from '../../assets/dashboardStyles/Search';
 import Drawericon from './Drawer';
+import Settings from './Drawer/DrawerScreens/Settings';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const BottomNavigation = () => {
   return (
-    <Tab.Navigator
-      // screenOptions={{}}
-      initialRouteName="Home"
-      screenOptions={{
-        headerTitleAlign: 'center',
-        // headerShown: false,
-        tabBarStyle: {
-          height: 80,
-        },
-      }}>
-      <Tab.Screen name="Home" component={Home} options={titleStyle} />
-      <Tab.Screen name="Movie" component={Movie} />
-      <Tab.Screen name="TV" component={Television} />
-    </Tab.Navigator>
+    <>
+      <Tab.Navigator
+        // screenOptions={{}}
+        initialRouteName="Home"
+        screenOptions={{
+          headerTitleAlign: 'center',
+          // headerShown: false,
+          tabBarStyle: {
+            height: 80,
+          },
+        }}>
+        <Tab.Screen name="Home" component={Home} options={titleStyle} />
+        <Tab.Screen name="Movie" component={Movie} />
+        <Tab.Screen name="TV" component={Television} />
+      </Tab.Navigator>
+      {/* <Stack.Navigator>
+        <Stack.Screen name="Settings" component={Settings} />
+      </Stack.Navigator> */}
+    </>
   );
 };
+
+// cons;
 
 const titleStyle = ({navigation}) => ({
   // title: 'Home',
