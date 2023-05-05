@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from './navigation';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import ColorConstants from '../assets/colorConstants';
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 
 const queryClient = new QueryClient();
 

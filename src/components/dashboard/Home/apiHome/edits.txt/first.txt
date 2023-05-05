@@ -1,6 +1,4 @@
 import React from 'react';
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
-
 import {
   Text,
   View,
@@ -13,9 +11,7 @@ import {useQuery} from 'react-query';
 import axios from 'axios';
 import styles from './styles';
 import {BASE_IMG_URL} from '../../../../services';
-// import Carousel from 'react-native-reanimated-carousel';
-import Carousel from 'react-native-snap-carousel';
-
+import Carousel from 'react-native-reanimated-carousel';
 import UpgradePlanSlider from '../../../Slider';
 
 const fetchMovies = async () => {
@@ -59,10 +55,18 @@ const ApiHomeOne = () => {
         style={styles.carousel}
         data={data}
         renderItem={renderFunc}
+        width={width}
+        height={height}
+        // modeConfig={}
+        parallaxScrollingScale={0.9}
+        // autoPlay={true}
         loop
-        sliderWidth={width}
-        itemWidth={width}
-        itemHeight={height}
+        // pagingEnabled
+        scrollAnimationDuration={300}
+        // style={{marginTop}}
+
+        // sliderWidth={300}
+        // itemWidth={300}
       />
 
       {/* {data !== undefined ? <UpgradePlanSlider data={data} /> : null} */}
