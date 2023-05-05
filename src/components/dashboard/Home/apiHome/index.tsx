@@ -18,7 +18,7 @@ import Carousel from 'react-native-snap-carousel';
 
 import UpgradePlanSlider from '../../../Slider';
 
-const fetchMovies = async () => {
+const fetchMoviesTrending = async () => {
   const apiRes = await axios.get(
     'https://api.themoviedb.org/3/trending/all/day?api_key=05b5b3464ea382ff0f577956284936db',
   );
@@ -35,13 +35,14 @@ const ApiHomeOne = () => {
       <View style={styles.renderView}>
         <ImageBackground
           style={styles.imgOneStyle}
+          imageStyle={styles.imgOneStyle}
           source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
           <Text>{item.title}</Text>
         </ImageBackground>
       </View>
     );
   };
-  const {data, isLoading, error} = useQuery('movies', fetchMovies);
+  const {data, isLoading, error} = useQuery('movies', fetchMoviesTrending);
 
   if (isLoading) {
     return <Text>Loading...</Text>;
@@ -61,7 +62,7 @@ const ApiHomeOne = () => {
         renderItem={renderFunc}
         loop
         sliderWidth={width}
-        itemWidth={width}
+        itemWidth={width * 0.6}
         itemHeight={height}
       />
 

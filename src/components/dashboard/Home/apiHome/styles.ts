@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1.5,
     // resizeMode: 'cover',
     // marginHorizontal: 50,
+    borderRadius: 20,
   },
   titleStyle: {
     fontSize: 14,
@@ -25,15 +26,20 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
     // alignSelf: 'center',
     // maxHeight:/
+    borderRadius: 20,
   },
   renderView: {
     marginHorizontal: 10,
+    borderRadius: 20,
   },
   carousel: {
     // aspectRatio: 1 / 1.5,
     // height: '70%',
     // width: '100%',
     backgroundColor: 'yellow',
+    borderRadius: 20,
+    borderWidth: 10,
+
     // marginHorizontal: 10,
   },
 });

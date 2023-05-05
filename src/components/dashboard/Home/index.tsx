@@ -12,14 +12,10 @@ const Home = () => {
   };
   return (
     <View style={styles.mainContainer}>
+      <View style={styles.btnClickOne}></View>
       <View style={styles.apiImg}>
         {/* <UpgradePlanSlider /> */}
         <ApiHomeOne />
-      </View>
-      <View style={styles.btnClickOne}>
-        <TouchableOpacity onPress={menuDrawer}>
-          <Text>click here to movie.</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
