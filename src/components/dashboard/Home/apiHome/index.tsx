@@ -10,25 +10,59 @@ import {
   Dimensions,
 } from 'react-native';
 import {useQuery} from 'react-query';
-import axios from 'axios';
 import styles from './styles';
 import {BASE_IMG_URL} from '../../../../services';
 // import Carousel from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-snap-carousel';
-
 import UpgradePlanSlider from '../../../Slider';
+import {
+  FetchLatestMovie,
+  FetchTrendingMovie,
+} from '../../../../services/FetchData';
 
-const fetchMoviesTrending = async () => {
-  const apiRes = await axios.get(
-    'https://api.themoviedb.org/3/trending/all/day?api_key=05b5b3464ea382ff0f577956284936db',
-  );
-  console.log(apiRes);
-  return apiRes.data.results;
-};
+const width = Dimensions.get('window').width;
 
-const ApiHomeOne = () => {
-  const width = Dimensions.get('window').width;
-  // const height = Dimensions.get('window').width * 1;
+// export const ApiLatestMovie = () => {
+//   const renderFunc = ({item}) => {
+//     return (
+//       <View style={styles.renderView}>
+//         <ImageBackground
+//           style={styles.imgOneStyle}
+//           imageStyle={styles.imageStyle}
+//           source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
+//           <Text>{item.title}</Text>
+//         </ImageBackground>
+//       </View>
+//     );
+//   };
+//   const {data, isLoading, isError} = useQuery('LatesMovies', FetchLatestMovie);
+//   if (isLoading) {
+//     return <Text>Loading...</Text>;
+//   }
+
+//   if (isError) {
+//     return <Text>{isError.message}</Text>;
+//   }
+
+//   return (
+//     <View style={styles.carouselView}>
+//       <Carousel
+//         style={styles.carousel}
+//         data={data}
+//         renderItem={renderFunc}
+//         // loop
+//         sliderWidth={width * 0.8}
+//         itemWidth={width * 0.55}
+//         // itemHeight={height}
+//       />
+
+//       {/* {data !== undefined ? <UpgradePlanSlider data={data} /> : null} */}
+//     </View>
+//   );
+// };
+
+const ApiTrendingData = () => {
+  // const width = Dimensions.get('window').width;
   const height = width * 1.5;
 
   const renderFunc = ({item}) => {
@@ -43,14 +77,17 @@ const ApiHomeOne = () => {
       </View>
     );
   };
-  const {data, isLoading, error} = useQuery('movies', fetchMoviesTrending);
-  console.log(data);
+  const {data, isLoading, isError} = useQuery(
+    'TrendingMovies',
+    FetchTrendingMovie,
+  );
+  // console.log(data);
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
 
-  if (error) {
-    return <Text>{error.message}</Text>;
+  if (isError) {
+    return <Text>{isError.message}</Text>;
   }
 
   // console.log(data.results[0].title);
@@ -72,7 +109,7 @@ const ApiHomeOne = () => {
   );
 };
 
-export default ApiHomeOne;
+export default ApiTrendingData;
 
 // import React from 'react';
 // import {Text, View, FlatList, Image, ImageBackground} from 'react-native';

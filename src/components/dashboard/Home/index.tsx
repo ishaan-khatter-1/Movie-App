@@ -1,10 +1,12 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import ApiHomeOne from './apiHome';
+import ApiHomeOne, {ApiLatestMovie} from './apiHome';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import DrawerNavigation from '../../../root/drawernavigation';
 import UpgradePlanSlider from '../../Slider';
+import ApiTrendingData from './apiHome';
+import ApiUpcomingMovie from './ApiUpcomingMovie';
 const Home = () => {
   const {navigate} = useNavigation();
   const menuDrawer = () => {
@@ -12,10 +14,13 @@ const Home = () => {
   };
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.btnClickOne}></View>
-      <View style={styles.apiImg}>
-        {/* <UpgradePlanSlider /> */}
-        <ApiHomeOne />
+      <View style={styles.UpcomingMovieImages}>
+        {/* <ApiLatestMovie /> */}
+        <ApiUpcomingMovie />
+      </View>
+      <View style={styles.apiTrendingImg}>
+        <Text style={styles.trendingTextColor}>Trending</Text>
+        <ApiTrendingData />
       </View>
     </View>
   );

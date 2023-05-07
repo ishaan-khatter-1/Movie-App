@@ -20,6 +20,7 @@ import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
 
 import Drawericon from '../components/dashboard/Drawer';
+import LinearGradient from 'react-native-linear-gradient';
 // import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 // import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 
@@ -45,13 +46,17 @@ const BottomNavigation = ({navigation}) => {
           headerLeft: ({}) => (
             <View style={{marginLeft: 10}}>
               <TouchableOpacity onPress={({}) => navigation.openDrawer()}>
-                <Drawer width={35} height={35} />
+                <Drawer
+                  width={35}
+                  height={35}
+                  fill={ColorConstants.textWhite}
+                />
               </TouchableOpacity>
             </View>
           ),
           headerRight: () => (
             <View style={{marginRight: 15}}>
-              <Search width={30} height={30} />
+              <Search width={30} height={30} fill={ColorConstants.textWhite} />
             </View>
           ),
           headerStyle: {backgroundColor: ColorConstants.mainBgColor},
