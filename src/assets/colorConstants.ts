@@ -6,7 +6,10 @@ const ColorConstants = {
   fadedColor: '#969696',
   secondaryColor: '#F4C10F',
   mainBgColor: 'rgb(34,0,70)',
-  titleColor: 'rgb(225,0,146)',
+  // titleColor: 'rgb(225,0,146)',
+  titleColor: '#FF8F71',
+  thirdOrange: '#FF7E03',
+
   // textBaseColor:
 };
 

@@ -12,6 +12,7 @@ import BottomNavigation from './bottomnavigation';
 import DrawerNavigation from './drawernavigation';
 import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 import About from '../components/dashboard/Drawer/DrawerScreens/About';
+import TwoColor from '../components/LinearGradient/TwoColor';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -72,6 +73,7 @@ const Navigation = () => {
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="TwoColor" component={TwoColor} />
       </Stack.Navigator>
     </NavigationContainer>
   );

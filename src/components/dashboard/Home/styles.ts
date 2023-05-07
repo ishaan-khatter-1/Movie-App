@@ -3,14 +3,15 @@ import ColorConstants from '../../../assets/colorConstants';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: ColorConstants.baseColor,
+    backgroundColor: ColorConstants.mainBgColor,
     // flex: 2,
+    justifyContent: 'space-between',
     flex: 1,
   },
   apiImg: {
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     // flex: 0.5,
-    marginBottom: '15%',
+    // marginBottom: '15%',
     borderRadius: 20,
   },
   btnClickOne: {

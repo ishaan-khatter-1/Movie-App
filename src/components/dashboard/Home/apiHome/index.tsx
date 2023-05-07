@@ -22,6 +22,7 @@ const fetchMoviesTrending = async () => {
   const apiRes = await axios.get(
     'https://api.themoviedb.org/3/trending/all/day?api_key=05b5b3464ea382ff0f577956284936db',
   );
+  console.log(apiRes);
   return apiRes.data.results;
 };
 
@@ -35,7 +36,7 @@ const ApiHomeOne = () => {
       <View style={styles.renderView}>
         <ImageBackground
           style={styles.imgOneStyle}
-          imageStyle={styles.imgOneStyle}
+          imageStyle={styles.imageStyle}
           source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
           <Text>{item.title}</Text>
         </ImageBackground>
@@ -43,7 +44,7 @@ const ApiHomeOne = () => {
     );
   };
   const {data, isLoading, error} = useQuery('movies', fetchMoviesTrending);
-
+  console.log(data);
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
@@ -61,8 +62,8 @@ const ApiHomeOne = () => {
         data={data}
         renderItem={renderFunc}
         loop
-        sliderWidth={width}
-        itemWidth={width * 0.6}
+        sliderWidth={width * 0.8}
+        itemWidth={width * 0.55}
         itemHeight={height}
       />
 

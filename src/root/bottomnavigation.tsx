@@ -14,6 +14,10 @@ import Drawer from '../assets/dashboardStyles/Drawer';
 import Search from '../assets/dashboardStyles/Search';
 import HomeIcon from '../assets/dashboardStyles/TabStyles/HomeIcon';
 import MovieIcon from '../assets/dashboardStyles/TabStyles/MovieIcon';
+import MovieIconFaded from '../assets/dashboardStyles/TabStyles/MovieIconFaded';
+import TelevisionIcon from '../assets/dashboardStyles/TabStyles/TelevisionIcon';
+import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
+import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
 
 import Drawericon from '../components/dashboard/Drawer';
 // import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
@@ -39,12 +43,18 @@ const BottomNavigation = ({navigation}) => {
         screenOptions={{
           headerTitleAlign: 'center',
           headerLeft: ({}) => (
-            <TouchableOpacity onPress={({}) => navigation.openDrawer()}>
-              <Drawer />
-            </TouchableOpacity>
+            <View style={{marginLeft: 10}}>
+              <TouchableOpacity onPress={({}) => navigation.openDrawer()}>
+                <Drawer width={35} height={35} />
+              </TouchableOpacity>
+            </View>
           ),
-          headerRight: () => <Search />,
-          headerStyle: {backgroundColor: ColorConstants.baseColor},
+          headerRight: () => (
+            <View style={{marginRight: 15}}>
+              <Search width={30} height={30} />
+            </View>
+          ),
+          headerStyle: {backgroundColor: ColorConstants.mainBgColor},
           headerTitleStyle: {color: ColorConstants.titleColor},
           // ...titleStyle,
           // headerStyle: titleStyle,
@@ -54,7 +64,7 @@ const BottomNavigation = ({navigation}) => {
         }}>
         <Tab.Screen name="Home" component={Home} options={homeTab} />
         <Tab.Screen name="Movie" component={Movie} options={movieTab} />
-        <Tab.Screen name="TV" component={Television} options={titleStyle} />
+        <Tab.Screen name="TV" component={Television} options={televisionTab} />
       </Tab.Navigator>
       {/* <Stack.Navigator>
         <Stack.Screen name="Settings" component={Settings} />
@@ -66,23 +76,30 @@ const BottomNavigation = ({navigation}) => {
 // cons;
 
 const homeTab = {
-  tabBarIcon: ({}) => (
-    <View>
-      <HomeIcon />
-    </View>
+  tabBarIcon: ({focused}) => (
+    <View>{focused ? <HomeIcon /> : <HomeIconFaded />}</View>
   ),
 };
 const movieTab = {
-  tabBarIcon: ({}) => (
+  tabBarIcon: ({focused}) => (
+    <View>{focused ? <MovieIcon /> : <MovieIconFaded />}</View>
+  ),
+};
+const televisionTab = {
+  tabBarIcon: ({focused}) => (
     <View>
-      <MovieIcon />
+      {focused ? (
+        <TelevisionIcon width={38} height={38} />
+      ) : (
+        <TelevisionIconFaded width={38} height={38} />
+      )}
     </View>
   ),
 };
 
 const tabBarStyling = {
   // position: 'absolute',
-  backgroundColor: ColorConstants.baseColor,
+  backgroundColor: ColorConstants.mainBgColor,
   shadowColor: 'rgb(7,44,133)',
   shadowOffset: {
     width: 0,
@@ -97,16 +114,6 @@ const tabBarStyling = {
   showLabel: false,
 };
 
-const titleStyle = ({navigation}) => ({
-  // console.log(navigation),
-  // ()=>{console.log(navigation)}
-  // title: 'Home',
-  // headerStyle: {backgroundColor: ColorConstants.baseColor},
-  // headerTitleStyle: {color: ColorConstants.titleColor},
-  // headerLeft: () => <Drawer />,
-  // headerLeft: () => <Drawericon drawerOpen={navigation} />,
-  // headerRight: () => <Search />,
-});
 export default BottomNavigation;
 
-const homeScreen = {...homeTab, titleStyle};
+// const homeScreen = {...homeTab, titleStyle};
