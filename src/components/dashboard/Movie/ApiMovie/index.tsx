@@ -10,11 +10,12 @@ import {
 import {useQuery} from 'react-query';
 import styles from './styles';
 import Carousel from 'react-native-snap-carousel';
+import {FetchSearchMovie} from '../../../../services/FetchData';
 
-const fetchMovie = async () => {
-  const apiRes = await axios.get(BASE_URL + SEARCH_URL);
-  return apiRes.data.results;
-};
+// const fetchMovie = async () => {
+//   const apiRes = await axios.get(BASE_URL + SEARCH_URL);
+//   return apiRes.data.results;
+// };
 
 const ApiMovie = () => {
   const width = Dimensions.get('window').width;
@@ -32,7 +33,10 @@ const ApiMovie = () => {
       </View>
     );
   };
-  const {data, isLoading, isError} = useQuery('moviesAPI', fetchMovie);
+  const {data, isLoading, isError} = useQuery(
+    'moviesSearchAPI',
+    FetchSearchMovie,
+  );
   if (isLoading) {
     return <Text>loading..</Text>;
   }

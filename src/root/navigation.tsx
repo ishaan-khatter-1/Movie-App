@@ -8,8 +8,8 @@ import App from './index';
 import SplashScreen from '../components/onboarding';
 import Dash from '../components/dashboard';
 import GetStarted from '../components/onboarding/getStarted';
-import BottomNavigation from '../components/dashboard/bottomnavigation';
-import DrawerNavigation from '../components/dashboard/Home/drawernavigation';
+import BottomNavigation from './bottomnavigation';
+import DrawerNavigation from './drawernavigation';
 import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 import About from '../components/dashboard/Drawer/DrawerScreens/About';
 

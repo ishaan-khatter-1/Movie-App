@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import ColorConstants from '../../../assets/colorConstants';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: 'red',
+    backgroundColor: ColorConstants.baseColor,
     // flex: 2,
     flex: 1,
   },

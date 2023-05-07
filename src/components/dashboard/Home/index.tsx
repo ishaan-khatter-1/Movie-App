@@ -3,7 +3,7 @@ import React from 'react';
 import ApiHomeOne from './apiHome';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import DrawerNavigation from './drawernavigation';
+import DrawerNavigation from '../../../root/drawernavigation';
 import UpgradePlanSlider from '../../Slider';
 const Home = () => {
   const {navigate} = useNavigation();

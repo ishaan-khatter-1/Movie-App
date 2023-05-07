@@ -7,6 +7,7 @@ const ColorConstants = {
   secondaryColor: '#F4C10F',
   mainBgColor: 'rgb(34,0,70)',
   titleColor: 'rgb(225,0,146)',
+  // textBaseColor:
 };
 
 export default ColorConstants;

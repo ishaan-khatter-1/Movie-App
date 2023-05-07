@@ -14,6 +14,7 @@
 
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
+// import Drawer from '../../../assets/dashboardStyles/Drawer';
 import Drawer from '../../../assets/dashboardStyles/Drawer';
 
 interface drawerOpenFace {
@@ -22,10 +23,10 @@ interface drawerOpenFace {
 
 // works without interface also
 
-const Drawericon = ({drawerOpen}) => {
+const Drawericon = ({drawe}) => {
   // console.log(drawerOpen);
   return (
-    <TouchableOpacity onPress={() => drawerOpen.openDrawer()}>
+    <TouchableOpacity onPress={() => drawe.openDrawer()}>
       <Drawer />
     </TouchableOpacity>
   );

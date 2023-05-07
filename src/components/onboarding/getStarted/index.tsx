@@ -6,7 +6,7 @@ import ScreenTwo from '../onboardingScreens/ScreenTwo';
 import ScreenThree from '../onboardingScreens/ScreenThree';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import BottomNavigation from '../../dashboard/bottomnavigation';
+import BottomNavigation from '../../../root/bottomnavigation';
 
 const GetStarted = () => {
   const [screenShown, setScreenShown] = useState(false);
