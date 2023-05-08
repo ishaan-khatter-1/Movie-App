@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+
 import {View, Text, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -27,8 +29,11 @@ import LinearGradient from 'react-native-linear-gradient';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+const movie = 'M💿VIE  ';
+const mania = 'MANIA';
+
 const BottomNavigation = ({navigation}) => {
-  // console.log(props.navigation);
+  console.log(navigation);
   return (
     <>
       <Tab.Navigator
@@ -42,7 +47,18 @@ const BottomNavigation = ({navigation}) => {
         // screenOptions={{}}
         initialRouteName="Home"
         screenOptions={{
+          headerTitle: ({}) => (
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
+                {movie}
+              </Text>
+              <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
+                {mania}
+              </Text>
+            </View>
+          ),
           headerTitleAlign: 'center',
+          // headerLeft: () => <Drawericon navigation={navigation} />,
           headerLeft: ({}) => (
             <View style={{marginLeft: 10}}>
               <TouchableOpacity onPress={({}) => navigation.openDrawer()}>
@@ -60,7 +76,7 @@ const BottomNavigation = ({navigation}) => {
             </View>
           ),
           headerStyle: {backgroundColor: ColorConstants.mainBgColor},
-          headerTitleStyle: {color: ColorConstants.titleColor},
+          headerTitleStyle: {color: ColorConstants.textWhite},
           // ...titleStyle,
           // headerStyle: titleStyle,
           tabBarStyle: {...tabBarStyling},
@@ -84,6 +100,7 @@ const homeTab = {
   tabBarIcon: ({focused}) => (
     <View>{focused ? <HomeIcon /> : <HomeIconFaded />}</View>
   ),
+  // headerLeft: () => <Drawericon navigation={navigation} />,
 };
 const movieTab = {
   tabBarIcon: ({focused}) => (

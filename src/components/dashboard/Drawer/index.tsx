@@ -23,10 +23,10 @@ interface drawerOpenFace {
 
 // works without interface also
 
-const Drawericon = ({drawe}) => {
-  // console.log(drawerOpen);
+const Drawericon = ({navigation}) => {
+  console.log(navigation);
   return (
-    <TouchableOpacity onPress={() => drawe.openDrawer()}>
+    <TouchableOpacity onPress={() => navigation.openDrawer()}>
       <Drawer />
     </TouchableOpacity>
   );

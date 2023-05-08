@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import BottomNavigation from './bottomnavigation';
 import CustomDrawer from '../components/dashboard/Drawer/CustomDrawer';
 import {Text} from 'react-native';
+import BottomNavigation from './bottomnavigation';
 
 const Drawer = createDrawerNavigator();
 

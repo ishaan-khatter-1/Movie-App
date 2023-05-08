@@ -22,28 +22,29 @@ const Navigation = () => {
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 3500);
+    }, 2280);
   }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="DrawerNavigation"
+        // initialRouteName="DrawerNavigation"
+        // initialRouteName="SplashScreen"
         screenOptions={{
           headerShown: false,
-          cardStyleInterpolator: ({current, layouts}) => {
-            return {
-              cardStyle: {
-                transform: [
-                  {
-                    translateX: current.progress.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [layouts.screen.width, 0],
-                    }),
-                  },
-                ],
-              },
-            };
-          },
+          // cardStyleInterpolator: ({current, layouts}) => {
+          //   return {
+          //     cardStyle: {
+          //       transform: [
+          //         {
+          //           translateX: current.progress.interpolate({
+          //             inputRange: [0, 1],
+          //             outputRange: [layouts.screen.width, 0],
+          //           }),
+          //         },
+          //       ],
+          //     },
+          //   };
+          // },
         }}>
         {/* <Stack.Screen
           name="SplashScreen"

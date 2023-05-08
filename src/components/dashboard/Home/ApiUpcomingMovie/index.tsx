@@ -41,7 +41,9 @@ const ApiUpcomingMovie = () => {
           style={styles.carousel}
           data={data}
           renderItem={renderFunc}
-          // loop
+          loop
+          autoplay={true}
+          autoplayInterval={3000}
           sliderWidth={width * 0.9}
           itemWidth={width * 0.85}
           // itemHeight={height}
