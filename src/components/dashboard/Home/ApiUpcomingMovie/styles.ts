@@ -7,8 +7,9 @@ const styles = StyleSheet.create({
   container: {},
   imgOneStyle: {
     aspectRatio: 5 / 3, // width / height
+    // height: 300,
 
-    borderRadius: 20,
+    borderRadius: 10,
 
     width: '100%',
   },
