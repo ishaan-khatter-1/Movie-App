@@ -9,6 +9,7 @@ const ColorConstants = {
   // titleColor: 'rgb(225,0,146)',
   titleColor: '#FF8F71',
   thirdOrange: '#FF7E03',
+  // textWhite: 'rgb(247,247,247)',
   textWhite: 'rgb(247,247,247)',
 
   // textBaseColor:

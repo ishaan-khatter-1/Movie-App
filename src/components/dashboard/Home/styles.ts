@@ -3,15 +3,18 @@ import ColorConstants from '../../../assets/colorConstants';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: ColorConstants.mainBgColor,
+    // backgroundColor: ColorConstants.mainBgColor,
+    backgroundColor: ColorConstants.backgroundWhite,
+
     // flex: 2,
     // justifyContent: 'space-between',
     flex: 1,
   },
   trendingTextColor: {
-    color: 'white',
-    fontSize: 20,
-    margin: 20,
+    color: '#000',
+    fontSize: 22,
+    margin: 10,
+    fontWeight: '500',
   },
   apiTrendingImg: {
     // backgroundColor: 'green',
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    marginTop: '8%',
+    marginTop: '5%',
   },
 });
 

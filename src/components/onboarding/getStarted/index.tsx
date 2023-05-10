@@ -7,14 +7,16 @@ import ScreenThree from '../onboardingScreens/ScreenThree';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BottomNavigation from '../../../root/bottomnavigation';
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 const GetStarted = () => {
   const [screenShown, setScreenShown] = useState(false);
-
+  const {dispatch} = useNavigation();
   useEffect(() => {
     AsyncStorage.getItem('screenShown').then(value => {
       if (value !== null) {
         setScreenShown(true);
+        dispatch(StackActions.replace('DrawerNavigation'));
       }
       // if (value !== 'true') {
       //   setScreenShown(true);

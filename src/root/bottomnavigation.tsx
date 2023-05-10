@@ -121,12 +121,12 @@ const televisionTab = {
 
 const tabBarStyling = {
   // position: 'absolute',
-  backgroundColor: ColorConstants.mainBgColor,
-  shadowColor: 'rgb(7,44,133)',
-  shadowOffset: {
-    width: 0,
-    height: 100,
-  },
+  backgroundColor: ColorConstants.backgroundWhite,
+  // shadowColor: 'rgb(7,44,133)',
+  // shadowOffset: {
+  //   width: 0,
+  //   height: 100,
+  // },
   elevation: 50,
   // bottom: '3%',
   // borderRadius: 15,

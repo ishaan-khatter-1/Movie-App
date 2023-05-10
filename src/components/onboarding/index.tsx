@@ -3,16 +3,23 @@ import React, {useEffect, useState} from 'react';
 import Lottie from 'lottie-react-native';
 import styles from './styles';
 import {MotiView} from 'moti';
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 const SplashScreen = () => {
   const [show, setShow] = useState(true);
+  // const dispatch = useDispatch();
+  const {dispatch} = useNavigation();
+
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
+      // const {dispatch} = useNavigation();
       setShow(false);
       console.log(show);
-    }, 100);
+      dispatch(StackActions.replace('GetStarted')); // replace with your screen name
+    }, 2280);
     // console.log(show);
-    // return () => clearTimeout(timeoutId);
+
+    return () => clearTimeout(timeoutId);
   }, []);
   return (
     <View style={styles.mainView}>

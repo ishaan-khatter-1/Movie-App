@@ -8,6 +8,8 @@ import {
   Image,
   ImageBackground,
   Dimensions,
+  TouchableOpacity,
+  Pressable,
 } from 'react-native';
 import {useQuery} from 'react-query';
 import styles from './styles';
@@ -19,6 +21,7 @@ import {
   FetchLatestMovie,
   FetchTrendingMovie,
 } from '../../../../services/FetchData';
+import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('window').width;
 
@@ -62,18 +65,38 @@ const width = Dimensions.get('window').width;
 // };
 
 const ApiTrendingData = () => {
+  const {navigate} = useNavigation();
   // const width = Dimensions.get('window').width;
   const height = width * 1.5;
 
   const renderFunc = ({item}) => {
+    // const renderDetail = () => {
+    //   return (
+    //     <View style={{flex: 1}}>
+    //       <ImageBackground
+    //         style={styles.imgOneStyle}
+    //         imageStyle={styles.imageStyle}
+    //         source={{
+    //           uri: BASE_IMG_URL + 'w500' + item.poster_path,
+    //         }}></ImageBackground>
+    //     </View>
+    //   );
+    // };
     return (
       <View style={styles.renderView}>
-        <ImageBackground
-          style={styles.imgOneStyle}
-          imageStyle={styles.imageStyle}
-          source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
-          <Text>{item.title}</Text>
-        </ImageBackground>
+        <TouchableOpacity
+          onPress={() => {
+            navigate('MovieDetail', {item});
+          }}
+          // onPress={renderDetail}
+        >
+          <ImageBackground
+            style={styles.imgOneStyle}
+            imageStyle={styles.imageStyle}
+            source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
+            <Text>{item.title}</Text>
+          </ImageBackground>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -99,8 +122,8 @@ const ApiTrendingData = () => {
         data={data}
         renderItem={renderFunc}
         loop
-        sliderWidth={width * 0.8}
-        itemWidth={width * 0.55}
+        sliderWidth={width}
+        itemWidth={width * 0.6}
         itemHeight={height}
       />
 

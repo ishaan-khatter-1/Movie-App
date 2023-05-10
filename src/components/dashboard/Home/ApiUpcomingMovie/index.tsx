@@ -44,8 +44,8 @@ const ApiUpcomingMovie = () => {
           loop
           autoplay={true}
           autoplayInterval={3000}
-          sliderWidth={width * 0.9}
-          itemWidth={width * 0.85}
+          sliderWidth={width * 0.85}
+          itemWidth={width * 0.8}
           // itemHeight={height}
         />
 

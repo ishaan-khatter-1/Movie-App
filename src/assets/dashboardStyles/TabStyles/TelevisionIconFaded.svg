@@ -1,8 +1,8 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#DADADA" fill-opacity="0.4">
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#bfbdbd" fill-opacity="1">
   <defs>
     <linearGradient id="grad" x1="-40%" y1="-20%" x2="40%" y2="0%">
       <stop stop-color="white" stop-opacity="0.25"/>
-      <stop offset="1" stop-color="white" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#bfbdbd" stop-opacity="1"/>
 </linearGradient>
   </defs>
   <g id="SVGRepo_bgCarrier" stroke-width="0">

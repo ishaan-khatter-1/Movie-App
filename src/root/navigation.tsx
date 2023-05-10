@@ -13,6 +13,7 @@ import DrawerNavigation from './drawernavigation';
 import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 import About from '../components/dashboard/Drawer/DrawerScreens/About';
 import TwoColor from '../components/LinearGradient/TwoColor';
+import MovieDetail from '../components/dashboard/MovieDetail';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -27,8 +28,9 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        // initialRouteName="DrawerNavigation"
+        initialRouteName="DrawerNavigation"
         // initialRouteName="SplashScreen"
+        // initialRouteName="MovieDetail"
         screenOptions={{
           headerShown: false,
           // cardStyleInterpolator: ({current, layouts}) => {
@@ -46,14 +48,14 @@ const Navigation = () => {
           //   };
           // },
         }}>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
           options={{
             headerShown: false,
           }}
-        /> */}
-        {splash ? (
+        />
+        {/* {splash ? (
           <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
@@ -68,6 +70,13 @@ const Navigation = () => {
           options={{
             headerShown: false,
           }}
+        /> */}
+        <Stack.Screen
+          name="GetStarted"
+          component={GetStarted}
+          options={{
+            headerShown: false,
+          }}
         />
 
         {/* <Stack.Screen name="Dash" component={Dash} /> */}
@@ -75,6 +84,13 @@ const Navigation = () => {
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="TwoColor" component={TwoColor} />
+        <Stack.Screen
+          name="MovieDetail"
+          component={MovieDetail}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
