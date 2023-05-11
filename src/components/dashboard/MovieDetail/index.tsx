@@ -47,24 +47,18 @@ const MovieDetal = prop => {
         </Pressable>
       </ImageBackground>
       <View style={styles.rating_titleView}>
-        <View style={{width: width * 0.7}}>
-          <Text style={styles.original_titleText}>
-            {apiDetail.item.original_title}
-          </Text>
-        </View>
-        <View style={styles.ratingView}>
-          {/* <View style={styles.starIconView}> */}
-          <StarRating width={15} height={15} />
-          {/* </View> */}
-          {/* <View style={styles.ratingTextView}> */}
-          <Text style={styles.ratingText}>{apiDetail.item.vote_average}</Text>
-          {/* </View> */}
-        </View>
+        {/* <View style={{width: width * 0.7}}> */}
+        <Text style={styles.original_titleText}>
+          {apiDetail.item.original_title}
+        </Text>
+        {/* </View> */}
       </View>
       <View style={styles.ReleaseDateView}>
         <Text style={styles.releaseDateText}>Release Date</Text>
-        <Text>{apiDetail.item.release_date}</Text>
+        <StarRating width={17} height={17} fill={'yellow'} />
+        <Text style={styles.ratingText}>{apiDetail.item.vote_average}</Text>
       </View>
+      <Text style={{marginLeft: 15}}>{apiDetail.item.release_date}</Text>
       {/* <View style={styles.overviewTextView}> */}
       <Text style={styles.overviewText}>{apiDetail.item.overview}</Text>
       {/* </View> */}

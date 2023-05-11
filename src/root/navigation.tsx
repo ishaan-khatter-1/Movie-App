@@ -14,6 +14,8 @@ import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 import About from '../components/dashboard/Drawer/DrawerScreens/About';
 import TwoColor from '../components/LinearGradient/TwoColor';
 import MovieDetail from '../components/dashboard/MovieDetail';
+import AllMovieData from '../components/AllMovieData';
+import SearchMovie from '../components/dashboard/Movie/SearchMovie';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,7 +30,8 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="DrawerNavigation"
+        initialRouteName="SearchMovie"
+        // initialRouteName="DrawerNavigation"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
         screenOptions={{
@@ -84,6 +87,8 @@ const Navigation = () => {
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="TwoColor" component={TwoColor} />
+        <Stack.Screen name="SearchMovie" component={SearchMovie} />
+
         <Stack.Screen
           name="MovieDetail"
           component={MovieDetail}

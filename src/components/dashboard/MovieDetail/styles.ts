@@ -45,30 +45,28 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     flexWrap: 'wrap',
   },
-  ratingView: {
-    flexDirection: 'row',
-    // alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginLeft: '2%',
-    // backgroundColor: 'yellow',
-  },
+  ratingView: {},
 
   ratingTextView: {},
   ratingText: {
     fontWeight: '500',
-    // flexWrap: 'wrap',
     marginLeft: 5,
   },
   ReleaseDateView: {
-    marginLeft: 15,
+    marginHorizontal: 15,
     marginTop: 15,
+    flexDirection: 'row',
+    // marginLeft: '2%',
+    // backgroundColor: 'red',
+    paddingRight: '5%',
   },
   releaseDateText: {
     fontSize: 14,
+
     fontWeight: '500',
     color: 'black',
     flexWrap: 'wrap',
-    // backgroundColor: 'red',
+    flex: 1,
   },
 
   overviewText: {
