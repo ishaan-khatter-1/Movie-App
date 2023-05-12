@@ -5,6 +5,28 @@ import ColorConstants from '../../../../assets/colorConstants';
 const styles = StyleSheet.create({
   mainContainer: {},
   container: {},
+  carouselViewZero: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  imgOneStyleZero: {
+    aspectRatio: 5 / 3, // width / height
+    // height: 300,
+
+    borderRadius: 10,
+
+    width: '100%',
+  },
+  imageStyleZero: {
+    borderRadius: 20,
+    shadowColor: 'red',
+  },
+  trendingTextColor: {
+    color: '#000',
+    fontSize: 22,
+    margin: 10,
+    fontWeight: '500',
+  },
   imgOneStyle: {
     aspectRatio: 1 / 1.5,
     borderRadius: 20,

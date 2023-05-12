@@ -14,12 +14,10 @@ const Home = () => {
   };
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.UpcomingMovieImages}>
-        {/* <ApiLatestMovie /> */}
+      {/* <View style={styles.UpcomingMovieImages}>
         <ApiUpcomingMovie />
-      </View>
+      </View> */}
       <View style={styles.apiTrendingImg}>
-        <Text style={styles.trendingTextColor}>Trending</Text>
         <ApiTrendingData />
       </View>
     </View>
