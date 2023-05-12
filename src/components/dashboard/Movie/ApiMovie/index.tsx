@@ -58,7 +58,7 @@ const ApiMovie = () => {
     return <Text>{error.message}</Text>;
   }
 
-  console.log(data);
+  // console.log(data);
 
   // const filteredData = () => {
   //   return

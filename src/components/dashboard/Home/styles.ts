@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   apiTrendingImg: {
     // backgroundColor: 'green',
-    // flex: 0.5,
+    // flex: 1,
     // marginBottom: '15%',
     borderRadius: 20,
   },

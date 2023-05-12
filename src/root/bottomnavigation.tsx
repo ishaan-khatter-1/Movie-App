@@ -33,7 +33,7 @@ const movie = 'M💿VIE  ';
 const mania = 'MANIA';
 
 const BottomNavigation = ({navigation}) => {
-  console.log(navigation);
+  // console.log(navigation);
   return (
     <>
       <Tab.Navigator

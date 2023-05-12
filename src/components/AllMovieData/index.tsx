@@ -92,7 +92,7 @@ const AllMovieData = () => {
       <Text style={{fontSize: 16}}>{item.title}</Text>
     </View>
   );
-  console.log(data);
+  // console.log(data);
   return (
     <View>
       {/* <Text>AllMovieData</Text> */}

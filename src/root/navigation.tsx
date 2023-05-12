@@ -30,8 +30,8 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SearchMovie"
-        // initialRouteName="DrawerNavigation"
+        // initialRouteName="SearchMovie"
+        initialRouteName="DrawerNavigation"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
         screenOptions={{
