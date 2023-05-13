@@ -1,0 +1,8 @@
+https://api.themoviedb.org/3/trending/tv/week?api_key=e3f2e72862408e5e3942f7d2684da6a8
+https://api.themoviedb.org/3/discover/tv?api_key=e3f2e72862408e5e3942f7d2684da6a8&first_air_date.gte=2022-05-01&sort_by=first_air_date.asc
+https://api.themoviedb.org/3/discover/tv?api_key=e3f2e72862408e5e3942f7d2684da6a8&first_air_date.gte=2022-05-01&sort_by=first_air_date.asc
+https://api.themoviedb.org/3/tv/popular?api_key=e3f2e72862408e5e3942f7d2684da6a8
+https://api.themoviedb.org/3/tv/1399/recommendations?api_key=e3f2e72862408e5e3942f7d2684da6a8&language=en-US&page=1
+
+
+https://api.themoviedb.org/3/movie/popular?api_key=e3f2e72862408e5e3942f7d2684da6a8

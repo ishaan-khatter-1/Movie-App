@@ -11,3 +11,9 @@ export const SEARCH_URL = `search/movie?api_key=${ApiKey}&language=en-US&page=1&
 export const MOVIEAPI = `movie/76600?api_key=${ApiKey}&language=en-US`;
 export const MOVIE_UPCOMING = `movie/upcoming?api_key=${ApiKey}&language=en-US&page=1`;
 export const MOVIE_LATEST = `movie/latest?api_key=${ApiKey}&language=en-US`;
+
+// TV series url
+export const TRENDING_URL_TV = `trending/tv/week?api_key=${ApiKey}`;
+export const DISCOVER_TV_URL = `discover/tv?api_key=${ApiKey}&first_air_date.gte=2022-05-01&sort_by=first_air_date.asc`;
+export const POPULAR_URL_TV = `tv/popular?api_key=${ApiKey}`;
+export const RECOMENDATIONS_URL_TV = `tv/1399/recommendations?api_key=${ApiKey}&language=en-US&page=1`;

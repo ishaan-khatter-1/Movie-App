@@ -17,6 +17,7 @@ import MovieDetail from '../components/dashboard/MovieDetail';
 import AllMovieData from '../components/AllMovieData';
 import SearchMovie from '../components/dashboard/Movie/SearchMovie';
 import Practive from '../assets/practive';
+import NewPage from '../components/dashboard/NewPage';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,7 +33,8 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         // initialRouteName="SearchMovie"
-        initialRouteName="DrawerNavigation"
+        // initialRouteName="DrawerNavigation"
+        initialRouteName="NewPage"
         // initialRouteName="Practive"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
@@ -90,6 +92,7 @@ const Navigation = () => {
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="TwoColor" component={TwoColor} />
         <Stack.Screen name="SearchMovie" component={SearchMovie} />
+        <Stack.Screen name="NewPage" component={NewPage} />
 
         <Stack.Screen
           name="MovieDetail"
