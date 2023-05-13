@@ -16,6 +16,7 @@ import TwoColor from '../components/LinearGradient/TwoColor';
 import MovieDetail from '../components/dashboard/MovieDetail';
 import AllMovieData from '../components/AllMovieData';
 import SearchMovie from '../components/dashboard/Movie/SearchMovie';
+import Practive from '../assets/practive';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ const Navigation = () => {
       <Stack.Navigator
         // initialRouteName="SearchMovie"
         initialRouteName="DrawerNavigation"
+        // initialRouteName="Practive"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
         screenOptions={{
@@ -96,6 +98,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen name="Practive" component={Practive} />
       </Stack.Navigator>
     </NavigationContainer>
   );

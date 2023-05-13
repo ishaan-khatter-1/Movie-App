@@ -1,34 +1,60 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import ColorConstants from '../../../assets/colorConstants';
+// export const width = Dimensions.get('screen').width;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: ColorConstants.mainBgColor,
     backgroundColor: ColorConstants.backgroundWhite,
-
-    // flex: 2,
-    // justifyContent: 'space-between',
     flex: 1,
+  },
+  container: {},
+  carouselViewZero: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  imgOneStyleZero: {
+    aspectRatio: 5 / 3, // width / height
+
+    borderRadius: 10,
+
+    width: '100%',
+  },
+  imageStyleZero: {
+    borderRadius: 20,
+    shadowColor: 'red',
   },
   trendingTextColor: {
     color: '#000',
-    fontSize: 22,
-    margin: 10,
+    fontSize: 20,
+    marginLeft: 10,
+    marginBottom: 10,
+    marginTop: 20,
     fontWeight: '500',
   },
-  apiTrendingImg: {
-    // backgroundColor: 'green',
-    // flex: 1,
-    // marginBottom: '15%',
+  imgOneStyle: {
+    aspectRatio: 1 / 1.5,
     borderRadius: 20,
   },
-  UpcomingMovieImages: {
-    // backgroundColor: 'yellow',
-    flex: 1,
+  imageStyle: {
+    aspectRatio: 1 / 1.5,
+    borderRadius: 20,
+  },
+  titleStyle: {
+    fontSize: 14,
+    color: '#fff',
+  },
+  carouselView: {
     alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'center',
-    marginTop: '5%',
+    borderRadius: 20,
+    marginHorizontal: Dimensions.get('window').width * 0.1,
+  },
+  renderView: {
+    marginHorizontal: 8,
+    borderRadius: 20,
+  },
+  carousel: {
+    borderRadius: 20,
+    borderWidth: 10,
   },
 });
 

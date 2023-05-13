@@ -1,27 +1,114 @@
-import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import ApiHomeOne, {ApiLatestMovie} from './apiHome';
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+
+import {
+  Text,
+  View,
+  FlatList,
+  Image,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
+import {useQuery} from 'react-query';
 import styles from './styles';
-import {useNavigation} from '@react-navigation/native';
-import DrawerNavigation from '../../../root/drawernavigation';
+import {BASE_IMG_URL} from '../../../services';
+// import Carousel from 'react-native-reanimated-carousel';
+import Carousel from 'react-native-snap-carousel';
 import UpgradePlanSlider from '../../Slider';
-import ApiTrendingData from './apiHome';
-import ApiUpcomingMovie from './ApiUpcomingMovie';
-const Home = () => {
+import {
+  FetchLatestMovie,
+  FetchTrendingMovie,
+} from '../../../services/FetchData';
+import {useNavigation} from '@react-navigation/native';
+
+const width = Dimensions.get('window').width;
+
+const ApiTrendingData = () => {
   const {navigate} = useNavigation();
-  const menuDrawer = () => {
-    navigate('DrawerNavigation');
+  const height = width * 1.5;
+
+  const renderFuncZero = ({item}) => {
+    return (
+      <View>
+        <Pressable
+          onPress={() => {
+            navigate('MovieDetail', {item});
+          }}>
+          <ImageBackground
+            resizeMode="contain"
+            style={styles.imgOneStyleZero}
+            imageStyle={styles.imageStyleZero}
+            source={{uri: BASE_IMG_URL + 'w500' + item.backdrop_path}}>
+            <Text>{item.title}</Text>
+          </ImageBackground>
+        </Pressable>
+      </View>
+    );
   };
+
+  const renderFunc = ({item}) => {
+    return (
+      <View style={styles.renderView}>
+        <TouchableOpacity
+          onPress={() => {
+            navigate('MovieDetail', {item});
+          }}
+          // onPress={renderDetail}
+        >
+          <ImageBackground
+            style={styles.imgOneStyle}
+            imageStyle={styles.imageStyle}
+            source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
+            <Text>{item.title}</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const {data, isLoading, isError} = useQuery(
+    'TrendingMovies',
+    FetchTrendingMovie,
+  );
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (isError) {
+    return <Text>{isError.message}</Text>;
+  }
+
   return (
     <View style={styles.mainContainer}>
-      {/* <View style={styles.UpcomingMovieImages}>
-        <ApiUpcomingMovie />
-      </View> */}
-      <View style={styles.apiTrendingImg}>
-        <ApiTrendingData />
+      <View style={styles.carouselViewZero}>
+        <Carousel
+          style={styles.carousel}
+          data={data}
+          renderItem={renderFuncZero}
+          loop
+          autoplay={true}
+          autoplayInterval={3000}
+          sliderWidth={width * 0.9}
+          itemWidth={width * 0.85}
+        />
+      </View>
+      <Text style={styles.trendingTextColor}>Trending</Text>
+
+      <View style={styles.carouselView}>
+        <Carousel
+          style={styles.carousel}
+          data={data}
+          renderItem={renderFunc}
+          loop
+          sliderWidth={width}
+          itemWidth={width * 0.6}
+          itemHeight={height}
+        />
       </View>
     </View>
   );
 };
 
-export default Home;
+export default ApiTrendingData;

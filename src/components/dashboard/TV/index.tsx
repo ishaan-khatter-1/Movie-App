@@ -1,19 +1,112 @@
-import {View, Text, FlatList} from 'react-native';
 import React from 'react';
-import {useQuery} from 'react-query';
-import {FetchUpcomingMovie} from '../../../services/FetchData';
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 
-const Television = () => {
+import {
+  Text,
+  View,
+  FlatList,
+  Image,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
+import {useQuery} from 'react-query';
+import styles from './styles';
+import {BASE_IMG_URL} from '../../../services';
+import Carousel from 'react-native-snap-carousel';
+// import UpgradePlanSlider from '../../../Slider';
+import {
+  FetchLatestMovie,
+  FetchUpcomingMovie,
+} from '../../../services/FetchData';
+import {useNavigation} from '@react-navigation/native';
+
+const width = Dimensions.get('window').width;
+
+const ApiTrendingData = () => {
+  const {navigate} = useNavigation();
+  const height = width * 1.5;
+
+  const renderFuncZero = ({item}) => {
+    return (
+      <View>
+        <Pressable
+          onPress={() => {
+            navigate('MovieDetail', {item});
+          }}>
+          <ImageBackground
+            resizeMode="contain"
+            style={styles.imgOneStyleZero}
+            imageStyle={styles.imageStyleZero}
+            source={{uri: BASE_IMG_URL + 'w500' + item.backdrop_path}}>
+            <Text>{item.title}</Text>
+          </ImageBackground>
+        </Pressable>
+      </View>
+    );
+  };
+
+  const renderFunc = ({item}) => {
+    return (
+      <View style={styles.renderView}>
+        <TouchableOpacity
+          onPress={() => {
+            navigate('MovieDetail', {item});
+          }}>
+          <ImageBackground
+            style={styles.imgOneStyle}
+            imageStyle={styles.imageStyle}
+            source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
+            <Text>{item.title}</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   const {data, isLoading, isError} = useQuery(
-    'upcomingMovies',
+    'TrendingMovies',
     FetchUpcomingMovie,
   );
-  console.log(data);
+  // console.log(data);
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
 
-  // renderFunc = () => {
+  if (isError) {
+    return <Text>{isError.message}</Text>;
+  }
 
-  // }
-  return <View>{/* <FlatList data={data} renderItem={} /> */}</View>;
+  return (
+    <View style={styles.mainContainer}>
+      <View style={styles.carouselViewZero}>
+        <Carousel
+          style={styles.carousel}
+          data={data}
+          renderItem={renderFuncZero}
+          loop
+          autoplay={true}
+          autoplayInterval={3000}
+          sliderWidth={width * 0.9}
+          itemWidth={width * 0.85}
+        />
+      </View>
+      <Text style={styles.trendingTextColor}>Upcoming Movies</Text>
+
+      <View style={styles.carouselView}>
+        <Carousel
+          style={styles.carousel}
+          data={data}
+          renderItem={renderFunc}
+          loop
+          sliderWidth={width}
+          itemWidth={width * 0.6}
+          itemHeight={height}
+        />
+      </View>
+    </View>
+  );
 };
 
-export default Television;
+export default ApiTrendingData;

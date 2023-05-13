@@ -70,11 +70,11 @@ const BottomNavigation = ({navigation}) => {
               </TouchableOpacity>
             </View>
           ),
-          headerRight: () => (
-            <View style={{marginRight: 15}}>
-              <Search width={30} height={30} fill={ColorConstants.textWhite} />
-            </View>
-          ),
+          // headerRight: () => (
+          //   <View style={{marginRight: 15}}>
+          //     <Search width={30} height={30} fill={ColorConstants.textWhite} />
+          //   </View>
+          // ),
           headerStyle: {backgroundColor: ColorConstants.mainBgColor},
           headerTitleStyle: {color: ColorConstants.textWhite},
           // ...titleStyle,
@@ -134,6 +134,7 @@ const tabBarStyling = {
   height: 80,
   borderTopWidth: 0,
   showLabel: false,
+  borderWidth: 0,
 };
 
 export default BottomNavigation;
