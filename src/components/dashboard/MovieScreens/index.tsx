@@ -14,17 +14,23 @@ import {
 import {useQuery} from 'react-query';
 import styles from './styles';
 import {BASE_IMG_URL} from '../../../services';
+// import Carousel from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-snap-carousel';
-// import UpgradePlanSlider from '../../../Slider';
+import UpgradePlanSlider from '../../Slider';
 import {
   FetchLatestMovie,
-  FetchUpcomingMovie,
+  FetchTrendingMovie,
 } from '../../../services/FetchData';
 import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('window').width;
 
-const ApiTrendingData = () => {
+interface MovieComponent {
+  FetchData?: () => {};
+  genre?: string;
+}
+
+const MovieScreen = ({FetchData, genre}: MovieComponent) => {
   const {navigate} = useNavigation();
   const height = width * 1.5;
 
@@ -53,7 +59,9 @@ const ApiTrendingData = () => {
         <TouchableOpacity
           onPress={() => {
             navigate('MovieDetail', {item});
-          }}>
+          }}
+          // onPress={renderDetail}
+        >
           <ImageBackground
             style={styles.imgOneStyle}
             imageStyle={styles.imageStyle}
@@ -65,11 +73,9 @@ const ApiTrendingData = () => {
     );
   };
 
-  const {data, isLoading, isError} = useQuery(
-    'UpcomingMovies',
-    FetchUpcomingMovie,
-  );
-  // console.log(data);
+  const {data, isLoading, isError} = useQuery('TrendingMovies', {
+    queryFn: FetchData,
+  });
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
@@ -88,11 +94,11 @@ const ApiTrendingData = () => {
           loop
           autoplay={true}
           autoplayInterval={3000}
-          sliderWidth={width * 0.9}
-          itemWidth={width * 0.85}
+          sliderWidth={width * 0.95}
+          itemWidth={width * 0.9}
         />
       </View>
-      <Text style={styles.trendingTextColor}>Upcoming Movies</Text>
+      <Text style={styles.trendingTextColor}>{genre}</Text>
 
       <View style={styles.carouselView}>
         <Carousel
@@ -101,7 +107,7 @@ const ApiTrendingData = () => {
           renderItem={renderFunc}
           loop
           sliderWidth={width}
-          itemWidth={width * 0.6}
+          itemWidth={width * 0.75}
           itemHeight={height}
         />
       </View>
@@ -109,4 +115,4 @@ const ApiTrendingData = () => {
   );
 };
 
-export default ApiTrendingData;
+export default MovieScreen;

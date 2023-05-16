@@ -11,5 +11,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     // margin: 20,
   },
+  componentHeaderText: {
+    color: 'black',
+    fontSize: 18,
+    marginHorizontal: 10,
+    marginTop: 10,
+    marginLeft: 15,
+    marginRight: 15,
+    fontWeight: 600,
+  },
+  MovieTvImg: {
+    width: 190,
+    height: 120,
+    marginLeft: 10,
+    marginVertical: 5,
+    // backgroundColor: 'green',
+  },
+  MovieTvImageStyle: {
+    borderRadius: 10,
+  },
+  movieTvtitleText: {
+    width: 150,
+    marginLeft: 15,
+    fontWeight: '600',
+    color: 'black',
+  },
 });
 export default styles;

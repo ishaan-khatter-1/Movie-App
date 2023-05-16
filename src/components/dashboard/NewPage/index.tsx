@@ -8,16 +8,104 @@ import {
   Image,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel from 'react-native-reanimated-carousel';
+import {Pagination} from 'react-native-snap-carousel';
 import axios from 'axios';
 import {
   BASE_IMG_URL,
   BASE_URL,
+  MOVIE_UPCOMING,
+  RECOMENDATIONS_URL_MOVIE,
+  SEARCH_URL,
   TRENDING_URL,
   TRENDING_URL_TV,
 } from '../../../services';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {FlatList} from 'react-native';
+import {useQuery} from 'react-query';
+import {
+  FetchPopularMovie,
+  FetchRecommendedMovie,
+  FetchSearchMovie,
+  FetchTrendingMovie,
+  FetchUpcomingMovie,
+} from '../../../services/FetchData';
+import {useQueryClient} from 'react-query';
+import { ScrollView } from 'react-native';
+import ApiUpcomingMovie from '../Home/ApiUpcomingMovie';
+const queryClient = useQueryClient;
+
+interface HorizontalComponent {
+  headerText: string;
+  queryKey: string;
+  FetchData?: () => {};
+}
+
+export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) => {
+  const {navigate} = useNavigation();
+  const [screen, setScreen] =useState('')
+  const {data} = useQuery(queryKey, {queryFn: FetchData});
+  const handleAllMovie = () =>{
+    if (headerText==='Trending Movies'){
+
+      navigate('TrendingMovie');
+    }
+    if (headerText==='Upcoming Movies'){
+
+      navigate('UpcomingMovie');
+    }
+    if (headerText==='Popular Movies'){
+
+      navigate('PopularMovie');
+    }
+    if (headerText==='Hot'){
+
+      navigate('HotMovie');
+    }
+    if (headerText==='Recommended Movies'){
+
+      navigate('RecommendedMovie');
+    }
+  }
+  // console.log(data);
+  return (
+    <View >
+      <View style={{flexDirection:'row', justifyContent:"space-between"}}>
+        <Text
+          style={[styles.componentHeaderText]}>
+          {headerText}
+        </Text>
+        <Pressable onPress={handleAllMovie}>
+        <Text style={[styles.componentHeaderText,{fontSize:15}]}>See All ></Text>
+        </Pressable>
+      </View>
+      <FlatList
+        data={data}
+        maxToRenderPerBatch={3}
+        horizontal
+        renderItem={({item}) => {
+          // console.log(item);
+          return (
+            <View>
+              
+              {item.backdrop_path &&
+                (<ImageBackground
+                resizeMode="contain"
+                imageStyle={styles.MovieTvImageStyle}
+                style={styles.MovieTvImg}
+                source={{
+                  uri: BASE_IMG_URL + 'original' + item.backdrop_path,
+                }}></ImageBackground>)}
+
+                {item.backdrop_path && (<Text style={styles.movieTvtitleText}>{item.title}</Text>)}
+            </View>
+          );
+        }}
+      />
+    </View>
+  );
+};
 
 const width = Dimensions.get('window').width;
 const NewPage = () => {
@@ -25,10 +113,10 @@ const NewPage = () => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
   const FetchCarouselData = async () => {
-    const trendingMovie = await axios.get(BASE_URL + TRENDING_URL);
-    const trendingTv = await axios.get(BASE_URL + TRENDING_URL_TV);
+    const trendingData = await axios.get(BASE_URL + TRENDING_URL);
+    const upcomingData = await axios.get(BASE_URL + MOVIE_UPCOMING);
 
-    const MovieData = trendingMovie.data.results.slice(0, 2).map(item => {
+    const MovieDatatrending = trendingData.data.results.slice(0, 2).map(item => {
       return {
         // ...GiveData,
         id: item.id,
@@ -45,8 +133,10 @@ const NewPage = () => {
         overview: item.overview ? item.overview : null,
       };
     });
-    const TvData = trendingTv.data.results.slice(0, 2).map(item => {
+
+    const MovieDataupcoming = upcomingData.data.results.slice(0, 2).map(item => {
       return {
+        // ...GiveData,
         id: item.id,
         release_date: item.release_date ? item.release_date : null,
         backdrop_path: item.backdrop_path
@@ -61,22 +151,22 @@ const NewPage = () => {
         overview: item.overview ? item.overview : null,
       };
     });
-    setData([...MovieData, ...TvData]);
+
+    setData([...MovieDatatrending,...MovieDataupcoming]);
   };
 
   useEffect(() => {
     FetchCarouselData();
   }, []);
-  console.log(data);
+  // console.log(data);
   const {navigate} = useNavigation();
   const renderFunc = ({item}) => {
     return (
       <Pressable
-        style={{margin: 0}}
         onPress={() => {
           navigate('MovieDetail', {item});
         }}>
-        <View style={{margin: 0}}>
+        <View>
           {item.backdrop_path && (
             <ImageBackground
               resizeMode="cover"
@@ -88,36 +178,42 @@ const NewPage = () => {
       </Pressable>
     );
   };
+
   return (
-    <View>
+    <ScrollView >
       <Carousel
         data={data}
         renderItem={renderFunc}
         loop
         ref={isCarousel}
-        autoplay={true}
-        autoplayInterval={3000}
-        sliderWidth={width}
-        itemWidth={width}
+        autoPlay={true}
+        scrollAnimationDuration={1000}
+        width={width}
+        height={(width * 1) / 1.7}
         onSnapToItem={index => setIndex(index)}
-        useScrollView={true}
       />
-      <Pagination
-        dotsLength={data.length}
-        activeDotIndex={index}
-        carouselRef={isCarousel}
-        dotStyle={{
-          width: 10,
-          height: 10,
-          borderRadius: 5,
-          marginHorizontal: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.92)',
-        }}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-        tappableDots={true}
+<View style={{marginTop:10}}>
+  <MovieTv queryKey="RecommendedMovies"
+    headerText="Recommended Movies"
+    FetchData={FetchRecommendedMovie}/>
+        <MovieTv queryKey='PopularMovies' 
+        headerText='Popular Movies' 
+        FetchData={FetchPopularMovie}/>
+      <MovieTv
+        queryKey="UpcomingMovies"
+        headerText="Upcoming Movies"
+        FetchData={FetchUpcomingMovie}
       />
-    </View>
+      <MovieTv
+        queryKey="TrendingMovies"
+        headerText="Trending Movies"
+        FetchData={FetchTrendingMovie}
+      />
+      <MovieTv queryKey='HotMovies' 
+      headerText='Hot' 
+      FetchData={FetchSearchMovie}/>
+      </View>
+    </ScrollView>
   );
 };
 

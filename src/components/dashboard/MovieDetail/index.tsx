@@ -52,9 +52,7 @@ const MovieDetal = prop => {
         </Pressable>
       </ImageBackground>
       <View style={styles.rating_titleView}>
-        <Text style={styles.original_titleText}>
-          {apiDetail.item.original_title}
-        </Text>
+        <Text style={styles.original_titleText}>{apiDetail.item.title}</Text>
       </View>
       <View style={styles.ReleaseDateView}>
         <Text style={styles.releaseDateText}>Release Date</Text>

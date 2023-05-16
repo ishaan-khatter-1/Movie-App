@@ -18,6 +18,17 @@ import AllMovieData from '../components/AllMovieData';
 import SearchMovie from '../components/dashboard/Movie/SearchMovie';
 import Practive from '../assets/practive';
 import NewPage from '../components/dashboard/NewPage';
+import Home from '../components/dashboard/Home';
+import ApiTrendingData from '../components/dashboard/TV';
+import Trending from '../components/dashboard/MovieScreens';
+import Screen from '../components/dashboard/MovieScreens/Screens';
+import MovieType from '../components/dashboard/MovieScreens/Screens';
+import MovieScreen from '../components/dashboard/MovieScreens';
+import PopularMovie from '../components/dashboard/MovieScreens/Screens/Popular';
+import HotMovie from '../components/dashboard/MovieScreens/Screens/Hot';
+import RecommendedMovie from '../components/dashboard/MovieScreens/Screens/Recommended';
+import TrendingMovie from '../components/dashboard/MovieScreens/Screens/Trending';
+import UpcomingMovie from '../components/dashboard/MovieScreens/Screens/Upcoming';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -33,11 +44,12 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         // initialRouteName="SearchMovie"
-        // initialRouteName="DrawerNavigation"
-        initialRouteName="NewPage"
+        initialRouteName="DrawerNavigation"
+        // initialRouteName="NewPage"
         // initialRouteName="Practive"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
+        // initialRouteName="MovieScreen"
         screenOptions={{
           headerShown: false,
           // cardStyleInterpolator: ({current, layouts}) => {
@@ -93,6 +105,15 @@ const Navigation = () => {
         <Stack.Screen name="TwoColor" component={TwoColor} />
         <Stack.Screen name="SearchMovie" component={SearchMovie} />
         <Stack.Screen name="NewPage" component={NewPage} />
+        {/* <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="ApiTrendingData" component={ApiTrendingData} /> */}
+        <Stack.Screen name="MovieScreen" component={MovieScreen} />
+        <Stack.Screen name="MovieType" component={MovieType} />
+        <Stack.Screen name="PopularMovie" component={PopularMovie} />
+        <Stack.Screen name="TrendingMovie" component={TrendingMovie} />
+        <Stack.Screen name="HotMovie" component={HotMovie} />
+        <Stack.Screen name="RecommendedMovie" component={RecommendedMovie} />
+        <Stack.Screen name="UpcomingMovie" component={UpcomingMovie} />
 
         <Stack.Screen
           name="MovieDetail"

@@ -9,6 +9,8 @@ import {
   MOVIE_LATEST,
   MOVIEAPI,
   BASE_IMG_URL,
+  RECOMENDATIONS_URL_MOVIE,
+  POPULAR_URL_MOVIE,
 } from '../index';
 
 export const FetchSearchMovie = async () => {
@@ -28,6 +30,16 @@ export const FetchTrendingMovie = async () => {
 
 export const FetchUpcomingMovie = async () => {
   const apiRes = await axios.get(BASE_URL + MOVIE_UPCOMING);
+  return apiRes.data.results;
+};
+
+export const FetchRecommendedMovie = async () => {
+  const apiRes = await axios.get(BASE_URL + RECOMENDATIONS_URL_MOVIE);
+  return apiRes.data.results;
+};
+
+export const FetchPopularMovie = async () => {
+  const apiRes = await axios.get(BASE_URL + POPULAR_URL_MOVIE);
   return apiRes.data.results;
 };
 
