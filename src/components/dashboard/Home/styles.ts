@@ -3,6 +3,10 @@ import ColorConstants from '../../../assets/colorConstants';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    marginBottom: 5,
+    backgroundColor: ColorConstants.backgroundWhite,
+  },
   imgStyle: {
     borderRadius: 10,
     width: '100%',
@@ -11,18 +15,41 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     // margin: 20,
   },
+  btnViewstyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 15,
+  },
+  btnOne: {
+    padding: 15,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    width: 100,
+    alignItems: 'center',
+  },
+  btnTwo: {
+    padding: 15,
+    borderTopRightRadius: 30,
+    borderBottomRightRadius: 30,
+    width: 100,
+    alignItems: 'center',
+  },
+  btnTextStyle: {
+    fontSize: 15,
+    fontWeight: '600',
+  },
   componentHeaderText: {
-    color: 'black',
-    fontSize: 18,
+    color: ColorConstants.mainBgColor,
+    fontSize: 16,
     marginHorizontal: 10,
     marginTop: 10,
     marginLeft: 15,
     marginRight: 15,
-    fontWeight: 600,
+    fontWeight: '600',
   },
   MovieTvImg: {
-    width: 190,
-    height: 120,
+    width: 180,
+    height: 110,
     marginLeft: 10,
     marginVertical: 5,
     // backgroundColor: 'green',
@@ -31,9 +58,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   movieTvtitleText: {
-    width: 150,
+    width: 180,
     marginLeft: 15,
-    fontWeight: '600',
+    fontSize: 12,
+    // fontWeight: '600',
     color: 'black',
   },
 });

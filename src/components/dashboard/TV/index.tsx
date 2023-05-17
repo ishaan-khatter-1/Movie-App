@@ -1,112 +1,170 @@
-import React from 'react';
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+// import {View, Text, FlatList, TextInput, Image, Pressable} from 'react-native';
+// import React, {useState} from 'react';
+// // import styles from './styles';
+// import SearchComponent from '../SearchComponent';
+// import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
+// import axios from 'axios';
+// import {
+//   BASE_URL,
+//   TRENDING_URL_TV,
+//   POPULAR_URL_TV,
+//   RECOMENDATIONS_URL_TV,
+//   DISCOVER_TV_URL,
+//   BASE_IMG_URL,
+// } from '../../../services';
+// import styles from './styles';
+// import {useNavigation} from '@react-navigation/native';
 
-import {
-  Text,
-  View,
-  FlatList,
-  Image,
-  ImageBackground,
-  Dimensions,
-  TouchableOpacity,
-  Pressable,
-} from 'react-native';
-import {useQuery} from 'react-query';
+// const Television = () => {
+//   const [data, setData] = useState([]);
+//   const FetchAllDataTv = async () => {
+//     const trendingRes = await axios.get(BASE_URL + TRENDING_URL_TV);
+//     const popularRes = await axios.get(BASE_URL + POPULAR_URL_TV);
+//     const recommendedRes = await axios.get(BASE_URL + RECOMENDATIONS_URL_TV);
+//     const discoverRes = await axios.get(BASE_URL + DISCOVER_TV_URL);
+
+//     const trendingData = trendingRes.data.results.map(item => {
+//       return {
+//         id: item.id,
+//         name: item.name ? item.name : null,
+//         release_date: item.release_date ? item.release_date : null,
+//         backdrop_path: item.backdrop_path
+//           ? BASE_IMG_URL + 'original' + item.backdrop_path
+//           : BASE_IMG_URL + 'original' + item.poster_path,
+//         // title: item.title,
+//         title: item.title ? item.title : null,
+
+//         poster_path: item.poster_path
+//           ? BASE_IMG_URL + 'original' + item.poster_path
+//           : null,
+//         overview: item.overview ? item.overview : null,
+//       };
+//     });
+//     const popularData = popularRes.data.results.map(item => {
+//       return {
+//         id: item.id,
+//         name: item.name ? item.name : null,
+//         release_date: item.release_date ? item.release_date : null,
+//         backdrop_path: item.backdrop_path
+//           ? BASE_IMG_URL + 'original' + item.backdrop_path
+//           : BASE_IMG_URL + 'original' + item.poster_path,
+//         // title: item.title,
+//         title: item.title ? item.title : null,
+
+//         poster_path: item.poster_path
+//           ? BASE_IMG_URL + 'original' + item.poster_path
+//           : null,
+//         overview: item.overview ? item.overview : null,
+//       };
+//     });
+//     const recommendedData = recommendedRes.data.results.map(item => {
+//       return {
+//         id: item.id,
+//         name: item.name ? item.name : null,
+//         release_date: item.release_date ? item.release_date : null,
+//         backdrop_path: item.backdrop_path
+//           ? BASE_IMG_URL + 'original' + item.backdrop_path
+//           : BASE_IMG_URL + 'original' + item.poster_path,
+//         // title: item.title,
+//         title: item.title ? item.title : null,
+
+//         poster_path: item.poster_path
+//           ? BASE_IMG_URL + 'original' + item.poster_path
+//           : null,
+//         overview: item.overview ? item.overview : null,
+//       };
+//     });
+//     const discoverData = discoverRes.data.results.map(item => {
+//       return {
+//         id: item.id,
+//         name: item.name ? item.name : null,
+//         release_date: item.release_date ? item.release_date : null,
+//         backdrop_path: item.backdrop_path
+//           ? BASE_IMG_URL + 'original' + item.backdrop_path
+//           : BASE_IMG_URL + 'original' + item.poster_path,
+//         // title: item.title,
+//         title: item.title ? item.title : null,
+
+//         poster_path: item.poster_path
+//           ? BASE_IMG_URL + 'original' + item.poster_path
+//           : null,
+//         overview: item.overview ? item.overview : null,
+//       };
+//     });
+//     setData([
+//       ...trendingData,
+//       ...popularData,
+//       ...recommendedData,
+//       ...discoverData,
+//     ]);
+//   };
+//   const {navigate} = useNavigation();
+//   const renderItem = ({item}) => (
+//     <Pressable
+//       onPress={() => {
+//         navigate('MovieDetail', {item});
+//       }}>
+//       <View style={{margin: 10}}>
+//         {item.poster_path && (
+//           <Image style={styles.imageStyle} source={{uri: item.poster_path}} />
+//         )}
+//       </View>
+//     </Pressable>
+//   );
+//   console.log(data);
+//   return (
+//     <View>
+//       <TextInput
+//         placeholder="Search"
+//         clearButtonMode="always"
+//         autoCapitalize="none"
+//         autoCorrect={false}
+//       />
+//       <FlatList
+//         data={data}
+//         style={styles.flatListstyle}
+//         renderItem={renderItem}
+//         numColumns={2}
+//       />
+//     </View>
+//   );
+// };
+
+// export default Television;
+
+import {View, Text, TextInput} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import ApiMovie from './ApiMovie';
 import styles from './styles';
-import {BASE_IMG_URL} from '../../../services';
-import Carousel from 'react-native-snap-carousel';
-// import UpgradePlanSlider from '../../../Slider';
-import {
-  FetchLatestMovie,
-  FetchUpcomingMovie,
-} from '../../../services/FetchData';
-import {useNavigation} from '@react-navigation/native';
+import SearchComponent from '../SearchComponent';
+import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
+import {useQuery, useQueryClient} from 'react-query';
 
-const width = Dimensions.get('window').width;
+const Movie = () => {
+  const [data, setData] = useState();
+  const res = FetchAllDataTv();
+  // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
 
-const ApiTrendingData = () => {
-  const {navigate} = useNavigation();
-  const height = width * 1.5;
-
-  const renderFuncZero = ({item}) => {
-    return (
-      <View>
-        <Pressable
-          onPress={() => {
-            navigate('MovieDetail', {item});
-          }}>
-          <ImageBackground
-            resizeMode="contain"
-            style={styles.imgOneStyleZero}
-            imageStyle={styles.imageStyleZero}
-            source={{uri: BASE_IMG_URL + 'w500' + item.backdrop_path}}>
-            <Text>{item.title}</Text>
-          </ImageBackground>
-        </Pressable>
-      </View>
-    );
-  };
-
-  const renderFunc = ({item}) => {
-    return (
-      <View style={styles.renderView}>
-        <TouchableOpacity
-          onPress={() => {
-            navigate('MovieDetail', {item});
-          }}>
-          <ImageBackground
-            style={styles.imgOneStyle}
-            imageStyle={styles.imageStyle}
-            source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
-            <Text>{item.title}</Text>
-          </ImageBackground>
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
-  const {data, isLoading, isError} = useQuery(
-    'UpcomingMovies',
-    FetchUpcomingMovie,
-  );
-  // console.log(data);
-  if (isLoading) {
-    return <Text>Loading...</Text>;
-  }
-
-  if (isError) {
-    return <Text>{isError.message}</Text>;
-  }
-
+  // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
+  // const queryClient = useQueryClient();
+  // const adata: any = data;
+  // useEffect(() => {
+  //   // console.log(FetchAllDataTv);
+  //   setData(res);
+  // }, []);
+  // const FetchData = data;
+  // console.log(adata);
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.carouselViewZero}>
-        <Carousel
-          style={styles.carousel}
-          data={data}
-          renderItem={renderFuncZero}
-          loop
-          autoplay={true}
-          autoplayInterval={3000}
-          sliderWidth={width * 0.9}
-          itemWidth={width * 0.85}
-        />
-      </View>
-      <Text style={styles.trendingTextColor}>Upcoming Movies</Text>
-
-      <View style={styles.carouselView}>
-        <Carousel
-          style={styles.carousel}
-          data={data}
-          renderItem={renderFunc}
-          loop
-          sliderWidth={width}
-          itemWidth={width * 0.6}
-          itemHeight={height}
-        />
-      </View>
+      <SearchComponent
+        title="Find TV Shows and related details...."
+        // FetchData={data}
+        searchType="Find TV Shows"
+        dataKey="TV Searching"
+      />
     </View>
+    // </View>
   );
 };
 
-export default ApiTrendingData;
+export default Movie;

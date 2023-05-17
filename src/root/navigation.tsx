@@ -29,6 +29,9 @@ import HotMovie from '../components/dashboard/MovieScreens/Screens/Hot';
 import RecommendedMovie from '../components/dashboard/MovieScreens/Screens/Recommended';
 import TrendingMovie from '../components/dashboard/MovieScreens/Screens/Trending';
 import UpcomingMovie from '../components/dashboard/MovieScreens/Screens/Upcoming';
+import SearchComponent from '../components/dashboard/SearchComponent';
+import indexTwo from '../components/dashboard/SearchComponent/indexTwo';
+import IndexTwo from '../components/dashboard/SearchComponent/indexTwo';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -46,6 +49,7 @@ const Navigation = () => {
         // initialRouteName="SearchMovie"
         initialRouteName="DrawerNavigation"
         // initialRouteName="NewPage"
+        // initialRouteName="IndexTwo"
         // initialRouteName="Practive"
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
@@ -103,7 +107,7 @@ const Navigation = () => {
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="TwoColor" component={TwoColor} />
-        <Stack.Screen name="SearchMovie" component={SearchMovie} />
+        {/* <Stack.Screen name="SearchMovie" component={SearchMovie} /> */}
         <Stack.Screen name="NewPage" component={NewPage} />
         {/* <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="ApiTrendingData" component={ApiTrendingData} /> */}
@@ -114,6 +118,8 @@ const Navigation = () => {
         <Stack.Screen name="HotMovie" component={HotMovie} />
         <Stack.Screen name="RecommendedMovie" component={RecommendedMovie} />
         <Stack.Screen name="UpcomingMovie" component={UpcomingMovie} />
+        {/* <Stack.Screen name="SearchComponent" component={SearchComponent} /> */}
+        <Stack.Screen name="IndexTwo" component={IndexTwo} />
 
         <Stack.Screen
           name="MovieDetail"

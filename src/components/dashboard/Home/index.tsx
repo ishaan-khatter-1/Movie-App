@@ -25,10 +25,14 @@ import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 import {useQuery} from 'react-query';
 import {
+  FetchDiscoverTv,
   FetchPopularMovie,
+  FetchPopularTv,
   FetchRecommendedMovie,
+  FetchRecommendedTv,
   FetchSearchMovie,
   FetchTrendingMovie,
+  FetchTrendingTv,
   FetchUpcomingMovie,
 } from '../../../services/FetchData';
 import {useQueryClient} from 'react-query';
@@ -81,8 +85,8 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
         </Pressable>
       </View>
       <FlatList
-        data={data.slice(0,4)}
-        maxToRenderPerBatch={3}
+        data={data}
+        maxToRenderPerBatch={4}
         horizontal
         renderItem={({item}) => {
           // console.log(item);
@@ -98,7 +102,7 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
                   uri: BASE_IMG_URL + 'original' + item.backdrop_path,
                 }}></ImageBackground>)}
 
-                {item.backdrop_path && (<Text style={styles.movieTvtitleText}>{item.title}</Text>)}
+                {item.backdrop_path && (<Text style={styles.movieTvtitleText}>{item.title?item.title:item.name}</Text>)}
             </View>
           );
         }}
@@ -107,8 +111,13 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
   );
 };
 
+
+
 const width = Dimensions.get('window').width;
+
 const Home = () => {
+  const [type, setType] = useState('Movies')
+ 
   const [data, setData] = useState([]);
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
@@ -179,8 +188,15 @@ const Home = () => {
     );
   };
 
+  const typeSetTvFunc=()=>{
+    setType('TV Shows')
+  }
+  const typeSetMovieFunc=()=>{
+    setType('Movies')
+  }
   return (
-    <ScrollView style={{marginBottom:5}}>
+    (type==='Movies')?
+    (<ScrollView style={styles.mainContainer}>
       <Carousel
         data={data}
         renderItem={renderFunc}
@@ -192,10 +208,18 @@ const Home = () => {
         height={(width * 1) / 1.7}
         onSnapToItem={index => setIndex(index)}
       />
+      <View style={styles.btnViewstyle}>
+        <TouchableOpacity style={[styles.btnOne,{backgroundColor:'orange'}]} onPress={typeSetMovieFunc}>
+       <Text style={styles.btnTextStyle}>Movies</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.btnTwo,{backgroundColor:'lightgrey',opacity:0.6}]} onPress={typeSetTvFunc}>
+       <Text style={styles.btnTextStyle}>TV Shows</Text>
+      </TouchableOpacity></View>
+      
 <View style={{marginTop:10}}>
   <MovieTv queryKey="RecommendedMovies"
-    headerText="Recommended Movies"
-    FetchData={FetchRecommendedMovie}/>
+        headerText="Recommended Movies"
+        FetchData={FetchRecommendedMovie}/>
         <MovieTv queryKey='PopularMovies' 
         headerText='Popular Movies' 
         FetchData={FetchPopularMovie}/>
@@ -213,7 +237,51 @@ const Home = () => {
       headerText='Hot' 
       FetchData={FetchSearchMovie}/>
       </View>
-    </ScrollView>
+    </ScrollView> ):
+    (<ScrollView style={{marginBottom:5}}>
+
+      
+    <Carousel
+      data={data}
+      renderItem={renderFunc}
+      loop
+      ref={isCarousel}
+      autoPlay={true}
+      scrollAnimationDuration={1000}
+      width={width}
+      height={(width * 1) / 1.7}
+      onSnapToItem={index => setIndex(index)}
+    />
+    <View style={styles.btnViewstyle}>
+      <TouchableOpacity style={[styles.btnOne, {backgroundColor:'lightgrey',opacity:0.6}]} onPress={typeSetMovieFunc}>
+     <Text style={styles.btnTextStyle}>Movies</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={[styles.btnTwo,{backgroundColor:'orange'}]} onPress={typeSetTvFunc}>
+     <Text style={styles.btnTextStyle}>TV Shows</Text>
+    </TouchableOpacity></View>
+    
+<View style={{marginTop:10}}>
+
+      <MovieTv queryKey='TrendingTv' 
+      headerText='Trending Tv' 
+      FetchData={FetchTrendingTv}/>
+    <MovieTv
+      queryKey="PopularTv"
+      headerText="Popular TV"
+      FetchData={FetchPopularTv}
+    />  
+    <MovieTv
+      queryKey="RecommendedTv"
+      headerText="Recommended TV Shows"
+      FetchData={FetchRecommendedTv}
+    />
+    
+
+<MovieTv queryKey='DiscoverTv' 
+    headerText='Discover Shows' 
+    FetchData={FetchDiscoverTv}/>
+    </View>
+  </ScrollView>)
   );
 };
 

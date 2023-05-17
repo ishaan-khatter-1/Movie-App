@@ -77,8 +77,6 @@ const BottomNavigation = ({navigation}) => {
           // ),
           headerStyle: {backgroundColor: ColorConstants.mainBgColor},
           headerTitleStyle: {color: ColorConstants.textWhite},
-          // ...titleStyle,
-          // headerStyle: titleStyle,
           tabBarStyle: {...tabBarStyling},
           tabBarShowLabel: false,
           // tabBarStyle: tabBarStyling,  /// this is also working??
@@ -87,9 +85,6 @@ const BottomNavigation = ({navigation}) => {
         <Tab.Screen name="Movie" component={Movie} options={movieTab} />
         <Tab.Screen name="TV" component={Television} options={televisionTab} />
       </Tab.Navigator>
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Settings" component={Settings} />
-      </Stack.Navigator> */}
     </>
   );
 };
@@ -120,20 +115,13 @@ const televisionTab = {
 };
 
 const tabBarStyling = {
-  // position: 'absolute',
   backgroundColor: ColorConstants.backgroundWhite,
-  // shadowColor: 'rgb(7,44,133)',
-  // shadowOffset: {
-  //   width: 0,
-  //   height: 100,
-  // },
-  elevation: 50,
-  // bottom: '3%',
-  // borderRadius: 15,
-  // marginHorizontal: 20,
-  height: 80,
+
+  // elevation: 50,
+
+  height: 60,
   borderTopWidth: 0,
-  showLabel: false,
+  // showLabel: false,
   borderWidth: 0,
 };
 
