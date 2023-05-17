@@ -93,16 +93,16 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
           return (
             <View>
               
-              {item.backdrop_path &&
+              {item.poster_path &&
                 (<ImageBackground
                 resizeMode="contain"
                 imageStyle={styles.MovieTvImageStyle}
                 style={styles.MovieTvImg}
                 source={{
-                  uri: BASE_IMG_URL + 'original' + item.backdrop_path,
+                  uri: BASE_IMG_URL + 'original' + item.poster_path,
                 }}></ImageBackground>)}
 
-                {item.backdrop_path && (<Text style={styles.movieTvtitleText}>{item.title?item.title:item.name}</Text>)}
+                {/* {item.backdrop_path && (<Text style={styles.movieTvtitleText}>{item.title?item.title:item.name}</Text>)} */}
             </View>
           );
         }}
@@ -178,7 +178,7 @@ const Home = () => {
         <View>
           {item.backdrop_path && (
             <ImageBackground
-              resizeMode="cover"
+              resizeMode="stretch"
               style={styles.imgStyle}
               source={{uri: item.backdrop_path}}
             />
@@ -195,8 +195,8 @@ const Home = () => {
     setType('Movies')
   }
   return (
-    (type==='Movies')?
-    (<ScrollView style={styles.mainContainer}>
+    
+    <ScrollView style={styles.mainContainer}>
       <Carousel
         data={data}
         renderItem={renderFunc}
@@ -205,83 +205,63 @@ const Home = () => {
         autoPlay={true}
         scrollAnimationDuration={1000}
         width={width}
-        height={(width * 1) / 1.7}
+        height={(width * 1) / 1.9}
         onSnapToItem={index => setIndex(index)}
       />
-      <View style={styles.btnViewstyle}>
-        <TouchableOpacity style={[styles.btnOne,{backgroundColor:'orange'}]} onPress={typeSetMovieFunc}>
-       <Text style={styles.btnTextStyle}>Movies</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={[styles.btnTwo,{backgroundColor:'lightgrey',opacity:0.6}]} onPress={typeSetTvFunc}>
-       <Text style={styles.btnTextStyle}>TV Shows</Text>
-      </TouchableOpacity></View>
-      
-<View style={{marginTop:10}}>
-  <MovieTv queryKey="RecommendedMovies"
-        headerText="Recommended Movies"
-        FetchData={FetchRecommendedMovie}/>
-        <MovieTv queryKey='PopularMovies' 
-        headerText='Popular Movies' 
-        FetchData={FetchPopularMovie}/>
-      <MovieTv
-        queryKey="UpcomingMovies"
-        headerText="Upcoming Movies"
-        FetchData={FetchUpcomingMovie}
-      />
-      <MovieTv
-        queryKey="TrendingMovies"
-        headerText="Trending Movies"
-        FetchData={FetchTrendingMovie}
-      />
-      <MovieTv queryKey='HotMovies' 
-      headerText='Hot' 
-      FetchData={FetchSearchMovie}/>
-      </View>
-    </ScrollView> ):
-    (<ScrollView style={{marginBottom:5}}>
+      {(type==='Movies')?
+      (<><View style={styles.btnViewstyle}>
+          <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'orange' }]} onPress={typeSetMovieFunc}>
+            <Text style={styles.btnTextStyle}>Movies</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetTvFunc}>
+            <Text style={styles.btnTextStyle}>TV Shows</Text>
+          </TouchableOpacity></View><View style={{ marginTop: 10 }}>
+            <MovieTv queryKey="RecommendedMovies"
+              headerText="Recommended Movies"
+              FetchData={FetchRecommendedMovie} />
+            <MovieTv queryKey='PopularMovies'
+              headerText='Popular Movies'
+              FetchData={FetchPopularMovie} />
+            <MovieTv
+              queryKey="UpcomingMovies"
+              headerText="Upcoming Movies"
+              FetchData={FetchUpcomingMovie} />
+            <MovieTv
+              queryKey="TrendingMovies"
+              headerText="Trending Movies"
+              FetchData={FetchTrendingMovie} />
+            <MovieTv queryKey='HotMovies'
+              headerText='Hot'
+              FetchData={FetchSearchMovie} />
+          </View></>)
+    :
 
-      
-    <Carousel
-      data={data}
-      renderItem={renderFunc}
-      loop
-      ref={isCarousel}
-      autoPlay={true}
-      scrollAnimationDuration={1000}
-      width={width}
-      height={(width * 1) / 1.7}
-      onSnapToItem={index => setIndex(index)}
-    />
-    <View style={styles.btnViewstyle}>
-      <TouchableOpacity style={[styles.btnOne, {backgroundColor:'lightgrey',opacity:0.6}]} onPress={typeSetMovieFunc}>
-     <Text style={styles.btnTextStyle}>Movies</Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={[styles.btnTwo,{backgroundColor:'orange'}]} onPress={typeSetTvFunc}>
-     <Text style={styles.btnTextStyle}>TV Shows</Text>
-    </TouchableOpacity></View>
-    
-<View style={{marginTop:10}}>
+    (<><View style={styles.btnViewstyle}>
+          <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetMovieFunc}>
+            <Text style={styles.btnTextStyle}>Movies</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'orange' }]} onPress={typeSetTvFunc}>
+            <Text style={styles.btnTextStyle}>TV Shows</Text>
+          </TouchableOpacity></View><View style={{ marginTop: 10 }}>
 
-      <MovieTv queryKey='TrendingTv' 
-      headerText='Trending Tv' 
-      FetchData={FetchTrendingTv}/>
-    <MovieTv
-      queryKey="PopularTv"
-      headerText="Popular TV"
-      FetchData={FetchPopularTv}
-    />  
-    <MovieTv
-      queryKey="RecommendedTv"
-      headerText="Recommended TV Shows"
-      FetchData={FetchRecommendedTv}
-    />
-    
+            <MovieTv queryKey='TrendingTv'
+              headerText='Trending Tv'
+              FetchData={FetchTrendingTv} />
+            <MovieTv
+              queryKey="PopularTv"
+              headerText="Popular TV"
+              FetchData={FetchPopularTv} />
+            <MovieTv
+              queryKey="RecommendedTv"
+              headerText="Recommended TV Shows"
+              FetchData={FetchRecommendedTv} />
 
-<MovieTv queryKey='DiscoverTv' 
-    headerText='Discover Shows' 
-    FetchData={FetchDiscoverTv}/>
-    </View>
-  </ScrollView>)
+
+            <MovieTv queryKey='DiscoverTv'
+              headerText='Discover Shows'
+              FetchData={FetchDiscoverTv} />
+          </View></>)}
+  </ScrollView>
   );
 };
 

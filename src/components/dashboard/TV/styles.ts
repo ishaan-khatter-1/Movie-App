@@ -41,12 +41,17 @@ import ColorConstants from '../../../assets/colorConstants';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: ColorConstants.backgroundWhite,
+    // backgroundColor: ColorConstants.backgroundWhite,
+    backgroundColor: 'yellow',
+
     flex: 1,
+  },
+  SearchComponentStyle: {
+    backgroundColor: 'red',
   },
   flatListstyle: {
     marginHorizontal: 10,
-    marginBottom: 80,
+    // marginBottom: 80,
 
     // backgroundColor: 'red',
   },

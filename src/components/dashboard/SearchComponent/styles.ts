@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   imgStyle: {},
   flatListstyle: {
     marginHorizontal: 10,
-    marginBottom: 80,
+    // marginBottom: 80,
 
     // backgroundColor: 'red',
   },

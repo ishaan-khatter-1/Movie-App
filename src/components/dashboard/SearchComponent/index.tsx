@@ -127,7 +127,7 @@ interface searchText {
   title: string;
   searchType: string;
   FetchData?: () => {};
-  dataKey: string;
+  dataKey?: string;
 }
 
 const SearchComponent = ({
@@ -164,7 +164,10 @@ const SearchComponent = ({
   const {data, isLoading, isError} = useQuery(dataKey, {queryFn: FetchData});
 
   const filteredData = data?.filter(item => {
-    return item.title?.toLowerCase().match(search.toLowerCase());
+    return (
+      (item.title && item.title?.toLowerCase().match(search.toLowerCase())) ||
+      (item.name && item.name?.toLowerCase().match(search.toLowerCase()))
+    );
   });
 
   return (

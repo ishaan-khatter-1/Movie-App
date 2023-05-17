@@ -48,10 +48,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   MovieTvImg: {
-    width: 180,
-    height: 110,
-    marginLeft: 10,
-    marginVertical: 5,
+    width: 135,
+    height: 135 * 1.5,
+
+    // marginLeft: 10,
+    marginVertical: 10,
+    marginHorizontal: 8,
     // backgroundColor: 'green',
   },
   MovieTvImageStyle: {
