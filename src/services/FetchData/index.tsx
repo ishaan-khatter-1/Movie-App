@@ -149,11 +149,11 @@ export const FetchAllDataTv = async () => {
   const trendingRes = await axios.get(BASE_URL + TRENDING_URL_TV);
   const popularRes = await axios.get(BASE_URL + POPULAR_URL_TV);
   const recommendedRes = await axios.get(BASE_URL + RECOMENDATIONS_URL_TV);
-  const discoverRes = await axios.get(BASE_URL + DISCOVER_TV_URL);
+  // const discoverRes = await axios.get(BASE_URL + DISCOVER_TV_URL);
 
   const trendingDataTv = trendingRes.data.results.map(item => {
     return {
-      id: item.id ? item.id : null,
+      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
@@ -171,7 +171,7 @@ export const FetchAllDataTv = async () => {
   });
   const popularDataTv = popularRes.data.results.map(item => {
     return {
-      id: item.id ? item.id : null,
+      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
@@ -189,7 +189,7 @@ export const FetchAllDataTv = async () => {
   });
   const recommendedDataTv = recommendedRes.data.results.map(item => {
     return {
-      id: item.id ? item.id : null,
+      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
@@ -205,25 +205,25 @@ export const FetchAllDataTv = async () => {
       overview: item.overview ? item.overview : null,
     };
   });
-  const discoverDataTv = discoverRes.data.results.map(item => {
-    return {
-      id: item.id ? item.id : null,
-      name: item.name ? item.name : null,
-      release_date: item.release_date ? item.release_date : null,
-      backdrop_path: item.backdrop_path
-        ? BASE_IMG_URL + 'original' + item.backdrop_path
-        : item.poster_path
-        ? BASE_IMG_URL + 'original' + item.poster_path
-        : null,
-      // title: item.title,
-      title: item.title ? item.title : null,
+  // const discoverDataTv = discoverRes.data.results.map(item => {
+  //   return {
+  //     id: item.id ? item.id : null,
+  //     name: item.name ? item.name : null,
+  //     release_date: item.release_date ? item.release_date : null,
+  //     backdrop_path: item.backdrop_path
+  //       ? BASE_IMG_URL + 'original' + item.backdrop_path
+  //       : item.poster_path
+  //       ? BASE_IMG_URL + 'original' + item.poster_path
+  //       : null,
+  //     // title: item.title,
+  //     title: item.title ? item.title : null,
 
-      poster_path: item.poster_path
-        ? BASE_IMG_URL + 'original' + item.poster_path
-        : null,
-      overview: item.overview ? item.overview : null,
-    };
-  });
+  //     poster_path: item.poster_path
+  //       ? BASE_IMG_URL + 'original' + item.poster_path
+  //       : null,
+  //     overview: item.overview ? item.overview : null,
+  //   };
+  // });
   // console.log([
   //   ...trendingDataTv,
   //   ...popularDataTv,
@@ -234,7 +234,7 @@ export const FetchAllDataTv = async () => {
     ...trendingDataTv,
     ...popularDataTv,
     ...recommendedDataTv,
-    ...discoverDataTv,
+    // ...discoverDataTv,
   ];
 };
 

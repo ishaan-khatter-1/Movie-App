@@ -5,15 +5,18 @@ import styles from './styles';
 import SearchMovie from './SearchMovie';
 import SearchComponent from '../SearchComponent';
 import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
+import {useQuery} from 'react-query';
 
 const Movie = () => {
-  // console.log(FetchAllData());
+  const {data} = useQuery('hil', FetchAllData);
+  console.log(data);
   return (
     <View style={styles.mainContainer}>
       <SearchComponent
         title="Find Movies and related details...."
         // FetchData={FetchAllData}
         searchType="Find Movies"
+        FetchData={FetchAllData}
         dataKey="Movie Searching"
       />
     </View>

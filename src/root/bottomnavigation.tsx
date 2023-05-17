@@ -83,7 +83,11 @@ const BottomNavigation = ({navigation}) => {
         }}>
         <Tab.Screen name="Home" component={Home} options={homeTab} />
         <Tab.Screen name="Movie" component={Movie} options={movieTab} />
-        <Tab.Screen name="TV" component={Television} options={televisionTab} />
+        <Tab.Screen
+          name="Television"
+          component={Television}
+          options={televisionTab}
+        />
       </Tab.Navigator>
     </>
   );

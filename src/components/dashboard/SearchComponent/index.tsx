@@ -126,10 +126,16 @@ import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
 interface searchText {
   title: string;
   searchType: string;
+  FetchData?: () => {};
   dataKey: string;
 }
 
-const SearchComponent = ({title, searchType, dataKey}: searchText) => {
+const SearchComponent = ({
+  title,
+  searchType,
+  dataKey,
+  FetchData,
+}: searchText) => {
   const [search, setSearch] = useState('');
   const [press, setPress] = useState(true);
   const {navigate} = useNavigation();
@@ -147,13 +153,15 @@ const SearchComponent = ({title, searchType, dataKey}: searchText) => {
     </Pressable>
   );
 
-  const {data, isLoading, isError} = useQuery(dataKey, () => {
-    if (dataKey === 'Movie Searching') {
-      return FetchAllData();
-    } else {
-      return FetchAllDataTv();
-    }
-  });
+  // const {data, isLoading, isError} = useQuery(dataKey, () => {
+  //   if (dataKey === 'Movie Searching') {
+  //     return FetchAllData();
+  //   } else {
+  //     return FetchAllDataTv();
+  //   }
+  // });
+
+  const {data, isLoading, isError} = useQuery(dataKey, {queryFn: FetchData});
 
   const filteredData = data?.filter(item => {
     return item.title?.toLowerCase().match(search.toLowerCase());

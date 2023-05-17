@@ -132,38 +132,72 @@
 
 // export default Television;
 
+// import {View, Text, TextInput} from 'react-native';
+// import React, {useEffect, useState} from 'react';
+// import ApiMovie from './ApiMovie';
+// import styles from './styles';
+// import SearchComponent from '../SearchComponent';
+// import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
+// import {useQuery, useQueryClient} from 'react-query';
+
+// const Television = () => {
+//   // const [data, setData] = useState();
+//   // const res = FetchAllDataTv();
+//   // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
+
+//   // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
+//   // const queryClient = useQueryClient();
+//   // const adata: any = data;
+//   // useEffect(() => {
+//   //   // console.log(FetchAllDataTv);
+//   //   setData(res);
+//   // }, []);
+//   // const FetchData = data;
+//   // console.log(adata);
+//   return (
+//     <View style={styles.mainContainer}>
+//       <SearchComponent
+//         title="Find TV Shows and related details...."
+//         // FetchData={data}
+//         searchType="Find TV Shows"
+//         dataKey="TV Searching"
+//       />
+//     </View>
+//     // </View>
+//   );
+// };
+
+// export default Television;
+
 import {View, Text, TextInput} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import ApiMovie from './ApiMovie';
 import styles from './styles';
+import SearchMovie from './SearchMovie';
 import SearchComponent from '../SearchComponent';
 import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
-import {useQuery, useQueryClient} from 'react-query';
+import {useQuery} from 'react-query';
 
 const Movie = () => {
-  const [data, setData] = useState();
-  const res = FetchAllDataTv();
-  // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
-
-  // const {data} = useQuery('TV Data', {queryFn: FetchAllDataTv});
-  // const queryClient = useQueryClient();
-  // const adata: any = data;
-  // useEffect(() => {
-  //   // console.log(FetchAllDataTv);
-  //   setData(res);
-  // }, []);
-  // const FetchData = data;
-  // console.log(adata);
+  const {data, isLoading} = useQuery('hil', FetchAllDataTv);
+  console.log(data);
+  useEffect(() => {
+    FetchAllDataTv();
+  }, []);
   return (
     <View style={styles.mainContainer}>
-      <SearchComponent
-        title="Find TV Shows and related details...."
-        // FetchData={data}
-        searchType="Find TV Shows"
-        dataKey="TV Searching"
-      />
+      {isLoading ? (
+        <Text>is loading...</Text>
+      ) : (
+        <SearchComponent
+          title="Find Movies and related details...."
+          // FetchData={FetchAllData}
+          searchType="Find Movies"
+          FetchData={FetchAllDataTv}
+          dataKey="Movie Searching"
+        />
+      )}
     </View>
-    // </View>
   );
 };
 
