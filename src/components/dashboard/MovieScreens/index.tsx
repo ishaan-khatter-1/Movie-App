@@ -10,6 +10,7 @@ import {
   Dimensions,
   TouchableOpacity,
   Pressable,
+  ScrollView,
 } from 'react-native';
 import {useQuery} from 'react-query';
 import styles from './styles';
@@ -32,42 +33,52 @@ interface MovieComponent {
 
 const MovieScreen = ({FetchData, genre}: MovieComponent) => {
   const {navigate} = useNavigation();
-  const height = width * 1.5;
 
-  const renderFuncZero = ({item}) => {
+  const renderFuncCarousel = ({item}) => {
     return (
       <View>
         <Pressable
           onPress={() => {
             navigate('MovieDetail', {item});
           }}>
-          <ImageBackground
-            resizeMode="contain"
-            style={styles.imgOneStyleZero}
-            imageStyle={styles.imageStyleZero}
-            source={{uri: BASE_IMG_URL + 'w500' + item.backdrop_path}}>
-            <Text>{item.title}</Text>
-          </ImageBackground>
+          {item.poster_path && (
+            <View>
+              <ImageBackground
+                resizeMode="contain"
+                style={styles.imgCarouselStyle}
+                imageStyle={styles.imageStyle}
+                source={{
+                  uri: item.backdrop_path
+                    ? BASE_IMG_URL + 'w500' + item.backdrop_path
+                    : BASE_IMG_URL + 'w500' + item.poster_path,
+                }}></ImageBackground>
+            </View>
+          )}
         </Pressable>
       </View>
     );
   };
 
-  const renderFunc = ({item}) => {
+  const renderFuncFlatlist = ({item}) => {
     return (
-      <View style={styles.renderView}>
+      <View
+      // style={styles.renderView}
+      >
         <TouchableOpacity
           onPress={() => {
             navigate('MovieDetail', {item});
           }}
           // onPress={renderDetail}
         >
-          <ImageBackground
-            style={styles.imgOneStyle}
-            imageStyle={styles.imageStyle}
-            source={{uri: BASE_IMG_URL + 'w500' + item.poster_path}}>
-            <Text>{item.title}</Text>
-          </ImageBackground>
+          {item.poster_path && (
+            <ImageBackground
+              resizeMode="contain"
+              style={styles.imgFlatlistStyle}
+              imageStyle={styles.imageStyle}
+              source={{
+                uri: BASE_IMG_URL + 'w500' + item.poster_path,
+              }}></ImageBackground>
+          )}
         </TouchableOpacity>
       </View>
     );
@@ -85,33 +96,27 @@ const MovieScreen = ({FetchData, genre}: MovieComponent) => {
   }
 
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.carouselViewZero}>
+    <ScrollView style={styles.mainContainer}>
+      <View
+      // style={styles.carouselViewZero}
+      >
         <Carousel
-          style={styles.carousel}
+          // style={styles.carousel}
           data={data}
-          renderItem={renderFuncZero}
+          renderItem={renderFuncCarousel}
           loop
           autoplay={true}
           autoplayInterval={3000}
-          sliderWidth={width * 0.95}
-          itemWidth={width * 0.9}
-        />
-      </View>
-      <Text style={styles.trendingTextColor}>{genre}</Text>
-
-      <View style={styles.carouselView}>
-        <Carousel
-          style={styles.carousel}
-          data={data}
-          renderItem={renderFunc}
-          loop
           sliderWidth={width}
-          itemWidth={width * 0.75}
-          itemHeight={height}
+          itemWidth={width * 0.8}
         />
       </View>
-    </View>
+      <Text style={styles.typeTextColor}>{genre}</Text>
+
+      <View style={styles.FlatlistView}>
+        <FlatList data={data} renderItem={renderFuncFlatlist} numColumns={2} />
+      </View>
+    </ScrollView>
   );
 };
 

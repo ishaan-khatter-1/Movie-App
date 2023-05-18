@@ -72,6 +72,22 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
 
       navigate('RecommendedMovie');
     }
+    if (headerText==='Discover Shows'){
+
+      navigate('DiscoverTv');
+    }
+    if (headerText==='Recommended TV Shows'){
+
+      navigate('RecommendedTv');
+    }
+    if (headerText==='Popular TV'){
+
+      navigate('PopularTv');
+    }
+    if (headerText==='Trending TV'){
+
+      navigate('TrendingTv');
+    }
   }
  
   // console.log(data);
@@ -177,12 +193,13 @@ const Home = () => {
           <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetTvFunc}>
             <Text style={styles.btnTextStyle}>TV Shows</Text>
           </TouchableOpacity></View><View style={{ marginTop: 10 }}>
-            <MovieTv queryKey="RecommendedMovies"
-              headerText="Recommended Movies"
-              FetchData={FetchRecommendedMovie} />
+            
             <MovieTv queryKey='PopularMovies'
               headerText='Popular Movies'
               FetchData={FetchPopularMovie} />
+              <MovieTv queryKey='HotMovies'
+              headerText='Hot'
+              FetchData={FetchSearchMovie} />
             <MovieTv
               queryKey="UpcomingMovies"
               headerText="Upcoming Movies"
@@ -191,9 +208,10 @@ const Home = () => {
               queryKey="TrendingMovies"
               headerText="Trending Movies"
               FetchData={FetchTrendingMovie} />
-            <MovieTv queryKey='HotMovies'
-              headerText='Hot'
-              FetchData={FetchSearchMovie} />
+              <MovieTv queryKey="RecommendedMovies"
+              headerText="Recommended Movies"
+              FetchData={FetchRecommendedMovie} />
+            
           </View></>)
     :
 
@@ -206,7 +224,7 @@ const Home = () => {
           </TouchableOpacity></View><View style={{ marginTop: 10 }}>
 
             <MovieTv queryKey='TrendingTv'
-              headerText='Trending Tv'
+              headerText='Trending TV'
               FetchData={FetchTrendingTv} />
             <MovieTv
               queryKey="PopularTv"

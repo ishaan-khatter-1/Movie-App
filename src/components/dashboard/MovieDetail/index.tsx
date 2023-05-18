@@ -28,7 +28,7 @@ const MovieDetal = prop => {
   const {navigate} = useNavigation();
   const width = Dimensions.get('window').width;
   const {data, isLoading, isError} = useQuery('MovieTVData', MovieTvData);
-
+  // console.log()
   // MovieTvData();
   // console.log(prop.route.params);
   const apiDetail = prop.route.params;
@@ -93,9 +93,7 @@ const MovieDetal = prop => {
         imageStyle={styles.imageStyle}>
         <Pressable
           style={styles.pressableBack}
-          onPress={() => {
-            navigate('Home');
-          }}>
+          onPress={() => prop.navigation.goBack()}>
           <View style={styles.pressableSymbol}>
             <BackIcon width={25} height={25} fill={'white'} />
           </View>
@@ -153,12 +151,15 @@ const MovieDetal = prop => {
                         {/* <View style={styles.flatlistImgViewText} /> */}
                       </ImageBackground>
                     )}
-                    <View style={{flex: 1, height: 180, marginRight: 10}}>
-                      <Text style={styles.flatListTitleText}>
-                        {item.title ? item.title : item.name}
-                      </Text>
-                      <Text>{item.overview}</Text>
-                    </View>
+
+                    {item.poster_path && (
+                      <View style={{flex: 1, height: 180, marginRight: 10}}>
+                        <Text style={styles.flatListTitleText}>
+                          {item.title ? item.title : item.name}
+                        </Text>
+                        <Text style={{marginTop: 5}}>{item.overview}</Text>
+                      </View>
+                    )}
                   </View>
                 </Pressable>
               </View>

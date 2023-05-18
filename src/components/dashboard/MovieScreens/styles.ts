@@ -6,26 +6,24 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: ColorConstants.backgroundWhite,
     flex: 1,
-    paddingTop: 10,
+    paddingTop: '5%',
+    // paddingBottom: '1%',
     // justifyContent: 'space-between',
   },
-  container: {},
-  carouselViewZero: {
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  imgOneStyleZero: {
-    aspectRatio: 5 / 3, // width / height
+  // container: {},
 
-    borderRadius: 10,
-
-    width: '100%',
+  imgFlatlistStyle: {
+    aspectRatio: 1 / 1.5, // width / height
+    // height: 150,
+    width: 150,
+    marginBottom: 10,
+    marginHorizontal: 8,
   },
-  imageStyleZero: {
-    borderRadius: 10,
-    shadowColor: 'red',
-  },
-  trendingTextColor: {
+  // imageStyleZero: {
+  //   borderRadius: 10,
+  //   shadowColor: 'red',
+  // },
+  typeTextColor: {
     color: '#000',
     fontSize: 20,
     marginLeft: 10,
@@ -33,31 +31,32 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight: '500',
   },
-  imgOneStyle: {
-    aspectRatio: 1 / 1.5,
+  imgCarouselStyle: {
+    aspectRatio: 1.5 / 1,
     borderRadius: 20,
   },
   imageStyle: {
-    aspectRatio: 1 / 1.5,
-    borderRadius: 10,
+    borderRadius: 5,
   },
-  titleStyle: {
-    fontSize: 14,
-    color: '#fff',
-  },
-  carouselView: {
+  // titleStyle: {
+  //   fontSize: 14,
+  //   color: '#fff',
+  // },
+  FlatlistView: {
     alignItems: 'center',
     borderRadius: 20,
-    marginHorizontal: Dimensions.get('window').width * 0.1,
+    marginBottom: 20,
+    // marginHorizontal: Dimensions.get('window').width * 0.1,
+    // backgroundColor: 'red',
   },
-  renderView: {
-    marginHorizontal: 8,
-    borderRadius: 20,
-  },
-  carousel: {
-    borderRadius: 20,
-    borderWidth: 10,
-  },
+  // renderView: {
+  //   // marginHorizontal: 8,
+  //   borderRadius: 20,
+  // },
+  // carousel: {
+  //   borderRadius: 20,
+  //   borderWidth: 10,
+  // },
 });
 
 export default styles;

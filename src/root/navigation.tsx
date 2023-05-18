@@ -24,14 +24,18 @@ import Trending from '../components/dashboard/MovieScreens';
 import Screen from '../components/dashboard/MovieScreens/Screens';
 import MovieType from '../components/dashboard/MovieScreens/Screens';
 import MovieScreen from '../components/dashboard/MovieScreens';
-import PopularMovie from '../components/dashboard/MovieScreens/Screens/Popular';
-import HotMovie from '../components/dashboard/MovieScreens/Screens/Hot';
-import RecommendedMovie from '../components/dashboard/MovieScreens/Screens/Recommended';
-import TrendingMovie from '../components/dashboard/MovieScreens/Screens/Trending';
-import UpcomingMovie from '../components/dashboard/MovieScreens/Screens/Upcoming';
+import PopularMovie from '../components/dashboard/MovieScreens/Screens/PopularMovie';
+import HotMovie from '../components/dashboard/MovieScreens/Screens/HotMovie';
+import RecommendedMovie from '../components/dashboard/MovieScreens/Screens/RecommendedMovie';
+import TrendingMovie from '../components/dashboard/MovieScreens/Screens/TrendingMovie';
+import UpcomingMovie from '../components/dashboard/MovieScreens/Screens/UpcomingMovie';
 import SearchComponent from '../components/dashboard/SearchComponent';
 import indexTwo from '../components/dashboard/SearchComponent/indexTwo';
 import IndexTwo from '../components/dashboard/SearchComponent/indexTwo';
+import DiscoverTv from '../components/dashboard/MovieScreens/Screens/DiscoverTv';
+import PopularTv from '../components/dashboard/MovieScreens/Screens/PopularTv';
+import RecommendedTv from '../components/dashboard/MovieScreens/Screens/RecommendedTv';
+import TrendingTv from '../components/dashboard/MovieScreens/Screens/TrendingTv';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -46,31 +50,9 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        // initialRouteName="SearchMovie"
         initialRouteName="DrawerNavigation"
-        // initialRouteName="NewPage"
-        // initialRouteName="IndexTwo"
-        // initialRouteName="Practive"
-        // initialRouteName="SplashScreen"
-        // initialRouteName="MovieDetail"
-        // initialRouteName="MovieScreen"
-
         screenOptions={{
           headerShown: false,
-          // cardStyleInterpolator: ({current, layouts}) => {
-          //   return {
-          //     cardStyle: {
-          //       transform: [
-          //         {
-          //           translateX: current.progress.interpolate({
-          //             inputRange: [0, 1],
-          //             outputRange: [layouts.screen.width, 0],
-          //           }),
-          //         },
-          //       ],
-          //     },
-          //   };
-          // },
         }}>
         <Stack.Screen
           name="SplashScreen"
@@ -79,22 +61,7 @@ const Navigation = () => {
             headerShown: false,
           }}
         />
-        {/* {splash ? (
-          <Stack.Screen
-            name="SplashScreen"
-            component={SplashScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-        ) : null}
-        <Stack.Screen
-          name="GetStarted"
-          component={GetStarted}
-          options={{
-            headerShown: false,
-          }}
-        /> */}
+
         <Stack.Screen
           name="GetStarted"
           component={GetStarted}
@@ -105,13 +72,7 @@ const Navigation = () => {
 
         {/* <Stack.Screen name="Dash" component={Dash} /> */}
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
-        <Stack.Screen name="Settings" component={Settings} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="TwoColor" component={TwoColor} />
-        {/* <Stack.Screen name="SearchMovie" component={SearchMovie} /> */}
-        <Stack.Screen name="NewPage" component={NewPage} />
-        {/* <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="ApiTrendingData" component={ApiTrendingData} /> */}
+
         <Stack.Screen name="MovieScreen" component={MovieScreen} />
         <Stack.Screen name="MovieType" component={MovieType} />
         <Stack.Screen name="PopularMovie" component={PopularMovie} />
@@ -119,33 +80,15 @@ const Navigation = () => {
         <Stack.Screen name="HotMovie" component={HotMovie} />
         <Stack.Screen name="RecommendedMovie" component={RecommendedMovie} />
         <Stack.Screen name="UpcomingMovie" component={UpcomingMovie} />
-        {/* <Stack.Screen name="SearchComponent" component={SearchComponent} /> */}
         <Stack.Screen name="IndexTwo" component={IndexTwo} />
-
-        <Stack.Screen
-          name="MovieDetail"
-          component={MovieDetail}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="Practive" component={Practive} />
+        <Stack.Screen name="DiscoverTv" component={DiscoverTv} />
+        <Stack.Screen name="RecommendedTv" component={RecommendedTv} />
+        <Stack.Screen name="PopularTv" component={PopularTv} />
+        <Stack.Screen name="TrendingTv" component={TrendingTv} />
+        <Stack.Screen name="MovieDetail" component={MovieDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-// const Navigation = () => {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Header">
-//         <Stack.Screen name="Header" component={Header} />
-
-//         {/* <Stack.Screen name="App" component={App} /> */}
-//         <Stack.Screen name="Profile" component={Profile} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
 
 export default Navigation;

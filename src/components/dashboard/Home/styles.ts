@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
   },
   MovieTvImageStyle: {
-    borderRadius: 10,
+    borderRadius: 5,
   },
   movieTvtitleText: {
     width: 180,
