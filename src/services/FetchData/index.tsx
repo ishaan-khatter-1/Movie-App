@@ -72,6 +72,49 @@ export const FetchDiscoverTv = async () => {
   return apiRes.data.results;
 };
 
+export const FetchHomeCarouselData = async () => {
+  const trendingData = await axios.get(BASE_URL + TRENDING_URL);
+  const upcomingData = await axios.get(BASE_URL + MOVIE_UPCOMING);
+
+  const MovieDatatrending = trendingData.data.results.slice(0, 2).map(item => {
+    return {
+      // ...GiveData,
+      id: item.id,
+      release_date: item.release_date ? item.release_date : null,
+      backdrop_path: item.backdrop_path
+        ? BASE_IMG_URL + 'original' + item.backdrop_path
+        : BASE_IMG_URL + 'original' + item.poster_path,
+      // title: item.title,
+      title: item.title ? item.title : null,
+
+      poster_path: item.poster_path
+        ? BASE_IMG_URL + 'original' + item.poster_path
+        : null,
+      overview: item.overview ? item.overview : null,
+    };
+  });
+
+  const MovieDataupcoming = upcomingData.data.results.slice(0, 2).map(item => {
+    return {
+      // ...GiveData,
+      id: item.id,
+      release_date: item.release_date ? item.release_date : null,
+      backdrop_path: item.backdrop_path
+        ? BASE_IMG_URL + 'original' + item.backdrop_path
+        : BASE_IMG_URL + 'original' + item.poster_path,
+      // title: item.title,
+      title: item.title ? item.title : null,
+
+      poster_path: item.poster_path
+        ? BASE_IMG_URL + 'original' + item.poster_path
+        : null,
+      overview: item.overview ? item.overview : null,
+    };
+  });
+
+  return [...MovieDatatrending, ...MovieDataupcoming];
+};
+
 //
 //
 //
@@ -236,6 +279,18 @@ export const FetchAllDataTv = async () => {
     ...recommendedDataTv,
     // ...discoverDataTv,
   ];
+};
+
+//
+//
+//
+
+export const MovieTvData = async () => {
+  const movieData = await FetchAllData();
+  const tvData = await FetchAllDataTv();
+
+  const totalData = [...movieData, ...tvData];
+  return totalData;
 };
 
 //

@@ -54,6 +54,7 @@ const Navigation = () => {
         // initialRouteName="SplashScreen"
         // initialRouteName="MovieDetail"
         // initialRouteName="MovieScreen"
+
         screenOptions={{
           headerShown: false,
           // cardStyleInterpolator: ({current, layouts}) => {

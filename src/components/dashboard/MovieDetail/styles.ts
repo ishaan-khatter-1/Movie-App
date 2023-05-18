@@ -3,7 +3,6 @@ const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // alignSelf: 'center',
     flex: 1.5,
     padding: 0,
     marginBottom: 5,
@@ -14,27 +13,15 @@ const styles = StyleSheet.create({
   },
   imageStyle: {},
   pressableBack: {
-    // position: 'absolute',
     alignSelf: 'flex-start',
-    // backgroundColor: 'green',
   },
   pressableSymbol: {
-    // color: 'white',
-    // fontSize: 20,
-    // margin: 5,
-    // fontWeight: '900',
-    // borderRadius: 50,
-    // borderColor: '#fff',
-    // borderWidth: 2,
-    // // backgroundColor: 'yellow',
-    // paddingHorizontal: 10,
     margin: 10,
   },
   rating_titleView: {
     marginLeft: 15,
     marginTop: 10,
-    // marginLeft: 10,
-    // alignItems: 'center',
+
     width: width * 0.9,
     flexDirection: 'row',
   },
@@ -56,8 +43,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 15,
     flexDirection: 'row',
-    // marginLeft: '2%',
-    // backgroundColor: 'red',
+
     paddingRight: '5%',
   },
   releaseDateText: {
@@ -71,7 +57,6 @@ const styles = StyleSheet.create({
 
   overviewText: {
     margin: 15,
-    // backgroundColor: 'red',
 
     color: 'black',
     fontWeight: '500',
@@ -79,26 +64,27 @@ const styles = StyleSheet.create({
   },
   moreHeadTxt: {
     marginHorizontal: 10,
-    // marginVertical: 12,
     marginBottom: 7,
     color: 'black',
     fontWeight: '600',
     fontSize: 22,
   },
   flatlistImgText: {
-    width: 200,
-    aspectRatio: 3 / 2.2,
+    width: 150,
+    aspectRatio: 1 / 1.5,
     marginHorizontal: 10,
+    marginBottom: 10,
   },
-  flatlistImgViewText: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start',
+  flatlistImgTextView: {
+    // flex: 1,
+    // justifyContent: 'flex-end',
+    // alignItems: 'flex-start',
+    flexDirection: 'row',
   },
-  flatListText: {
-    color: '#fff',
+
+  flatListTitleText: {
+    color: '#000',
     fontWeight: '700',
-    margin: '4%',
   },
 });
 export default styles;
