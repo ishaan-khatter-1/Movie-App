@@ -6,12 +6,20 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: ColorConstants.backgroundWhite,
     flex: 1,
-    paddingTop: '5%',
+    // paddingTop: '5%',
     // paddingBottom: '1%',
     // justifyContent: 'space-between',
   },
   // container: {},
-
+  pressableBack: {
+    alignSelf: 'flex-start',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  pressableSymbol: {
+    margin: 10,
+  },
   imgFlatlistStyle: {
     aspectRatio: 1 / 1.5, // width / height
     // height: 150,

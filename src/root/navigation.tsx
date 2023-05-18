@@ -36,6 +36,7 @@ import DiscoverTv from '../components/dashboard/MovieScreens/Screens/DiscoverTv'
 import PopularTv from '../components/dashboard/MovieScreens/Screens/PopularTv';
 import RecommendedTv from '../components/dashboard/MovieScreens/Screens/RecommendedTv';
 import TrendingTv from '../components/dashboard/MovieScreens/Screens/TrendingTv';
+import Favourite from '../components/dashboard/Drawer/DrawerScreens/Favourite';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -50,6 +51,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        // initialRouteName="Favourite"
         initialRouteName="DrawerNavigation"
         screenOptions={{
           headerShown: false,
@@ -86,6 +88,7 @@ const Navigation = () => {
         <Stack.Screen name="PopularTv" component={PopularTv} />
         <Stack.Screen name="TrendingTv" component={TrendingTv} />
         <Stack.Screen name="MovieDetail" component={MovieDetail} />
+        <Stack.Screen name="Favourite" component={Favourite} />
       </Stack.Navigator>
     </NavigationContainer>
   );

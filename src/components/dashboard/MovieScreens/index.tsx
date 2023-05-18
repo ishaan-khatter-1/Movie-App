@@ -13,6 +13,8 @@ import {
   ScrollView,
 } from 'react-native';
 import {useQuery} from 'react-query';
+import BackIcon from '../../../assets/svgIcons/BackIcon';
+
 import styles from './styles';
 import {BASE_IMG_URL} from '../../../services';
 // import Carousel from 'react-native-reanimated-carousel';
@@ -23,6 +25,7 @@ import {
   FetchTrendingMovie,
 } from '../../../services/FetchData';
 import {useNavigation} from '@react-navigation/native';
+import ColorConstants from '../../../assets/colorConstants';
 
 const width = Dimensions.get('window').width;
 
@@ -31,8 +34,8 @@ interface MovieComponent {
   genre?: string;
 }
 
-const MovieScreen = ({FetchData, genre}: MovieComponent) => {
-  const {navigate} = useNavigation();
+const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
+  const {navigate, goBack} = useNavigation();
 
   const renderFuncCarousel = ({item}) => {
     return (
@@ -97,6 +100,22 @@ const MovieScreen = ({FetchData, genre}: MovieComponent) => {
 
   return (
     <ScrollView style={styles.mainContainer}>
+      <View
+        style={{
+          width: '100%',
+          backgroundColor: ColorConstants.mainBgColor,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 50,
+        }}>
+        <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
+          <View style={styles.pressableSymbol}>
+            <BackIcon width={25} height={25} fill={'#fff'} />
+          </View>
+        </TouchableOpacity>
+        <Text style={{color: 'white'}}>Movie Mania</Text>
+      </View>
       <View
       // style={styles.carouselViewZero}
       >
