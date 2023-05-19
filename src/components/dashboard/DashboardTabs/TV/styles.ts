@@ -3,7 +3,7 @@
 // const width = Dimensions.get('window').width;
 
 import {StyleSheet} from 'react-native';
-import ColorConstants from '../../../assets/colorConstants';
+import ColorConstants from '../../../../assets/colorConstants';
 
 // const styles = StyleSheet.create({
 //   headerText: {

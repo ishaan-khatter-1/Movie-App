@@ -98,23 +98,26 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
     return <Text>{isError.message}</Text>;
   }
 
+  const movie = 'M💿VIE  ';
+  const mania = 'MANIA';
+
   return (
     <ScrollView style={styles.mainContainer}>
-      <View
-        style={{
-          width: '100%',
-          backgroundColor: ColorConstants.mainBgColor,
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: 50,
-        }}>
+      <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
           <View style={styles.pressableSymbol}>
-            <BackIcon width={25} height={25} fill={'#fff'} />
+            <BackIcon width={30} height={30} fill={'#fff'} />
           </View>
         </TouchableOpacity>
-        <Text style={{color: 'white'}}>Movie Mania</Text>
+        {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
+        <View style={{flexDirection: 'row'}}>
+          <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
+            {movie}
+          </Text>
+          <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
+            {mania}
+          </Text>
+        </View>
       </View>
       <View
       // style={styles.carouselViewZero}

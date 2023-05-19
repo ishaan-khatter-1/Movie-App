@@ -3,8 +3,8 @@ import React, {useEffect} from 'react';
 import ApiMovie from './ApiMovie';
 import styles from './styles';
 import SearchMovie from './SearchMovie';
-import SearchComponent from '../SearchComponent';
-import {FetchAllData, FetchAllDataTv} from '../../../services/FetchData';
+import SearchComponent from '../../SearchComponent';
+import {FetchAllData, FetchAllDataTv} from '../../../../services/FetchData';
 import {useQuery} from 'react-query';
 import {useNavigation} from '@react-navigation/native';
 

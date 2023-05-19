@@ -19,7 +19,7 @@ import {
   SEARCH_URL,
   TRENDING_URL,
   TRENDING_URL_TV,
-} from '../../../services';
+} from '../../../../services';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
@@ -35,10 +35,10 @@ import {
   FetchTrendingMovie,
   FetchTrendingTv,
   FetchUpcomingMovie,
-} from '../../../services/FetchData';
+} from '../../../../services/FetchData';
 import {useQueryClient} from 'react-query';
 import { ScrollView } from 'react-native';
-import ApiUpcomingMovie from '../Home/ApiUpcomingMovie';
+import ApiUpcomingMovie from './ApiUpcomingMovie';
 const queryClient = useQueryClient;
 
 interface HorizontalComponent {

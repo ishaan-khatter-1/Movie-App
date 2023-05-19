@@ -6,25 +6,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../components/dashboard/Home';
-import Movie from '../components/dashboard/Movie';
-import Television from '../components/dashboard/TV';
+import Home from '../components/dashboard/DashboardTabs/Home';
+import Movie from '../components/dashboard/DashboardTabs/Movie';
+import Television from '../components/dashboard/DashboardTabs/TV';
 import ColorConstants from '../assets/colorConstants';
-// import Drawer from '../../assets/svgIcons/drawer';
 import Drawer from '../assets/dashboardStyles/Drawer';
-// import Search from '../../assets/dashboardStyles/Search';
-import Search from '../assets/dashboardStyles/Search';
 import HomeIcon from '../assets/dashboardStyles/TabStyles/HomeIcon';
 import MovieIcon from '../assets/dashboardStyles/TabStyles/MovieIcon';
 import MovieIconFaded from '../assets/dashboardStyles/TabStyles/MovieIconFaded';
 import TelevisionIcon from '../assets/dashboardStyles/TabStyles/TelevisionIcon';
 import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
-
-import Drawericon from '../components/dashboard/Drawer';
-import LinearGradient from 'react-native-linear-gradient';
-// import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
-// import Settings from '../components/dashboard/Drawer/DrawerScreens/Settings';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -33,18 +25,9 @@ const movie = 'M💿VIE  ';
 const mania = 'MANIA';
 
 const BottomNavigation = ({navigation}) => {
-  // console.log(navigation);
   return (
     <>
       <Tab.Navigator
-        // ={{
-        //   style: {
-        //     position: 'absolute',
-        //     bottom: 25,
-        //     left: 20,
-        //   },
-        // }}
-        // screenOptions={{}}
         initialRouteName="Home"
         screenOptions={{
           headerTitle: ({}) => (
@@ -58,7 +41,6 @@ const BottomNavigation = ({navigation}) => {
             </View>
           ),
           headerTitleAlign: 'center',
-          // headerLeft: () => <Drawericon navigation={navigation} />,
           headerLeft: ({}) => (
             <View style={{marginLeft: 10}}>
               <TouchableOpacity onPress={({}) => navigation.openDrawer()}>
@@ -70,16 +52,12 @@ const BottomNavigation = ({navigation}) => {
               </TouchableOpacity>
             </View>
           ),
-          // headerRight: () => (
-          //   <View style={{marginRight: 15}}>
-          //     <Search width={30} height={30} fill={ColorConstants.textWhite} />
-          //   </View>
-          // ),
+
           headerStyle: {backgroundColor: ColorConstants.mainBgColor},
           headerTitleStyle: {color: ColorConstants.textWhite},
           tabBarStyle: {...tabBarStyling},
-          tabBarShowLabel: false,
-          // tabBarStyle: tabBarStyling,  /// this is also working??
+          // tabBarShowLabel: false,
+          // tabBarLabel:
         }}>
         <Tab.Screen name="Home" component={Home} options={homeTab} />
         <Tab.Screen name="Movie" component={Movie} options={movieTab} />
@@ -93,18 +71,17 @@ const BottomNavigation = ({navigation}) => {
   );
 };
 
-// cons;
-
 const homeTab = {
   tabBarIcon: ({focused}) => (
     <View>{focused ? <HomeIcon /> : <HomeIconFaded />}</View>
   ),
-  // headerLeft: () => <Drawericon navigation={navigation} />,
+  tabBarLabel: 'Home',
 };
 const movieTab = {
   tabBarIcon: ({focused}) => (
     <View>{focused ? <MovieIcon /> : <MovieIconFaded />}</View>
   ),
+  tabBarLabel: 'Find Movies',
 };
 const televisionTab = {
   tabBarIcon: ({focused}) => (
@@ -116,19 +93,14 @@ const televisionTab = {
       )}
     </View>
   ),
+  tabBarLabel: 'Find TV Shows',
 };
 
 const tabBarStyling = {
   backgroundColor: ColorConstants.backgroundWhite,
-
-  // elevation: 50,
-
   height: 60,
   borderTopWidth: 0,
-  // showLabel: false,
   borderWidth: 0,
 };
 
 export default BottomNavigation;
-
-// const homeScreen = {...homeTab, titleStyle};

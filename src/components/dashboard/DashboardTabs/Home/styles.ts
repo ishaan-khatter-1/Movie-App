@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import ColorConstants from '../../../assets/colorConstants';
+import ColorConstants from '../../../../assets/colorConstants';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
