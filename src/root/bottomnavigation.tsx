@@ -1,10 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-
 import {View, Text, TouchableOpacity} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../components/dashboard/DashboardTabs/Home';
 import Movie from '../components/dashboard/DashboardTabs/Movie';
@@ -17,10 +12,8 @@ import MovieIconFaded from '../assets/dashboardStyles/TabStyles/MovieIconFaded';
 import TelevisionIcon from '../assets/dashboardStyles/TabStyles/TelevisionIcon';
 import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
-import About from '../components/dashboard/Drawer/DrawerScreens/About';
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 
 const movie = 'M💿VIE  ';
 const mania = 'MANIA';
