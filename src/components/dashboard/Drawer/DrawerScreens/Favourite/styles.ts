@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import ColorConstants from '../../../../../assets/colorConstants';
+import fonts from '../../../../../assets/fonts';
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -11,17 +12,30 @@ const styles = StyleSheet.create({
     height: 60,
     marginBottom: 10,
   },
-  // container: {},
   pressableBack: {
     alignSelf: 'flex-start',
     position: 'absolute',
     top: 5,
     left: 0,
-    // alignItems: 'flex-start',
   },
   pressableSymbol: {
     margin: 10,
   },
+  imageStyle: {width: 130, height: 195},
+  favTitleView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  favTitle: {
+    color: '#000',
+    fontSize: 22,
+    marginBottom: 20,
+    fontFamily: fonts.BOLD,
+  },
+  titleTextView: {marginHorizontal: 10, flex: 1},
+  titleText: {fontWeight: '800', color: 'black'},
+  overviewText: {marginVertical: 5, height: 130},
+  removeText: {fontWeight: '700'},
 });
 
 export default styles;

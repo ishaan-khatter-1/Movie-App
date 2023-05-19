@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 
 const styles = StyleSheet.create({
   drawerHeader: {
@@ -12,15 +13,20 @@ const styles = StyleSheet.create({
   drawerHeaderText: {
     color: '#fff',
     fontSize: 20,
+    fontWeight: '600',
+
+    fontFamily: fonts.BOLD,
   },
   drawerHeaderText2: {
     color: ColorConstants.thirdOrange,
     fontSize: 20,
-    fontWeight: 600,
+    fontWeight: '600',
+    fontFamily: fonts.BOLD,
   },
   labelStyle: {
-    fontSize: 18,
-    marginLeft: '15%',
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#000',
   },
 });
 

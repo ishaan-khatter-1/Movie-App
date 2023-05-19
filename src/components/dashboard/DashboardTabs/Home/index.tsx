@@ -39,6 +39,7 @@ import {
 import {useQueryClient} from 'react-query';
 import { ScrollView } from 'react-native';
 import ApiUpcomingMovie from './ApiUpcomingMovie';
+import StringConstants from '../../../../assets/stringConstants';
 const queryClient = useQueryClient;
 
 interface HorizontalComponent {
@@ -52,39 +53,39 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
   const [screen, setScreen] =useState('')
   const {data} = useQuery(queryKey, {queryFn: FetchData});
   const handleAllMovie = () =>{
-    if (headerText==='Trending Movies'){
+    if (headerText===StringConstants.TrendingMovies){
 
       navigate('TrendingMovie');
     }
-    if (headerText==='Upcoming Movies'){
+    if (headerText===StringConstants.UpcomingMovies){
 
       navigate('UpcomingMovie');
     }
-    if (headerText==='Popular Movies'){
+    if (headerText===StringConstants.PopularMovies){
 
       navigate('PopularMovie');
     }
-    if (headerText==='Hot'){
+    if (headerText===StringConstants.Hot){
 
       navigate('HotMovie');
     }
-    if (headerText==='Recommended Movies'){
+    if (headerText===StringConstants.RecommededMovies){
 
       navigate('RecommendedMovie');
     }
-    if (headerText==='Discover Shows'){
+    if (headerText===StringConstants.DiscoverTv){
 
       navigate('DiscoverTv');
     }
-    if (headerText==='Recommended TV Shows'){
+    if (headerText===StringConstants.RecommendedTv){
 
       navigate('RecommendedTv');
     }
-    if (headerText==='Popular TV'){
+    if (headerText===StringConstants.PopularTv){
 
       navigate('PopularTv');
     }
-    if (headerText==='Trending TV'){
+    if (headerText===StringConstants.TrendingTv){
 
       navigate('TrendingTv');
     }
@@ -188,28 +189,30 @@ const Home = () => {
       {(type==='Movies')?
       (<><View style={styles.btnViewstyle}>
           <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'orange' }]} onPress={typeSetMovieFunc}>
-            <Text style={styles.btnTextStyle}>Movies</Text>
+            <Text style={styles.btnTextStyle}>{StringConstants.Movies}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetTvFunc}>
-            <Text style={styles.btnTextStyle}>TV Shows</Text>
+            <Text style={styles.btnTextStyle}>{StringConstants.TVShows}</Text>
           </TouchableOpacity></View><View style={{ marginTop: 10 }}>
             
             <MovieTv queryKey='PopularMovies'
-              headerText='Popular Movies'
+              headerText={StringConstants.PopularMovies}
               FetchData={FetchPopularMovie} />
               <MovieTv queryKey='HotMovies'
-              headerText='Hot'
+              headerText={StringConstants.Hot}
+
               FetchData={FetchSearchMovie} />
             <MovieTv
               queryKey="UpcomingMovies"
-              headerText="Upcoming Movies"
+              headerText={StringConstants.UpcomingMovies}
               FetchData={FetchUpcomingMovie} />
             <MovieTv
               queryKey="TrendingMovies"
-              headerText="Trending Movies"
+              headerText={StringConstants.TrendingMovies}
               FetchData={FetchTrendingMovie} />
               <MovieTv queryKey="RecommendedMovies"
-              headerText="Recommended Movies"
+              headerText={StringConstants.RecommededMovies}
+
               FetchData={FetchRecommendedMovie} />
             
           </View></>)
@@ -224,20 +227,20 @@ const Home = () => {
           </TouchableOpacity></View><View style={{ marginTop: 10 }}>
 
             <MovieTv queryKey='TrendingTv'
-              headerText='Trending TV'
+              headerText={StringConstants.TrendingTv}
               FetchData={FetchTrendingTv} />
             <MovieTv
               queryKey="PopularTv"
-              headerText="Popular TV"
+              headerText={StringConstants.PopularMovies}
               FetchData={FetchPopularTv} />
             <MovieTv
               queryKey="RecommendedTv"
-              headerText="Recommended TV Shows"
+              headerText={StringConstants.RecommendedTv}
               FetchData={FetchRecommendedTv} />
 
 
             <MovieTv queryKey='DiscoverTv'
-              headerText='Discover Shows'
+              headerText={StringConstants.DiscoverTv}
               FetchData={FetchDiscoverTv} />
           </View></>)}
   </ScrollView>

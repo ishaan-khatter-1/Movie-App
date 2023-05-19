@@ -26,6 +26,7 @@ import {
 } from '../../../services/FetchData';
 import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../assets/colorConstants';
+import StringConstants from '../../../assets/stringConstants';
 
 const width = Dimensions.get('window').width;
 
@@ -98,8 +99,8 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
     return <Text>{isError.message}</Text>;
   }
 
-  const movie = 'M💿VIE  ';
-  const mania = 'MANIA';
+  const movie = StringConstants.AppNameFirstLetter;
+  const mania = StringConstants.AppNameSecondLetter;
 
   return (
     <ScrollView style={styles.mainContainer}>

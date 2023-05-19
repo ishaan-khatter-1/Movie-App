@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import fonts from '../../../assets/fonts';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -27,10 +28,11 @@ const styles = StyleSheet.create({
   },
   original_titleText: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 18,
     marginRight: '5%',
-    fontWeight: '700',
+    // fontWeight: '700',
     flexWrap: 'wrap',
+    fontFamily: fonts.BOLD,
   },
   ratingView: {},
 
@@ -47,20 +49,22 @@ const styles = StyleSheet.create({
     paddingRight: '5%',
   },
   releaseDateText: {
-    fontSize: 14,
+    fontSize: 16,
 
     fontWeight: '500',
     color: 'black',
     flexWrap: 'wrap',
     flex: 1,
+    fontFamily: fonts.SEMIBOLD,
   },
 
   overviewText: {
-    margin: 15,
+    margin: 16,
 
     color: 'black',
-    fontWeight: '500',
+    // fontWeight: '600',
     flexWrap: 'wrap',
+    fontFamily: fonts.BOLD,
   },
   moreHeadTxt: {
     marginHorizontal: 10,
@@ -84,7 +88,9 @@ const styles = StyleSheet.create({
 
   flatListTitleText: {
     color: '#000',
-    fontWeight: '700',
+    // fontWeight: '700',
+    fontSize: 17,
+    fontFamily: fonts.BOLD,
   },
 });
 export default styles;

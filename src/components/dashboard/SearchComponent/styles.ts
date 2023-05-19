@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import ColorConstants from '../../../assets/colorConstants';
+import fonts from '../../../assets/fonts';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -7,9 +8,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginHorizontal: 15,
     width: width * 0.7,
-    // backgroundColor: 'red',
-    fontWeight: '700',
+
     color: ColorConstants.baseColor,
+    fontFamily: fonts.BOLD,
   },
   search: {
     paddingHorizontal: 15,
@@ -23,9 +24,6 @@ const styles = StyleSheet.create({
   imgStyle: {},
   flatListstyle: {
     marginHorizontal: 10,
-    // marginBottom: 80,
-
-    // backgroundColor: 'red',
   },
   imageStyle: {
     borderRadius: 5,

@@ -6,6 +6,7 @@ import SearchMovie from './SearchMovie';
 import SearchComponent from '../../SearchComponent';
 import {FetchAllData, FetchAllDataTv} from '../../../../services/FetchData';
 import {useQuery} from 'react-query';
+import StringConstants from '../../../../assets/stringConstants';
 
 const Movie = () => {
   const {data} = useQuery('hil', FetchAllData);
@@ -13,9 +14,9 @@ const Movie = () => {
   return (
     <View style={styles.mainContainer}>
       <SearchComponent
-        title="Find Movies and related details...."
+        title={StringConstants.SearchMovieTitle}
         // FetchData={FetchAllData}
-        searchType="Find Movies"
+        searchType={StringConstants.FindMoviesPlaceholder}
         FetchData={FetchAllData}
         dataKey="Movie Searching"
       />

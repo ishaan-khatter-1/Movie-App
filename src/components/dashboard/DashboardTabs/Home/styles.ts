@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -24,19 +25,23 @@ const styles = StyleSheet.create({
     padding: 15,
     borderTopLeftRadius: 30,
     borderBottomLeftRadius: 30,
-    width: 100,
+    width: 120,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   btnTwo: {
     padding: 15,
+
     borderTopRightRadius: 30,
     borderBottomRightRadius: 30,
-    width: 100,
+    width: 120,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   btnTextStyle: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: '600',
+    fontFamily: fonts.BOLD,
   },
   componentHeaderText: {
     color: ColorConstants.mainBgColor,
@@ -46,6 +51,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     fontWeight: '600',
+    fontStyle: fonts.SEMIBOLD,
   },
   MovieTvImg: {
     width: 135,
@@ -68,69 +74,3 @@ const styles = StyleSheet.create({
   },
 });
 export default styles;
-//
-//
-//
-//
-
-// import {Dimensions, StyleSheet} from 'react-native';
-// import ColorConstants from '../../../assets/colorConstants';
-// // export const width = Dimensions.get('screen').width;
-
-// const styles = StyleSheet.create({
-//   mainContainer: {
-//     backgroundColor: ColorConstants.backgroundWhite,
-//     flex: 1,
-//   },
-//   container: {},
-//   carouselViewZero: {
-//     alignItems: 'center',
-//     marginTop: 20,
-//   },
-//   imgOneStyleZero: {
-//     aspectRatio: 5 / 3, // width / height
-
-//     borderRadius: 10,
-
-//     width: '100%',
-//   },
-//   imageStyleZero: {
-//     borderRadius: 20,
-//     shadowColor: 'red',
-//   },
-//   trendingTextColor: {
-//     color: '#000',
-//     fontSize: 20,
-//     marginLeft: 10,
-//     marginBottom: 10,
-//     marginTop: 20,
-//     fontWeight: '500',
-//   },
-//   imgOneStyle: {
-//     aspectRatio: 1 / 1.5,
-//     borderRadius: 20,
-//   },
-//   imageStyle: {
-//     aspectRatio: 1 / 1.5,
-//     borderRadius: 20,
-//   },
-//   titleStyle: {
-//     fontSize: 14,
-//     color: '#fff',
-//   },
-//   carouselView: {
-//     alignItems: 'center',
-//     borderRadius: 20,
-//     marginHorizontal: Dimensions.get('window').width * 0.1,
-//   },
-//   renderView: {
-//     marginHorizontal: 8,
-//     borderRadius: 20,
-//   },
-//   carousel: {
-//     borderRadius: 20,
-//     borderWidth: 10,
-//   },
-// });
-
-// export default styles;

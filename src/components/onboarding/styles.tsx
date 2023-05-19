@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import fonts from '../../assets/fonts';
 
 const styles = StyleSheet.create({
   mainView: {
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     color: 'rgb(225,0,146)',
     fontSize: 25,
     fontWeight: '700',
+    fontFamily: fonts.BOLD,
   },
   lottieStyleView: {
     alignItems: 'center',

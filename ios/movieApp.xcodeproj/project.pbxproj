@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-movieApp-movieAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-movieApp-movieAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8C17C17AD5AA45219560B07E /* CrimsonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BE46047DE50452B8F017DE0 /* CrimsonText-Bold.ttf */; };
+		250BF88E8B4346D9AA6A3F3A /* CrimsonText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47E892085D1E478FAA08C2C8 /* CrimsonText-BoldItalic.ttf */; };
+		3F1E2F7D830B40749099E0CF /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E682D56B24E4903BEEFD25D /* CrimsonText-Italic.ttf */; };
+		F03AC938661146BF90C61B1F /* CrimsonText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18B394F9C8FD433F9544B357 /* CrimsonText-Regular.ttf */; };
+		70B60EF56D3C4D5488F5F9AF /* CrimsonText-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43E312899A2A4120BA63987B /* CrimsonText-SemiBold.ttf */; };
+		8CB853EC3870453985F6BBF3 /* CrimsonText-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B798D0EB9FDB49BCBF802087 /* CrimsonText-SemiBoldItalic.ttf */; };
+		007E289E8F8A4A74BBE3C934 /* index.tsx in Resources */ = {isa = PBXBuildFile; fileRef = 9714DCB630634B26A7B0DF40 /* index.tsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = movieApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-movieApp-movieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieApp-movieAppTests.release.xcconfig"; path = "Target Support Files/Pods-movieApp-movieAppTests/Pods-movieApp-movieAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0BE46047DE50452B8F017DE0 /* CrimsonText-Bold.ttf */ = {isa = PBXFileReference; name = "CrimsonText-Bold.ttf"; path = "../src/assets/fonts/CrimsonText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		47E892085D1E478FAA08C2C8 /* CrimsonText-BoldItalic.ttf */ = {isa = PBXFileReference; name = "CrimsonText-BoldItalic.ttf"; path = "../src/assets/fonts/CrimsonText-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E682D56B24E4903BEEFD25D /* CrimsonText-Italic.ttf */ = {isa = PBXFileReference; name = "CrimsonText-Italic.ttf"; path = "../src/assets/fonts/CrimsonText-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		18B394F9C8FD433F9544B357 /* CrimsonText-Regular.ttf */ = {isa = PBXFileReference; name = "CrimsonText-Regular.ttf"; path = "../src/assets/fonts/CrimsonText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43E312899A2A4120BA63987B /* CrimsonText-SemiBold.ttf */ = {isa = PBXFileReference; name = "CrimsonText-SemiBold.ttf"; path = "../src/assets/fonts/CrimsonText-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B798D0EB9FDB49BCBF802087 /* CrimsonText-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "CrimsonText-SemiBoldItalic.ttf"; path = "../src/assets/fonts/CrimsonText-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9714DCB630634B26A7B0DF40 /* index.tsx */ = {isa = PBXFileReference; name = "index.tsx"; path = "../src/assets/fonts/index.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				3B62A571EC43447FBB608AD5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		3B62A571EC43447FBB608AD5 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				0BE46047DE50452B8F017DE0 /* CrimsonText-Bold.ttf */,
+				47E892085D1E478FAA08C2C8 /* CrimsonText-BoldItalic.ttf */,
+				6E682D56B24E4903BEEFD25D /* CrimsonText-Italic.ttf */,
+				18B394F9C8FD433F9544B357 /* CrimsonText-Regular.ttf */,
+				43E312899A2A4120BA63987B /* CrimsonText-SemiBold.ttf */,
+				B798D0EB9FDB49BCBF802087 /* CrimsonText-SemiBoldItalic.ttf */,
+				9714DCB630634B26A7B0DF40 /* index.tsx */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8C17C17AD5AA45219560B07E /* CrimsonText-Bold.ttf in Resources */,
+				250BF88E8B4346D9AA6A3F3A /* CrimsonText-BoldItalic.ttf in Resources */,
+				3F1E2F7D830B40749099E0CF /* CrimsonText-Italic.ttf in Resources */,
+				F03AC938661146BF90C61B1F /* CrimsonText-Regular.ttf in Resources */,
+				70B60EF56D3C4D5488F5F9AF /* CrimsonText-SemiBold.ttf in Resources */,
+				8CB853EC3870453985F6BBF3 /* CrimsonText-SemiBoldItalic.ttf in Resources */,
+				007E289E8F8A4A74BBE3C934 /* index.tsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,11 +12,13 @@ import MovieIconFaded from '../assets/dashboardStyles/TabStyles/MovieIconFaded';
 import TelevisionIcon from '../assets/dashboardStyles/TabStyles/TelevisionIcon';
 import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
+import fonts from '../assets/fonts';
+import StringConstants from '../assets/stringConstants';
 
 const Tab = createBottomTabNavigator();
 
-const movie = 'M💿VIE  ';
-const mania = 'MANIA';
+const movie = StringConstants.AppNameFirstLetter;
+const mania = StringConstants.AppNameSecondLetter;
 
 const BottomNavigation = ({navigation}) => {
   return (
@@ -26,10 +28,20 @@ const BottomNavigation = ({navigation}) => {
         screenOptions={{
           headerTitle: ({}) => (
             <View style={{flexDirection: 'row'}}>
-              <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
+              <Text
+                style={{
+                  color: ColorConstants.textWhite,
+                  fontSize: 20,
+                  fontFamily: fonts.BOLD,
+                }}>
                 {movie}
               </Text>
-              <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
+              <Text
+                style={{
+                  color: ColorConstants.thirdOrange,
+                  fontSize: 22,
+                  fontFamily: fonts.BOLD,
+                }}>
                 {mania}
               </Text>
             </View>
@@ -70,12 +82,22 @@ const homeTab = {
     <View>{focused ? <HomeIcon /> : <HomeIconFaded />}</View>
   ),
   tabBarLabel: 'Home',
+  tabBarLabelStyle: {
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 11,
+    marginVertical: 3,
+  },
 };
 const movieTab = {
   tabBarIcon: ({focused}) => (
     <View>{focused ? <MovieIcon /> : <MovieIconFaded />}</View>
   ),
   tabBarLabel: 'Find Movies',
+  tabBarLabelStyle: {
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 11,
+    marginVertical: 3,
+  },
 };
 const televisionTab = {
   tabBarIcon: ({focused}) => (
@@ -88,11 +110,16 @@ const televisionTab = {
     </View>
   ),
   tabBarLabel: 'Find TV Shows',
+  tabBarLabelStyle: {
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 11,
+    marginVertical: 3,
+  },
 };
 
 const tabBarStyling = {
   backgroundColor: ColorConstants.backgroundWhite,
-  height: 60,
+  height: 65,
   borderTopWidth: 0,
   borderWidth: 0,
 };

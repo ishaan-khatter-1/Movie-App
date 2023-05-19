@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import ColorConstants from '../../../../../assets/colorConstants';
+import fonts from '../../../../../assets/fonts';
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -11,16 +12,26 @@ const styles = StyleSheet.create({
     height: 60,
     marginBottom: 10,
   },
-  // container: {},
   pressableBack: {
     alignSelf: 'flex-start',
     position: 'absolute',
     top: 5,
     left: 0,
-    // alignItems: 'flex-start',
   },
   pressableSymbol: {
     margin: 10,
+  },
+  aboutTitle: {
+    color: '#000',
+    fontSize: 22,
+    marginBottom: 20,
+    fontFamily: fonts.BOLD,
+  },
+  aboutText: {
+    color: '#000',
+    marginHorizontal: 20,
+    fontSize: 16,
+    fontFamily: fonts.SEMIBOLD,
   },
 });
 

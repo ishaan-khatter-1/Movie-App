@@ -48,24 +48,16 @@ const MovieTvDetal = props => {
     }
 
     if (isFavourite) {
-      // Remove item from favourites
       const updatedArray = favArray.filter(
         favItem => favItem.poster_path !== item.poster_path,
       );
       setIsFavourite(false);
       await AsyncStorage.setItem('FavDetail', JSON.stringify(updatedArray));
     } else {
-      // Add item to favourites
       favArray.push(item);
       setIsFavourite(true);
       await AsyncStorage.setItem('FavDetail', JSON.stringify(favArray));
     }
-  };
-
-  const clearFavourites = async () => {
-    await AsyncStorage.removeItem('FavDetail');
-    setIsFavourite(false);
-    console.log('Favourites cleared');
   };
 
   const {navigate} = useNavigation();
@@ -94,7 +86,6 @@ const MovieTvDetal = props => {
           {item.title ? item.title : item.name}
         </Text>
       </View>
-      {/* Other components */}
       <View style={styles.ReleaseDateView}>
         <Text style={styles.releaseDateText}>Release Date</Text>
         <StarRating width={17} height={17} fill={'yellow'} />
@@ -122,23 +113,12 @@ const MovieTvDetal = props => {
           </Text>
         </View>
       </TouchableOpacity>
-      {/* <TouchableOpacity onPress={clearFavourites}>
-        <Text>Clear Favourites</Text>
-      </TouchableOpacity> */}
-      {/* More components */}
-      <View
-        style={
-          {
-            // backgroundColor: 'red',
-            // // width: width * 0.95,
-            // alignSelf: 'center',
-          }
-        }>
+
+      <View>
         <Text style={styles.moreHeadTxt}>More</Text>
         <FlatList
           keyExtractor={item => item.poster_path}
           data={data}
-          // horizontal
           renderItem={({item}) => {
             return (
               <View>

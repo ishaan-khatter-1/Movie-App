@@ -5,10 +5,11 @@ import BackIcon from '../../../../../assets/svgIcons/BackIcon';
 
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import StringConstants from '../../../../../assets/stringConstants';
 
 const About = () => {
-  const movie = 'M💿VIE  ';
-  const mania = 'MANIA';
+  const movie = StringConstants.AppNameFirstLetter;
+  const mania = StringConstants.AppNameSecondLetter;
   const {goBack} = useNavigation();
 
   return (
@@ -29,23 +30,8 @@ const About = () => {
           </Text>
         </View>
       </View>
-      <Text
-        style={{
-          fontWeight: '700',
-          color: '#000',
-          fontSize: 20,
-          marginBottom: 20,
-        }}>
-        About:
-      </Text>
-      <Text style={{color: '#000', marginHorizontal: 20, fontSize: 15}}>
-        Movie Mania is the authoritative source for movie, TV and celebrity
-        content. Find ratings for the newest movie and TV shows. Movie gives the
-        Recommedation for the user according to his liking. Movie Mania provides
-        overview, rating and much more. Movie Mania includes films and TV Shows
-        of all many types. Movie Mania provides users with perfect value of
-        their interest.
-      </Text>
+      <Text style={styles.aboutTitle}>{StringConstants.AboutTitle}</Text>
+      <Text style={styles.aboutText}>{StringConstants.AboutContent}</Text>
     </View>
   );
 };
