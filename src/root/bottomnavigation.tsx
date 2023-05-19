@@ -17,6 +17,7 @@ import MovieIconFaded from '../assets/dashboardStyles/TabStyles/MovieIconFaded';
 import TelevisionIcon from '../assets/dashboardStyles/TabStyles/TelevisionIcon';
 import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
+import About from '../components/dashboard/Drawer/DrawerScreens/About';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

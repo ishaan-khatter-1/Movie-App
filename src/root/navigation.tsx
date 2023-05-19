@@ -25,6 +25,7 @@ import TrendingTv from '../components/dashboard/MovieScreens/Screens/TrendingTv'
 import Favourite from '../components/dashboard/Drawer/DrawerScreens/Favourite';
 import MovieTvDetail from '../components/dashboard/MovieTvDetail';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import About from '../components/dashboard/Drawer/DrawerScreens/About';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -106,6 +107,7 @@ const Navigation = () => {
         <Stack.Screen name="TrendingTv" component={TrendingTv} />
         <Stack.Screen name="MovieDetail" component={MovieTvDetail} />
         <Stack.Screen name="Favourite" component={Favourite} />
+        <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );

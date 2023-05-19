@@ -24,7 +24,7 @@ const CustomDrawer = () => {
         <View>
           <TouchableOpacity
             style={{flexDirection: 'row', alignItems: 'center'}}>
-            <SettingIcon
+            {/* <SettingIcon
               width={30}
               height={30}
               fill={ColorConstants.mainBgColor}
@@ -32,11 +32,14 @@ const CustomDrawer = () => {
               marginRight={20}
               marginVertical={10}
             />
-            <Text style={{fontWeight: 700, color: '#000'}}>Settings</Text>
+            <Text style={{fontWeight: 700, color: '#000'}}>Settings</Text> */}
           </TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity
+            onPress={() => {
+              Navigation.navigate('About');
+            }}
             style={{flexDirection: 'row', alignItems: 'center'}}>
             <AboutIcon
               width={30}
