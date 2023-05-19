@@ -110,7 +110,7 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
           // console.log(item);
           return (
             <Pressable onPress={()=>{
-              navigate('MovieDetail', {item})
+              navigate('MovieTvDetail', {item})
             }}>
             <View>
               
@@ -150,7 +150,7 @@ const Home = () => {
     return (
       <Pressable
         onPress={() => {
-          navigate('MovieDetail', {item});
+          navigate('MovieTvDetail', {item});
         }}>
         <View>
           {item.backdrop_path && (

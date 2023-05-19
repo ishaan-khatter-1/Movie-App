@@ -4,7 +4,7 @@ import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {useNavigation} from '@react-navigation/native';
 import Settings from '../DrawerScreens/Settings';
 import styles from './styles';
-import SettingIcon from '../../../../assets/svgIcons/settingsIcon';
+import FavouriteIcon from '../../../../assets/svgIcons/favourite';
 import AboutIcon from '../../../../assets/svgIcons/aboutUs';
 import ColorConstants from '../../../../assets/colorConstants';
 
@@ -23,8 +23,11 @@ const CustomDrawer = () => {
       <DrawerContentScrollView>
         <View>
           <TouchableOpacity
+            onPress={() => {
+              Navigation.navigate('Favourite');
+            }}
             style={{flexDirection: 'row', alignItems: 'center'}}>
-            {/* <SettingIcon
+            <FavouriteIcon
               width={30}
               height={30}
               fill={ColorConstants.mainBgColor}
@@ -32,7 +35,7 @@ const CustomDrawer = () => {
               marginRight={20}
               marginVertical={10}
             />
-            <Text style={{fontWeight: 700, color: '#000'}}>Settings</Text> */}
+            <Text style={{fontWeight: 700, color: '#000'}}>Favourites</Text>
           </TouchableOpacity>
         </View>
         <View>

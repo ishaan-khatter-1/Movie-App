@@ -42,7 +42,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
       <View>
         <Pressable
           onPress={() => {
-            navigate('MovieDetail', {item});
+            navigate('MovieTvDetail', {item});
           }}>
           {item.poster_path && (
             <View>
@@ -69,7 +69,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
       >
         <TouchableOpacity
           onPress={() => {
-            navigate('MovieDetail', {item});
+            navigate('MovieTvDetail', {item});
           }}
           // onPress={renderDetail}
         >

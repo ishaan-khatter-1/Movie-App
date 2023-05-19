@@ -105,7 +105,7 @@ const Navigation = () => {
         <Stack.Screen name="RecommendedTv" component={RecommendedTv} />
         <Stack.Screen name="PopularTv" component={PopularTv} />
         <Stack.Screen name="TrendingTv" component={TrendingTv} />
-        <Stack.Screen name="MovieDetail" component={MovieTvDetail} />
+        <Stack.Screen name="MovieTvDetail" component={MovieTvDetail} />
         <Stack.Screen name="Favourite" component={Favourite} />
         <Stack.Screen name="About" component={About} />
       </Stack.Navigator>

@@ -11,8 +11,8 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <StatusBar
-        barStyle="dark-content"
-        backgroundColor={ColorConstants.titleColor}
+        // barStyle=""
+        backgroundColor={ColorConstants.mainBgColor}
         translucent={false}
       />
       <Navigation />

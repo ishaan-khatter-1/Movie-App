@@ -36,7 +36,7 @@ const SearchComponent = ({
   const renderItem = ({item}) => (
     <Pressable
       onPress={() => {
-        navigate('MovieDetail', {item});
+        navigate('MovieTvDetail', {item});
       }}>
       <View style={{margin: 10}}>
         {item.poster_path && (
