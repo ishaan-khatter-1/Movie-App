@@ -85,7 +85,8 @@ const homeTab = {
   tabBarLabelStyle: {
     fontFamily: fonts.SEMIBOLD,
     fontSize: 11,
-    marginVertical: 3,
+    // marginVertical: 3,
+    marginBottom: 3,
   },
 };
 const movieTab = {
@@ -96,7 +97,8 @@ const movieTab = {
   tabBarLabelStyle: {
     fontFamily: fonts.SEMIBOLD,
     fontSize: 11,
-    marginVertical: 3,
+    // marginVertical: 3,
+    marginBottom: 3,
   },
 };
 const televisionTab = {
@@ -113,15 +115,14 @@ const televisionTab = {
   tabBarLabelStyle: {
     fontFamily: fonts.SEMIBOLD,
     fontSize: 11,
-    marginVertical: 3,
+    // marginVertical: 3,
+    marginBottom: 3,
   },
 };
 
 const tabBarStyling = {
   backgroundColor: ColorConstants.backgroundWhite,
   height: 65,
-  borderTopWidth: 0,
-  borderWidth: 0,
 };
 
 export default BottomNavigation;

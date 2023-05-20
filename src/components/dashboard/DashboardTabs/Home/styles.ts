@@ -5,8 +5,9 @@ const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    marginBottom: 5,
+    // marginBottom: 5,
     backgroundColor: ColorConstants.backgroundWhite,
+    flex: 1,
   },
   imgStyle: {
     borderRadius: 10,
@@ -17,10 +18,10 @@ const styles = StyleSheet.create({
   btnViewstyle: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 15,
+    marginTop: 10,
   },
   btnOne: {
-    padding: 15,
+    padding: 10,
     borderTopLeftRadius: 30,
     borderBottomLeftRadius: 30,
     width: 120,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   btnTwo: {
-    padding: 15,
+    padding: 10,
 
     borderTopRightRadius: 30,
     borderBottomRightRadius: 30,
@@ -50,8 +51,8 @@ const styles = StyleSheet.create({
     fontFamily: fonts.SEMIBOLD,
   },
   MovieTvImg: {
-    width: 135,
-    height: 135 * 1.5,
+    width: 125,
+    height: 125 * 1.5,
 
     marginVertical: 10,
     marginHorizontal: 8,
