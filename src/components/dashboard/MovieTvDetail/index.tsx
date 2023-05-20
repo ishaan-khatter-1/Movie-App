@@ -19,6 +19,7 @@ import FavouriteIcon from '../../../assets/svgIcons/favourite';
 import {MovieTvData} from '../../../services/FetchData';
 import {useQuery} from 'react-query';
 import ColorConstants from '../../../assets/colorConstants';
+import PlainHeader from '../../PlainHeader';
 
 const MovieTvDetal = props => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -64,6 +65,7 @@ const MovieTvDetal = props => {
 
   return (
     <ScrollView style={styles.mainContainer}>
+      <PlainHeader />
       <ImageBackground
         resizeMode="stretch"
         source={{
@@ -73,13 +75,13 @@ const MovieTvDetal = props => {
         }}
         style={styles.imgStyle}
         imageStyle={styles.imageStyle}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.pressableBack}
           onPress={() => props.navigation.goBack()}>
           <View style={styles.pressableSymbol}>
             <BackIcon width={25} height={25} fill={'white'} />
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </ImageBackground>
       <View style={styles.rating_titleView}>
         <Text style={styles.original_titleText}>

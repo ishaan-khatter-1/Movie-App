@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
 
   typeTextColor: {
-    color: '#000',
+    color: ColorConstants.textBlack,
     fontSize: 20,
     marginLeft: 10,
     marginBottom: 10,

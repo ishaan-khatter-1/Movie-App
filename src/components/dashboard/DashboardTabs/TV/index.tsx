@@ -12,7 +12,7 @@ import StringConstants from '../../../../assets/stringConstants';
 const Television = () => {
   return (
     <View>
-      <View style={styles.SearchComponentStyle}>
+      <View>
         <SearchComponent
           title={StringConstants.SearchTvTitle}
           searchType={StringConstants.FindTVShowsPlaceholder}

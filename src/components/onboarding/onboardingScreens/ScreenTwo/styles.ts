@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
+import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 
 const styleTwo = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(34,0,70)',
+    backgroundColor: ColorConstants.mainBgColor,
   },
   containerOne: {
     justifyContent: 'space-between',
@@ -15,33 +17,25 @@ const styleTwo = StyleSheet.create({
     marginTop: '15%',
   },
   textView: {
-    // marginTop: '30%',
     height: '10%',
 
-    // backgroundColor: 'red',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    // marginRight: '4%',
-    // marginLeft: '3%',
-    // paddingBottom: '20',
   },
   textView2: {
     marginHorizontal: '5%',
   },
   textstyle: {
-    color: 'white',
-    fontSize: 16,
+    color: ColorConstants.textWhite,
+    fontSize: 18,
+    fontFamily: fonts.SEMIBOLD,
   },
   imgView: {
-    // justifyContent: 'center',
     alignItems: 'center',
     elevation: 100,
-    // borderColor: 'grey',
-    // backgroundColor: 'red',
   },
   img1View: {
     width: '100%',
-    // backgroundColor: 'red',
     marginBottom: 40,
     alignItems: 'flex-start',
     marginLeft: '12%',
@@ -55,8 +49,6 @@ const styleTwo = StyleSheet.create({
     marginBottom: 10,
     alignItems: 'flex-end',
     marginRight: '12%',
-
-    // backgroundColor: 'red',
   },
   img: {
     width: 230,
@@ -64,7 +56,6 @@ const styleTwo = StyleSheet.create({
     borderRadius: 5,
   },
   skipbtn: {
-    // backgroundColor: 'red',
     bottom: 0,
     justifyContent: 'flex-start',
     alignItems: 'flex-end',

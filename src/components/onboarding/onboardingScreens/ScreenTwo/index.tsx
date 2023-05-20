@@ -5,6 +5,7 @@ import {MotiView} from 'moti';
 import styleOne from '../ScreenOne/styles';
 import styleTwo from './styles';
 import ButtonOnboard from '../../onboradingButtons';
+import StringConstants from '../../../../assets/stringConstants';
 
 const ScreenTwo = () => {
   return (
@@ -32,7 +33,7 @@ const ScreenTwo = () => {
             }}>
             <View style={styleTwo.textView2}>
               <Text style={styleTwo.textstyle}>
-                Take a look at latest and trending Movies.
+                {StringConstants.ScreenTwoOnboard}
               </Text>
             </View>
           </MotiView>
@@ -82,7 +83,7 @@ const ScreenTwo = () => {
           </View>
         </View>
         <View style={styleTwo.skipbtn}>
-          <ButtonOnboard text="Skip To DashBoard" />
+          <ButtonOnboard text={StringConstants.SkipToDashBoard} />
         </View>
       </View>
     </View>

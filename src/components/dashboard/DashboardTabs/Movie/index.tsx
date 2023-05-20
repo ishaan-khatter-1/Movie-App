@@ -12,7 +12,7 @@ const Movie = () => {
   const {data} = useQuery('hil', FetchAllData);
   console.log(data);
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, {flex: 1}]}>
       <SearchComponent
         title={StringConstants.SearchMovieTitle}
         // FetchData={FetchAllData}

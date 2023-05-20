@@ -4,6 +4,7 @@ import Lottie from 'lottie-react-native';
 import styles from './styles';
 import {MotiView} from 'moti';
 import {StackActions, useNavigation} from '@react-navigation/native';
+import StringConstants from '../../assets/stringConstants';
 
 const SplashScreen = () => {
   const [show, setShow] = useState(true);
@@ -43,7 +44,9 @@ const SplashScreen = () => {
               type: 'timing',
               duration: 1500,
             }}>
-            <Text style={[styles.splashText, {color: '#fff'}]}>MOVIE</Text>
+            <Text style={[styles.splashText, {color: '#fff'}]}>
+              {StringConstants.AppNameFirstLetter}
+            </Text>
           </MotiView>
           <MotiView
             from={{
@@ -56,14 +59,14 @@ const SplashScreen = () => {
               scale: 1,
               opacity: 1,
               translateX: 0,
-              // rotate: '360deg',
             }}
             transition={{
-              // loop: true,
               type: 'timing',
               duration: 1500,
             }}>
-            <Text style={styles.splashText}> MANIA</Text>
+            <Text style={styles.splashText}>
+              {StringConstants.AppNameSecondLetter}
+            </Text>
           </MotiView>
         </View>
       </View>
@@ -73,14 +76,11 @@ const SplashScreen = () => {
             style={styles.lottieStyle}
             source={require('../../assets/lottie/splash2.json')}
             autoPlay
-            // loop
           />
         ) : (
           <Lottie
             style={styles.lottieStyle}
             source={require('../../assets/lottie/splash2.json')}
-            // autoPlay
-            // loop
           />
         )}
       </View>

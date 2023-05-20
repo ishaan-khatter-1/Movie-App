@@ -4,16 +4,14 @@ import {
   FlatList,
   Image,
   TextInput,
-  Dimensions,
-  ScrollView,
   Pressable,
+  ActivityIndicator,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useQuery} from 'react-query';
 import styles from './styles';
 import ColorConstants from '../../../assets/colorConstants';
-import {colorKeys} from 'moti';
 import {useNavigation} from '@react-navigation/native';
 
 interface searchText {
@@ -47,6 +45,9 @@ const SearchComponent = ({
   );
 
   const {data, isLoading, isError} = useQuery(dataKey, {queryFn: FetchData});
+  if (isLoading) {
+    return <ActivityIndicator size="large" />;
+  }
 
   const filteredData = data?.filter(item => {
     return (
@@ -57,7 +58,10 @@ const SearchComponent = ({
 
   return (
     <View
-      style={{paddingTop: 10, backgroundColor: ColorConstants.backgroundWhite}}>
+      style={{
+        paddingTop: 10,
+        backgroundColor: ColorConstants.backgroundWhite,
+      }}>
       {press ? <Text style={styles.headerText}>{title}</Text> : null}
 
       <TextInput
@@ -75,6 +79,7 @@ const SearchComponent = ({
         onChangeText={val => setSearch(val)}
         style={styles.search}
       />
+
       <FlatList
         data={filteredData}
         style={styles.flatListstyle}

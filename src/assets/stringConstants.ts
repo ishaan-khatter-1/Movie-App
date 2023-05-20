@@ -1,6 +1,13 @@
 const StringConstants = {
   AppNameFirstLetter: 'M💿VIE ',
   AppNameSecondLetter: 'MANIA',
+  ScreenOneOnboard:
+    'Your one stop destination for comedy, drama, thrillers is here.',
+  ScreenTwoOnboard: 'Take a look at latest and trending Movies.',
+  ScreenThreeOnboardHeader: 'Welcome to ',
+  ScreenThreeOnboard: 'Explore and select the perfect next movie.',
+  SkipToDashBoard: 'Skip To DashBoard',
+  GetStarted: 'Get Started',
 
   Movies: 'Movies',
   TVShows: 'TV Shows',

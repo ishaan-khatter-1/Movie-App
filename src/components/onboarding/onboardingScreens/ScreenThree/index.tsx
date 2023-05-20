@@ -5,6 +5,8 @@ import styleThree from './styles';
 import ButtonOnboard from '../../onboradingButtons';
 import { MotiView } from 'moti';
 import Lottie from 'lottie-react-native';
+import StringConstants from '../../../../assets/stringConstants';
+import ColorConstants from '../../../../assets/colorConstants';
 
 
 const ScreenThree = () => {
@@ -13,11 +15,11 @@ const ScreenThree = () => {
       <View style={styleThree.mainContainer2}>
         <View style={styleThree.textView}>
           <View style={styleThree.textHeaderView}>
-          <Text style={styleThree.textHeader}>Welcome to </Text>
-          <Text style={[styleThree.textHeader,styleThree.textHeader2]}>Movie Mania</Text>
+          <Text style={styleThree.textHeader}>{StringConstants.ScreenThreeOnboardHeader}</Text>
+          <Text style={[styleThree.textHeader,styleThree.textHeader2]}>{StringConstants.AppNameFirstLetter}{StringConstants.AppNameSecondLetter}</Text>
           </View>
           <Text style={styleThree.thirdScreenContent}>
-            Explore and select the perfect next movie.
+            {StringConstants.ScreenThreeOnboard}
           </Text>
               <View style={styleThree.lottieStyleView}>
                 <Lottie
@@ -56,7 +58,7 @@ const ScreenThree = () => {
             }}
             animate={{
           opacity:1,
-            borderColor:'rgb(225,0,146)',
+            borderColor:ColorConstants.pinkmain,
               
               scale: 1,
             }}
@@ -87,7 +89,7 @@ const ScreenThree = () => {
         </MotiView>
         </View>
         <View style={{marginLeft:'6%'}}>
-        <ButtonOnboard text="Get Started" />
+        <ButtonOnboard text={StringConstants.GetStarted} />
         </View>
       </View>
     </View>

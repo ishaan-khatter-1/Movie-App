@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     margin: 15,
     borderWidth: 1,
     borderRadius: 25,
-    borderColor: '#000',
+    borderColor: ColorConstants.backgorundBlack,
     opacity: 0.5,
   },
   imgStyle: {},

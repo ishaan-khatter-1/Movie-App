@@ -5,6 +5,7 @@ import {MotiView} from 'moti';
 import styleOne from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import ButtonOnboard from '../../onboradingButtons';
+import StringConstants from '../../../../assets/stringConstants';
 
 const ScreenOne = () => {
   return (
@@ -23,19 +24,14 @@ const ScreenOne = () => {
               scale: 1,
               opacity: 1,
               translateX: 0,
-              // rotate: '360deg',
             }}
             transition={{
-              // loop: true,
               type: 'timing',
               duration: 2000,
             }}>
             <Text style={styleOne.textstyle}>
-              Your one stop destination for comedy, drama, thrillers is here.
+              {StringConstants.ScreenOneOnboard}
             </Text>
-            {/* <Text style={styleOne.textstyle}>
-            Get Started and know everything about Movies.
-          </Text> */}
           </MotiView>
           <MotiView style={styleOne.textView}></MotiView>
           <MotiView
@@ -44,16 +40,13 @@ const ScreenOne = () => {
               scale: 0,
               opacity: 0,
               translateX: -1000,
-              // rotate: '360deg',
             }}
             animate={{
               scale: 1,
               opacity: 1,
               translateX: 0,
-              // rotate: '360deg',
             }}
             transition={{
-              // loop: true,
               type: 'timing',
               duration: 2000,
             }}>
@@ -65,7 +58,7 @@ const ScreenOne = () => {
         </View>
         <View>
           <View style={styleOne.skipbtn}>
-            <ButtonOnboard text="Skip To DashBoard" />
+            <ButtonOnboard text={StringConstants.SkipToDashBoard} />
           </View>
         </View>
       </View>

@@ -1,9 +1,11 @@
 import React from 'react';
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 
 import {
   Text,
   View,
   FlatList,
+  Image,
   ImageBackground,
   Dimensions,
   TouchableOpacity,
@@ -17,7 +19,11 @@ import styles from './styles';
 import {BASE_IMG_URL} from '../../../services';
 // import Carousel from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-snap-carousel';
-
+import UpgradePlanSlider from '../../Slider';
+import {
+  FetchLatestMovie,
+  FetchTrendingMovie,
+} from '../../../services/FetchData';
 import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../assets/colorConstants';
 import StringConstants from '../../../assets/stringConstants';
@@ -82,7 +88,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
     );
   };
 
-  const {data, isLoading, isError} = useQuery('SeeAllData', {
+  const {data, isLoading, isError} = useQuery('TrendingMovies', {
     queryFn: FetchData,
   });
   if (isLoading) {

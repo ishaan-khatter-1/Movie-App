@@ -1,21 +1,18 @@
 import {StyleSheet} from 'react-native';
+import ColorConstants from '../../../../assets/colorConstants';
 
 const styleThree = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: '#rgb(34,0,70)',
+    backgroundColor: ColorConstants.mainBgColor,
   },
   mainContainer2: {
     flex: 0.8,
-    // backgroundColor: 'red',
   },
   textView: {
-    // height: '10%',
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: '10%',
-
-    // backgroundColor: 'red',
   },
   textHeaderView: {
     flexDirection: 'row',
@@ -23,16 +20,15 @@ const styleThree = StyleSheet.create({
   },
   textHeader: {
     fontSize: 26,
-    color: 'white',
+    color: ColorConstants.textWhite,
     fontWeight: '800',
   },
   textHeader2: {
-    color: 'rgb(225,0,146)',
+    color: ColorConstants.thirdOrange,
   },
   lottieStyleView: {
     alignItems: 'center',
-    // marginTop: 70,
-    // backgroundColor: 'green',
+
     flex: 1,
   },
   lottieStyle: {
@@ -45,7 +41,7 @@ const styleThree = StyleSheet.create({
     // backgroundColor: 'blue',
   },
   thirdScreenContent: {
-    color: '#fff',
+    color: ColorConstants.textWhite,
     fontSize: 16,
     marginTop: '7%',
   },

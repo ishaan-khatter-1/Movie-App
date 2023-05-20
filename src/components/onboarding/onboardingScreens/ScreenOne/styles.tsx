@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
+import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 
 const styleOne = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#rgb(34,0,70)',
+    backgroundColor: ColorConstants.mainBgColor,
   },
   containerTwo: {
     marginTop: '25%',
@@ -11,30 +13,24 @@ const styleOne = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textView: {
-    // marginTop: '30%',
     height: '18%',
-    // backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'flex-end',
     marginRight: '4%',
     marginLeft: '3%',
   },
   textstyle: {
-    color: 'white',
-    fontSize: 20,
+    color: ColorConstants.textWhite,
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 22,
   },
   imgView: {
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    // marginTop: '50%',
     elevation: 100,
-    borderColor: 'grey',
-    // backgroundColor: 'red',
     resizeMode: 'stretch',
-    // width: 'img',
     width: 260,
     marginLeft: '5%',
-    // marginVertical: '5%',
   },
   img: {
     width: 260,
@@ -42,7 +38,6 @@ const styleOne = StyleSheet.create({
     borderRadius: 10,
   },
   skipbtn: {
-    // backgroundColor: 'red',
     bottom: 0,
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
