@@ -1,5 +1,3 @@
-import {View, Text} from 'react-native';
-import React from 'react';
 import axios from 'axios';
 import {
   BASE_URL,
@@ -78,7 +76,6 @@ export const FetchHomeCarouselData = async () => {
 
   const MovieDatatrending = trendingData.data.results.slice(0, 2).map(item => {
     return {
-      // ...GiveData,
       id: item.id,
       vote_average: item.vote_average,
 
@@ -86,7 +83,6 @@ export const FetchHomeCarouselData = async () => {
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
         : BASE_IMG_URL + 'original' + item.poster_path,
-      // title: item.title,
       title: item.title ? item.title : null,
 
       poster_path: item.poster_path
@@ -98,7 +94,6 @@ export const FetchHomeCarouselData = async () => {
 
   const MovieDataupcoming = upcomingData.data.results.slice(0, 2).map(item => {
     return {
-      // ...GiveData,
       id: item.id,
       vote_average: item.vote_average,
 
@@ -106,7 +101,6 @@ export const FetchHomeCarouselData = async () => {
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
         : BASE_IMG_URL + 'original' + item.poster_path,
-      // title: item.title,
       title: item.title ? item.title : null,
 
       poster_path: item.poster_path
@@ -169,7 +163,6 @@ export const FetchAllData = async () => {
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
         : BASE_IMG_URL + 'original' + item.poster_path,
-      // title: item.title,
       title: item.title ? item.title : null,
 
       poster_path: item.poster_path
@@ -207,7 +200,6 @@ export const FetchAllDataTv = async () => {
 
   const trendingDataTv = trendingRes.data.results.map(item => {
     return {
-      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
       vote_average: item.vote_average,
@@ -227,7 +219,6 @@ export const FetchAllDataTv = async () => {
   });
   const popularDataTv = popularRes.data.results.map(item => {
     return {
-      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       vote_average: item.vote_average,
 
@@ -247,7 +238,6 @@ export const FetchAllDataTv = async () => {
   });
   const recommendedDataTv = recommendedRes.data.results.map(item => {
     return {
-      // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       vote_average: item.vote_average,
 
@@ -267,7 +257,6 @@ export const FetchAllDataTv = async () => {
   });
   const discoverDataTv = discoverRes.data.results.map(item => {
     return {
-      // id: item.id ? item.id : null,
       vote_average: item.vote_average,
 
       name: item.name ? item.name : null,
@@ -277,7 +266,6 @@ export const FetchAllDataTv = async () => {
         : item.poster_path
         ? BASE_IMG_URL + 'original' + item.poster_path
         : null,
-      // title: item.title,
       title: item.title ? item.title : null,
 
       poster_path: item.poster_path
