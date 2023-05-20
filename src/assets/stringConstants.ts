@@ -32,8 +32,9 @@ const StringConstants = {
   RemoveFromFav: 'Click to Remove from Favourites',
   FindMoviesPlaceholder: 'Find Movies',
   FindTVShowsPlaceholder: 'Find TV Shows',
-  drawerItemFavourite: 'Favourite',
+  drawerItemFavourite: 'Favourites',
   drawerItemAbout: 'About',
+  MoreText: 'More',
 };
 
 export default StringConstants;

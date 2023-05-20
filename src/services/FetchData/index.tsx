@@ -80,6 +80,8 @@ export const FetchHomeCarouselData = async () => {
     return {
       // ...GiveData,
       id: item.id,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -98,6 +100,8 @@ export const FetchHomeCarouselData = async () => {
     return {
       // ...GiveData,
       id: item.id,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -128,6 +132,7 @@ export const FetchAllData = async () => {
   const trendingData = trendingRes.data.results.map(item => {
     return {
       id: item.id,
+      vote_average: item.vote_average,
       title: item.title ? item.title : null,
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
@@ -142,6 +147,8 @@ export const FetchAllData = async () => {
   const searchData = searchRes.data.results.map(item => {
     return {
       id: item.id,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -156,6 +163,8 @@ export const FetchAllData = async () => {
   const upcomingData = UpcomingRes.data.results.map(item => {
     return {
       id: item.id,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -171,6 +180,8 @@ export const FetchAllData = async () => {
   });
   const movieData = {
     id: MovieRes.data.id,
+    vote_average: MovieRes.data.vote_average,
+
     release_date: MovieRes.data.release_date,
     backdrop_path: MovieRes.data.backdrop_path
       ? BASE_IMG_URL + 'original' + MovieRes.data.backdrop_path
@@ -199,6 +210,8 @@ export const FetchAllDataTv = async () => {
       // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
+      vote_average: item.vote_average,
+
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
         : item.poster_path
@@ -216,6 +229,8 @@ export const FetchAllDataTv = async () => {
     return {
       // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -234,6 +249,8 @@ export const FetchAllDataTv = async () => {
     return {
       // id: item.id ? item.id : null,
       name: item.name ? item.name : null,
+      vote_average: item.vote_average,
+
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
         ? BASE_IMG_URL + 'original' + item.backdrop_path
@@ -250,7 +267,9 @@ export const FetchAllDataTv = async () => {
   });
   const discoverDataTv = discoverRes.data.results.map(item => {
     return {
-      id: item.id ? item.id : null,
+      // id: item.id ? item.id : null,
+      vote_average: item.vote_average,
+
       name: item.name ? item.name : null,
       release_date: item.release_date ? item.release_date : null,
       backdrop_path: item.backdrop_path
@@ -277,7 +296,7 @@ export const FetchAllDataTv = async () => {
     ...trendingDataTv,
     ...popularDataTv,
     ...recommendedDataTv,
-    // ...discoverDataTv,
+    ...discoverDataTv,
   ];
 };
 
@@ -296,21 +315,3 @@ export const MovieTvData = async () => {
 //
 //
 //
-
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2YyZTcyODYyNDA4ZTVlMzk0MmY3ZDI2ODRkYTZhOCIsInN1YiI6IjY0NGY1YmNiYzBhMzA4MDMwMTZmZjVkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8PFf9ymXKgR7H2_tlnSGmretDAnk6OU17mf4l0uILAI',
-  },
-};
-
-export const FetchWatchList = async () => {
-  const apiRes = await axios.get(
-    BASE_URL +
-      '/account/19239241/watchlist/tv?language=en-US&page=1&sort_by=created_at.asc',
-    options,
-  );
-  return apiRes;
-};

@@ -97,16 +97,23 @@ const MovieTvDetal = props => {
               fill={ColorConstants.mainBgColor}
               marginLeft={15}
             />
-            <Text style={styles.favText}>
+            {/* <Text style={styles.favText}>
               {isFavourite
                 ? StringConstants.RemoveFromFav
                 : StringConstants.AddToFav}
-            </Text>
+            </Text> */}
+            {isFavourite ? (
+              <Text style={styles.favText}>
+                {StringConstants.RemoveFromFav}
+              </Text>
+            ) : (
+              <Text style={styles.favTextTwo}>{StringConstants.AddToFav}</Text>
+            )}
           </View>
         </TouchableOpacity>
 
         <View>
-          <Text style={styles.moreHeadTxt}>More</Text>
+          <Text style={styles.moreHeadTxt}>{StringConstants.MoreText}</Text>
           <FlatList
             keyExtractor={item => item.poster_path}
             data={data}

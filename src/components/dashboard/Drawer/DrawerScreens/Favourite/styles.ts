@@ -6,6 +6,8 @@ const styles = StyleSheet.create({
   mainFavView: {
     flexDirection: 'row',
     margin: 10,
+    // borderWidth: 5,
+    // padding: 10,
   },
   imageStyle: {width: 130, height: 195},
   favTitleView: {
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
     height: 195,
     flex: 1,
     paddingBottom: 10,
+    // backgroundColor: 'red',
   },
   titleText: {
     fontSize: 16,
@@ -33,15 +36,20 @@ const styles = StyleSheet.create({
   },
   overviewText: {
     marginVertical: 5,
-    height: 120,
+    height: 115,
     fontFamily: fonts.REGULAR,
     fontSize: 13,
-    // backgroundColor: 'red',
+    color: ColorConstants.baseColor,
+  },
+  removeBtn: {
+    padding: 5,
+    position: 'absolute',
+    bottom: 0,
   },
   removeText: {
     fontFamily: fonts.SEMIBOLD,
-    fontSize: 15,
-    color: ColorConstants.textBlack,
+    fontSize: 13,
+    color: ColorConstants.textRed,
   },
   noFavView: {
     flex: 1,

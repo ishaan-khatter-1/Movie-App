@@ -13,6 +13,7 @@ const ColorConstants = {
   // textWhite: 'rgb(247,247,247)',
   textWhite: 'rgb(247,247,247)',
   pinkmain: 'rgb(225,0,146)',
+  textRed: 'red',
 
   // textBaseColor:
 };

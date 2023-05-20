@@ -67,13 +67,15 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     alignItems: 'center',
   },
-  favText: {marginLeft: 10, color: 'black'},
+  favText: {marginLeft: 10, color: ColorConstants.textRed},
+  favTextTwo: {marginLeft: 10, color: ColorConstants.pinkmain},
+
   moreHeadTxt: {
     marginHorizontal: 10,
     marginBottom: 7,
-    color: 'black',
-    fontWeight: '600',
-    fontSize: 22,
+    color: ColorConstants.textBlack,
+    fontFamily: fonts.BOLD,
+    fontSize: 23,
   },
   flatlistImgText: {
     width: 150,

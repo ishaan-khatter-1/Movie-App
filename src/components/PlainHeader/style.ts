@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     position: 'absolute',
     top: 5,
-    left: 0,
+    left: 5,
   },
   pressableSymbol: {
     margin: 10,
