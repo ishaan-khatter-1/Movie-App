@@ -34,15 +34,15 @@ const BottomNavigation = ({navigation}) => {
                   fontSize: 20,
                   fontFamily: fonts.BOLD,
                 }}>
-                {movie}
+                {StringConstants.AppNameFirstLetter}
               </Text>
               <Text
                 style={{
                   color: ColorConstants.thirdOrange,
-                  fontSize: 22,
+                  fontSize: 20,
                   fontFamily: fonts.BOLD,
                 }}>
-                {mania}
+                {StringConstants.AppNameSecondLetter}
               </Text>
             </View>
           ),
