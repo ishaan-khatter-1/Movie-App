@@ -94,15 +94,11 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
     return <Text>{isError.message}</Text>;
   }
 
-  const movie = StringConstants.AppNameFirstLetter;
-  const mania = StringConstants.AppNameSecondLetter;
-
   return (
     <ScrollView style={styles.mainContainer}>
       <PlainHeader />
       <View style={styles.carouselView}>
         <Carousel
-          // style={styles.carousel}
           data={data}
           renderItem={renderFuncCarousel}
           loop

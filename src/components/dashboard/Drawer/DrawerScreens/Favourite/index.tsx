@@ -64,14 +64,7 @@ const Favourite = () => {
               onPress={() => {
                 navigate('MovieTvDetail', {item});
               }}>
-              <View
-                key={item.poster_path}
-                style={{
-                  flexDirection: 'row',
-                  margin: 10,
-                  // height: 215,
-                  // backgroundColor: 'red',
-                }}>
+              <View key={item.poster_path} style={styles.mainFavView}>
                 <ImageBackground
                   resizeMode="contain"
                   style={styles.imageStyle}

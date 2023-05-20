@@ -3,12 +3,17 @@ import ColorConstants from '../../../../../assets/colorConstants';
 import fonts from '../../../../../assets/fonts';
 
 const styles = StyleSheet.create({
+  mainFavView: {
+    flexDirection: 'row',
+    margin: 10,
+  },
   imageStyle: {width: 130, height: 195},
   favTitleView: {
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
   },
+
   favTitle: {
     color: '#000',
     fontSize: 22,

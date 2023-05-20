@@ -2,7 +2,6 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {useNavigation} from '@react-navigation/native';
-import Settings from '../DrawerScreens/Settings';
 import styles from './styles';
 import FavouriteIcon from '../../../../assets/svgIcons/favourite';
 import AboutIcon from '../../../../assets/svgIcons/aboutUs';
@@ -11,9 +10,6 @@ import StringConstants from '../../../../assets/stringConstants';
 
 const CustomDrawer = () => {
   const Navigation = useNavigation();
-  const drawerScreenNavigate = Screen => {
-    Navigation.navigate(Screen);
-  };
 
   return (
     <View style={{flex: 1}}>
@@ -40,7 +36,9 @@ const CustomDrawer = () => {
               marginRight={20}
               marginVertical={10}
             />
-            <Text style={styles.labelStyle}>Favourites</Text>
+            <Text style={styles.labelStyle}>
+              {StringConstants.drawerItemFavourite}
+            </Text>
           </TouchableOpacity>
         </View>
         <View>
@@ -57,7 +55,9 @@ const CustomDrawer = () => {
               marginRight={20}
               marginVertical={10}
             />
-            <Text style={styles.labelStyle}>About</Text>
+            <Text style={styles.labelStyle}>
+              {StringConstants.drawerItemAbout}
+            </Text>
           </TouchableOpacity>
         </View>
       </DrawerContentScrollView>

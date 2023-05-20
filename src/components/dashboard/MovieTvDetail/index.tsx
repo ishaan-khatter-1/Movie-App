@@ -11,7 +11,6 @@ import React, {useState, useEffect, useRef} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BASE_IMG_URL} from '../../../services';
 import styles from './styles';
-import BackIcon from '../../../assets/svgIcons/BackIcon';
 import {useNavigation} from '@react-navigation/native';
 import StarRating from '../../../assets/svgIcons/starRating';
 import FavouriteIcon from '../../../assets/svgIcons/favourite';
@@ -20,11 +19,12 @@ import {MovieTvData} from '../../../services/FetchData';
 import {useQuery} from 'react-query';
 import ColorConstants from '../../../assets/colorConstants';
 import PlainHeader from '../../PlainHeader';
+import StringConstants from '../../../assets/stringConstants';
 
 const MovieTvDetal = props => {
   const [isFavourite, setIsFavourite] = useState(false);
   const {item} = props.route.params;
-  const {data, isLoading, isError} = useQuery('MovieTVData', MovieTvData);
+  const {data} = useQuery('MovieTVData', MovieTvData);
 
   useEffect(() => {
     checkFavourite();
@@ -90,22 +90,17 @@ const MovieTvDetal = props => {
         <Text style={{marginLeft: 15}}>{item.release_date}</Text>
         <Text style={styles.overviewText}>{item.overview}</Text>
         <TouchableOpacity onPress={toggleFavourite}>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginVertical: 10,
-              alignItems: 'center',
-            }}>
+          <View style={styles.favIconTextView}>
             <FavouriteIcon
               width={30}
               height={30}
               fill={ColorConstants.mainBgColor}
               marginLeft={15}
             />
-            <Text style={{marginLeft: 10, color: 'black'}}>
+            <Text style={styles.favText}>
               {isFavourite
-                ? 'Click to Remove from Favourites'
-                : 'Click to Add to Favourites'}
+                ? StringConstants.RemoveFromFav
+                : StringConstants.AddToFav}
             </Text>
           </View>
         </TouchableOpacity>
@@ -137,7 +132,7 @@ const MovieTvDetal = props => {
                       )}
 
                       {item.poster_path && (
-                        <View style={{flex: 1, height: 180, marginRight: 10}}>
+                        <View style={styles.flatListTitleTextView}>
                           <Text style={styles.flatListTitleText}>
                             {item.title ? item.title : item.name}
                           </Text>

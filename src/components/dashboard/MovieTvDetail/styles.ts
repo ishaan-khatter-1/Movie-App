@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import fonts from '../../../assets/fonts';
+import ColorConstants from '../../../assets/colorConstants';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -12,7 +13,6 @@ const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 3 / 2,
   },
-  imageStyle: {},
   pressableBack: {
     alignSelf: 'flex-start',
   },
@@ -27,16 +27,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   original_titleText: {
-    color: 'black',
+    color: ColorConstants.textBlack,
     fontSize: 18,
     marginRight: '5%',
-    // fontWeight: '700',
     flexWrap: 'wrap',
     fontFamily: fonts.BOLD,
   },
-  ratingView: {},
 
-  ratingTextView: {},
   ratingText: {
     fontWeight: '500',
     marginLeft: 5,
@@ -52,7 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
 
     fontWeight: '500',
-    color: 'black',
+    color: ColorConstants.textBlack,
     flexWrap: 'wrap',
     flex: 1,
     fontFamily: fonts.SEMIBOLD,
@@ -61,11 +58,16 @@ const styles = StyleSheet.create({
   overviewText: {
     margin: 16,
 
-    color: 'black',
-    // fontWeight: '600',
+    color: ColorConstants.textBlack,
     flexWrap: 'wrap',
     fontFamily: fonts.BOLD,
   },
+  favIconTextView: {
+    flexDirection: 'row',
+    marginVertical: 10,
+    alignItems: 'center',
+  },
+  favText: {marginLeft: 10, color: 'black'},
   moreHeadTxt: {
     marginHorizontal: 10,
     marginBottom: 7,
@@ -80,15 +82,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   flatlistImgTextView: {
-    // flex: 1,
-    // justifyContent: 'flex-end',
-    // alignItems: 'flex-start',
     flexDirection: 'row',
   },
-
+  flatListTitleTextView: {flex: 1, height: 180, marginRight: 10},
   flatListTitleText: {
-    color: '#000',
-    // fontWeight: '700',
+    color: ColorConstants.textBlack,
     fontSize: 17,
     fontFamily: fonts.BOLD,
   },

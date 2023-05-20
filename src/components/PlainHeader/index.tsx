@@ -1,11 +1,9 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import ColorConstants from '../../assets/colorConstants';
 import styles from './style';
 import BackIcon from '../../assets/svgIcons/BackIcon';
 import {useNavigation} from '@react-navigation/native';
 import StringConstants from '../../assets/stringConstants';
-import fonts from '../../assets/fonts';
 
 const PlainHeader = () => {
   const {goBack} = useNavigation();
@@ -18,15 +16,10 @@ const PlainHeader = () => {
       </TouchableOpacity>
       {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
       <View style={{flexDirection: 'row'}}>
-        <Text
-          style={{
-            color: ColorConstants.textWhite,
-            fontSize: 20,
-            fontFamily: fonts.BOLD,
-          }}>
+        <Text style={styles.movieName}>
           {StringConstants.AppNameFirstLetter}
         </Text>
-        <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
+        <Text style={styles.maniaName}>
           {StringConstants.AppNameSecondLetter}
         </Text>
       </View>

@@ -28,8 +28,12 @@ const StringConstants = {
   AboutTitle: 'About:',
   FavouriteTitle: 'Favourites:',
   NoFavourite: 'No Favourites Added',
+  AddToFav: 'Click to Add to Favourites',
+  RemoveFromFav: 'Click to Remove from Favourites',
   FindMoviesPlaceholder: 'Find Movies',
   FindTVShowsPlaceholder: 'Find TV Shows',
+  drawerItemFavourite: 'Favourite',
+  drawerItemAbout: 'About',
 };
 
 export default StringConstants;

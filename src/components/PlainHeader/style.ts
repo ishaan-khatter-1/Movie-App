@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import ColorConstants from '../../assets/colorConstants';
+import fonts from '../../assets/fonts';
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -18,6 +19,16 @@ const styles = StyleSheet.create({
   },
   pressableSymbol: {
     margin: 10,
+  },
+  movieName: {
+    color: ColorConstants.textWhite,
+    fontSize: 20,
+    fontFamily: fonts.BOLD,
+  },
+  maniaName: {
+    color: ColorConstants.thirdOrange,
+    fontSize: 22,
+    fontFamily: fonts.BOLD,
   },
 });
 

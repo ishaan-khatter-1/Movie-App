@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 10,
     marginTop: 20,
-    fontWeight: '500',
     fontFamily: fonts.BOLD,
   },
   imgCarouselStyle: {

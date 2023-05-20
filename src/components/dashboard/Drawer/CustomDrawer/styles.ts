@@ -11,16 +11,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   drawerHeaderText: {
-    color: '#fff',
+    color: ColorConstants.textWhite,
     fontSize: 20,
-    fontWeight: '600',
+    // fontWeight: '600',
 
     fontFamily: fonts.BOLD,
   },
   drawerHeaderText2: {
     color: ColorConstants.thirdOrange,
     fontSize: 20,
-    fontWeight: '600',
+    // fontWeight: '600',
     fontFamily: fonts.BOLD,
   },
   drawerItems: {flexDirection: 'row', alignItems: 'center'},
