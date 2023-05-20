@@ -8,17 +8,14 @@ import StringConstants from '../../assets/stringConstants';
 
 const SplashScreen = () => {
   const [show, setShow] = useState(true);
-  // const dispatch = useDispatch();
   const {dispatch} = useNavigation();
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      // const {dispatch} = useNavigation();
       setShow(false);
       console.log(show);
-      dispatch(StackActions.replace('GetStarted')); // replace with your screen name
+      dispatch(StackActions.replace('GetStarted'));
     }, 2280);
-    // console.log(show);
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -31,16 +28,13 @@ const SplashScreen = () => {
               scale: 1,
               opacity: 1,
               translateX: -1000,
-              // rotate: '360deg',
             }}
             animate={{
               scale: 1,
               opacity: 1,
               translateX: 0,
-              // rotate: '360deg',
             }}
             transition={{
-              // loop: true,
               type: 'timing',
               duration: 1500,
             }}>
@@ -53,7 +47,6 @@ const SplashScreen = () => {
               scale: 1,
               opacity: 1,
               translateX: 1000,
-              // rotate: '360deg',
             }}
             animate={{
               scale: 1,

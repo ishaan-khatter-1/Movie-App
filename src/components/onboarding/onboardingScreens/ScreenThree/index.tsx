@@ -1,6 +1,5 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {SvgUri} from 'react-native-svg';
 import styleThree from './styles';
 import ButtonOnboard from '../../onboradingButtons';
 import { MotiView } from 'moti';

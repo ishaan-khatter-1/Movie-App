@@ -18,7 +18,6 @@ const ScreenOne = () => {
               scale: 0,
               opacity: 0,
               translateX: 1000,
-              // rotate: '360deg',
             }}
             animate={{
               scale: 1,

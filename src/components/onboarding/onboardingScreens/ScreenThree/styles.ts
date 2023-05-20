@@ -37,8 +37,6 @@ const styleThree = StyleSheet.create({
     padding: 0,
     justifyContent: 'center',
     alignItems: 'center',
-
-    // backgroundColor: 'blue',
   },
   thirdScreenContent: {
     color: ColorConstants.textWhite,
@@ -46,14 +44,10 @@ const styleThree = StyleSheet.create({
     marginTop: '7%',
   },
 
-  mainbtnView: {
-    // marginLeft: '6%',
-    // backgroundColor: 'yellow',
-  },
+  mainbtnView: {},
   skipSymbol: {
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'green',
     flexDirection: 'row',
     height: 40,
   },
@@ -64,15 +58,12 @@ const styleThree = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
-  // motibtnView: {
-  //   flexDirection: 'row',
-  //   backgroundColor: 'yellow',
-  // },
+
   btnAbovText: {
-    color: '#fff',
+    // color: ColorConstants.textWhite,
     fontSize: 25,
     marginRight: '0%',
-    color: 'rgb(225,0,146)',
+    color: ColorConstants.pinkmain,
     fontWeight: '600',
   },
 });
