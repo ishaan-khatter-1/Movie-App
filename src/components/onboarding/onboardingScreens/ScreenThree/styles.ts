@@ -44,7 +44,6 @@ const styleThree = StyleSheet.create({
     marginTop: '7%',
   },
 
-  mainbtnView: {},
   skipSymbol: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -52,15 +51,14 @@ const styleThree = StyleSheet.create({
     height: 40,
   },
   skipbtn: {
-    // backgroundColor: 'green',
     bottom: 0,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
+    marginRight: 5,
   },
 
   btnAbovText: {
-    // color: ColorConstants.textWhite,
     fontSize: 25,
     marginRight: '0%',
     color: ColorConstants.pinkmain,
