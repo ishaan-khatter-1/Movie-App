@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 
 const styleThree = StyleSheet.create({
   mainContainer: {
@@ -21,10 +22,16 @@ const styleThree = StyleSheet.create({
   textHeader: {
     fontSize: 26,
     color: ColorConstants.textWhite,
-    fontWeight: '800',
+    fontFamily: fonts.BOLD,
   },
   textHeader2: {
     color: ColorConstants.thirdOrange,
+  },
+  thirdScreenContent: {
+    fontFamily: fonts.SEMIBOLD,
+    color: ColorConstants.textWhite,
+    fontSize: 17,
+    marginTop: '7%',
   },
   lottieStyleView: {
     alignItems: 'center',
@@ -37,11 +44,6 @@ const styleThree = StyleSheet.create({
     padding: 0,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  thirdScreenContent: {
-    color: ColorConstants.textWhite,
-    fontSize: 16,
-    marginTop: '7%',
   },
 
   skipSymbol: {

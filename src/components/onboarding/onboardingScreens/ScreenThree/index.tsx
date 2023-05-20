@@ -6,6 +6,7 @@ import { MotiView } from 'moti';
 import Lottie from 'lottie-react-native';
 import StringConstants from '../../../../assets/stringConstants';
 import ColorConstants from '../../../../assets/colorConstants';
+import fonts from '../../../../assets/fonts';
 
 
 const ScreenThree = () => {

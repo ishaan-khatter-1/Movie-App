@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   maniaName: {
     color: ColorConstants.thirdOrange,
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: fonts.BOLD,
   },
 });

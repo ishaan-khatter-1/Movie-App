@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import ColorConstants from '../../../assets/colorConstants';
+import fonts from '../../../assets/fonts';
 
 const styles = StyleSheet.create({
   btnView: {
@@ -8,13 +10,14 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     padding: 5,
     paddingHorizontal: 10,
-    backgroundColor: '#fff',
+    backgroundColor: ColorConstants.backgroundWhite,
     marginRight: '3%',
   },
   skipbtntext: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#rgb(34,0,70)',
+    fontSize: 20,
+    // fontWeight: 'bold',
+    fontFamily: fonts.SEMIBOLD,
+    color: ColorConstants.mainBgColor,
   },
 });
 export default styles;
