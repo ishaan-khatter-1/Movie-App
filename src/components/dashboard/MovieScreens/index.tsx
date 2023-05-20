@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Pressable,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import {useQuery} from 'react-query';
 import BackIcon from '../../../assets/svgIcons/BackIcon';
@@ -87,7 +88,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
     queryFn: FetchData,
   });
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <ActivityIndicator size={'large'} />;
   }
 
   if (isError) {
