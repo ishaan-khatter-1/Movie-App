@@ -21,6 +21,7 @@ import Carousel from 'react-native-snap-carousel';
 import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../assets/colorConstants';
 import StringConstants from '../../../assets/stringConstants';
+import PlainHeader from '../../PlainHeader';
 
 const width = Dimensions.get('window').width;
 
@@ -98,25 +99,8 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
 
   return (
     <ScrollView style={styles.mainContainer}>
-      <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
-          <View style={styles.pressableSymbol}>
-            <BackIcon width={30} height={30} fill={'#fff'} />
-          </View>
-        </TouchableOpacity>
-        {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
-        <View style={{flexDirection: 'row'}}>
-          <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
-            {movie}
-          </Text>
-          <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
-            {mania}
-          </Text>
-        </View>
-      </View>
-      <View
-      // style={styles.carouselViewZero}
-      >
+      <PlainHeader />
+      <View style={styles.carouselView}>
         <Carousel
           // style={styles.carousel}
           data={data}

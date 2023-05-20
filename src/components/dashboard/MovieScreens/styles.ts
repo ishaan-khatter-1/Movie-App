@@ -7,24 +7,10 @@ const styles = StyleSheet.create({
     backgroundColor: ColorConstants.backgroundWhite,
     flex: 1,
   },
-  headerContainer: {
-    width: '100%',
-    backgroundColor: ColorConstants.mainBgColor,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 60,
-    marginBottom: 10,
+  carouselView: {
+    marginTop: 10,
   },
-  pressableBack: {
-    alignSelf: 'flex-start',
-    position: 'absolute',
-    top: 5,
-    left: 0,
-  },
-  pressableSymbol: {
-    margin: 10,
-  },
+
   imgFlatlistStyle: {
     aspectRatio: 1 / 1.5, // width / height
     width: 150,

@@ -31,7 +31,7 @@ const CustomDrawer = () => {
             onPress={() => {
               Navigation.navigate('Favourite');
             }}
-            style={{flexDirection: 'row', alignItems: 'center'}}>
+            style={styles.drawerItems}>
             <FavouriteIcon
               width={30}
               height={30}
@@ -48,7 +48,7 @@ const CustomDrawer = () => {
             onPress={() => {
               Navigation.navigate('About');
             }}
-            style={{flexDirection: 'row', alignItems: 'center'}}>
+            style={styles.drawerItems}>
             <AboutIcon
               width={30}
               height={30}

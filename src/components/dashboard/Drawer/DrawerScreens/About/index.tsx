@@ -6,6 +6,7 @@ import BackIcon from '../../../../../assets/svgIcons/BackIcon';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import StringConstants from '../../../../../assets/stringConstants';
+import PlainHeader from '../../../../PlainHeader';
 
 const About = () => {
   const movie = StringConstants.AppNameFirstLetter;
@@ -14,22 +15,7 @@ const About = () => {
 
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
-      <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
-          <View style={styles.pressableSymbol}>
-            <BackIcon width={30} height={30} fill={'#fff'} />
-          </View>
-        </TouchableOpacity>
-        {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
-        <View style={{flexDirection: 'row'}}>
-          <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
-            {movie}
-          </Text>
-          <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
-            {mania}
-          </Text>
-        </View>
-      </View>
+      <PlainHeader />
       <Text style={styles.aboutTitle}>{StringConstants.AboutTitle}</Text>
       <Text style={styles.aboutText}>{StringConstants.AboutContent}</Text>
     </View>

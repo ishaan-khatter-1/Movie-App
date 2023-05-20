@@ -27,6 +27,7 @@ const StringConstants = {
     ' Movie Mania is the authoritative source for movie, TV and celebrity content. Find ratings for the newest movie and TV shows. Movie gives the Recommedation for the user according to his liking. Movie Mania provides overview, rating and much more. Movie Mania includes films and TV Shows of all many types. Movie Mania provides users with perfect value of their interest.',
   AboutTitle: 'About:',
   FavouriteTitle: 'Favourites:',
+  NoFavourite: 'No Favourites Added',
   FindMoviesPlaceholder: 'Find Movies',
   FindTVShowsPlaceholder: 'Find TV Shows',
 };

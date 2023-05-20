@@ -14,6 +14,8 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../../../assets/colorConstants';
 import StringConstants from '../../../../../assets/stringConstants';
+import PlainHeader from '../../../../PlainHeader';
+import fonts from '../../../../../assets/fonts';
 
 const Favourite = () => {
   const [data, setData] = useState([]);
@@ -38,51 +40,63 @@ const Favourite = () => {
   };
   const movie = StringConstants.AppNameFirstLetter;
   const mania = StringConstants.AppNameSecondLetter;
-  const {goBack} = useNavigation();
+  const {navigate, goBack} = useNavigation();
   return (
-    <ScrollView>
-      <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
-          <View style={styles.pressableSymbol}>
-            <BackIcon width={30} height={30} fill={'#fff'} />
-          </View>
-        </TouchableOpacity>
-        {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
-        <View style={{flexDirection: 'row'}}>
-          <Text style={{color: ColorConstants.textWhite, fontSize: 20}}>
-            {movie}
-          </Text>
-          <Text style={{color: ColorConstants.thirdOrange, fontSize: 22}}>
-            {mania}
-          </Text>
+    <View
+      style={{
+        // paddingBottom: 60,
+        flex: 1,
+        backgroundColor: ColorConstants.backgroundWhite,
+      }}>
+      <PlainHeader />
+      <ScrollView>
+        <View style={styles.favTitleView}>
+          <Text style={styles.favTitle}>{StringConstants.FavouriteTitle}</Text>
         </View>
-      </View>
-      <View style={styles.favTitleView}>
-        <Text style={styles.favTitle}>{StringConstants.FavouriteTitle}</Text>
-      </View>
 
-      {data.map(item => (
-        <View key={item.poster_path} style={{flexDirection: 'row', margin: 10}}>
-          <ImageBackground
-            resizeMode="contain"
-            style={styles.imageStyle}
-            source={{
-              uri: BASE_IMG_URL + 'original' + item.poster_path,
-            }}></ImageBackground>
-          <View style={styles.titleTextView}>
-            <Text style={styles.titleText}>
-              {item.title ? item.title : item.name}
-            </Text>
-            <Text style={styles.overviewText}>{item.overview}</Text>
-            <TouchableOpacity
-              style={{marginTop: 5}}
-              onPress={() => removeItem(item)}>
-              <Text style={styles.removeText}>Remove from favourites</Text>
-            </TouchableOpacity>
+        {data.length === 0 ? (
+          <View style={styles.noFavView}>
+            <Text style={styles.noFavText}>{StringConstants.NoFavourite}</Text>
           </View>
-        </View>
-      ))}
-    </ScrollView>
+        ) : (
+          data.map(item => (
+            <TouchableOpacity
+              onPress={() => {
+                navigate('MovieTvDetail', {item});
+              }}>
+              <View
+                key={item.poster_path}
+                style={{
+                  flexDirection: 'row',
+                  margin: 10,
+                  // height: 215,
+                  // backgroundColor: 'red',
+                }}>
+                <ImageBackground
+                  resizeMode="contain"
+                  style={styles.imageStyle}
+                  source={{
+                    uri: BASE_IMG_URL + 'original' + item.poster_path,
+                  }}></ImageBackground>
+                <View style={styles.titleTextView}>
+                  <Text style={styles.titleText}>
+                    {item.title ? item.title : item.name}
+                  </Text>
+                  <TouchableOpacity
+                    style={{marginTop: 5}}
+                    onPress={() => removeItem(item)}>
+                    <Text style={styles.removeText}>
+                      Remove from favourites
+                    </Text>
+                  </TouchableOpacity>
+                  <Text style={styles.overviewText}>{item.overview}</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          ))
+        )}
+      </ScrollView>
+    </View>
   );
 };
 

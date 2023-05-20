@@ -3,28 +3,11 @@ import ColorConstants from '../../../../../assets/colorConstants';
 import fonts from '../../../../../assets/fonts';
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    width: '100%',
-    backgroundColor: ColorConstants.mainBgColor,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 60,
-    marginBottom: 10,
-  },
-  pressableBack: {
-    alignSelf: 'flex-start',
-    position: 'absolute',
-    top: 5,
-    left: 0,
-  },
-  pressableSymbol: {
-    margin: 10,
-  },
   imageStyle: {width: 130, height: 195},
   favTitleView: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10,
   },
   favTitle: {
     color: '#000',
@@ -32,10 +15,39 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontFamily: fonts.BOLD,
   },
-  titleTextView: {marginHorizontal: 10, flex: 1},
-  titleText: {fontWeight: '800', color: 'black'},
-  overviewText: {marginVertical: 5, height: 130},
-  removeText: {fontWeight: '700'},
+  titleTextView: {
+    marginHorizontal: 10,
+    height: 195,
+    flex: 1,
+    paddingBottom: 10,
+  },
+  titleText: {
+    fontSize: 16,
+    color: ColorConstants.textBlack,
+    fontFamily: fonts.BOLD,
+  },
+  overviewText: {
+    marginVertical: 5,
+    height: 120,
+    fontFamily: fonts.REGULAR,
+    fontSize: 13,
+    // backgroundColor: 'red',
+  },
+  removeText: {
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 15,
+    color: ColorConstants.textBlack,
+  },
+  noFavView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 400,
+  },
+  noFavText: {
+    fontFamily: fonts.BOLD,
+    fontSize: 22,
+  },
 });
 
 export default styles;

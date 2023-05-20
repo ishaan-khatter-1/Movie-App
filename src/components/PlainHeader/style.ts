@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    // marginBottom: 10,
   },
   pressableBack: {
     alignSelf: 'flex-start',
