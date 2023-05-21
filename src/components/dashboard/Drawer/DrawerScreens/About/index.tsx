@@ -14,7 +14,12 @@ const About = () => {
   const {goBack} = useNavigation();
 
   return (
-    <View style={{flex: 1, alignItems: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: ColorConstants.backgroundWhite,
+      }}>
       <PlainHeader />
       <Text style={styles.aboutTitle}>{StringConstants.AboutTitle}</Text>
       <Text style={styles.aboutText}>{StringConstants.AboutContent}</Text>
