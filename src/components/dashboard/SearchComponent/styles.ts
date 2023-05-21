@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   imgStyle: {},
   flatListstyle: {
     marginHorizontal: 10,
+    alignSelf: 'center',
   },
   imageStyle: {
     borderRadius: 5,

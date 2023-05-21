@@ -96,25 +96,31 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
   }
 
   return (
-    <ScrollView style={styles.mainContainer}>
+    <View style={{flex: 1}}>
       <PlainHeader />
-      <View style={styles.carouselView}>
-        <Carousel
-          data={data}
-          renderItem={renderFuncCarousel}
-          loop
-          autoplay={true}
-          autoplayInterval={3000}
-          sliderWidth={width}
-          itemWidth={width * 0.8}
-        />
-      </View>
-      <Text style={styles.typeTextColor}>{genre}</Text>
+      <ScrollView style={styles.mainContainer}>
+        <View style={styles.carouselView}>
+          <Carousel
+            data={data}
+            renderItem={renderFuncCarousel}
+            loop
+            autoplay={true}
+            autoplayInterval={3000}
+            sliderWidth={width}
+            itemWidth={width * 0.8}
+          />
+        </View>
+        <Text style={styles.typeTextColor}>{genre}</Text>
 
-      <View style={styles.FlatlistView}>
-        <FlatList data={data} renderItem={renderFuncFlatlist} numColumns={2} />
-      </View>
-    </ScrollView>
+        <View style={styles.FlatlistView}>
+          <FlatList
+            data={data}
+            renderItem={renderFuncFlatlist}
+            numColumns={2}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
