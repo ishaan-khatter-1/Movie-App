@@ -238,7 +238,7 @@ const Home = () => {
               FetchData={FetchTrendingTv} />
             <MovieTv
               queryKey="PopularTv"
-              headerText={StringConstants.PopularMovies}
+              headerText={StringConstants.PopularTv}
               FetchData={FetchPopularTv} />
             <MovieTv
               queryKey="RecommendedTv"
