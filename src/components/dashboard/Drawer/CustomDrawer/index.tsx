@@ -7,6 +7,7 @@ import FavouriteIcon from '../../../../assets/svgIcons/favourite';
 import AboutIcon from '../../../../assets/svgIcons/aboutUs';
 import ColorConstants from '../../../../assets/colorConstants';
 import StringConstants from '../../../../assets/stringConstants';
+import routes from '../../../../assets/routes';
 
 const CustomDrawer = () => {
   const Navigation = useNavigation();
@@ -25,7 +26,9 @@ const CustomDrawer = () => {
         <View>
           <TouchableOpacity
             onPress={() => {
-              Navigation.navigate('Favourite');
+              Navigation.navigate(
+                routes.dashboard.Drawer.DrawerScreens.Favourites.path,
+              );
             }}
             style={styles.drawerItems}>
             <FavouriteIcon
@@ -44,7 +47,9 @@ const CustomDrawer = () => {
         <View>
           <TouchableOpacity
             onPress={() => {
-              Navigation.navigate('About');
+              Navigation.navigate(
+                routes.dashboard.Drawer.DrawerScreens.About.path,
+              );
             }}
             style={styles.drawerItems}>
             <AboutIcon

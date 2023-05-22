@@ -14,6 +14,7 @@ import HomeIconFaded from '../assets/dashboardStyles/TabStyles/HomeIconFaded';
 import TelevisionIconFaded from '../assets/dashboardStyles/TabStyles/TelevisionIconFaded';
 import fonts from '../assets/fonts';
 import StringConstants from '../assets/stringConstants';
+import routes from '../assets/routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -65,10 +66,18 @@ const BottomNavigation = ({navigation}) => {
           // tabBarShowLabel: false,
           // tabBarLabel:
         }}>
-        <Tab.Screen name="Home" component={Home} options={homeTab} />
-        <Tab.Screen name="Movie" component={Movie} options={movieTab} />
         <Tab.Screen
-          name="Television"
+          name={routes.root.DrawerNavigation.BottomNavigation.Home.path}
+          component={Home}
+          options={homeTab}
+        />
+        <Tab.Screen
+          name={routes.root.DrawerNavigation.BottomNavigation.Movie.path}
+          component={Movie}
+          options={movieTab}
+        />
+        <Tab.Screen
+          name={routes.root.DrawerNavigation.BottomNavigation.Television.path}
           component={Television}
           options={televisionTab}
         />

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import fonts from '../../assets/fonts';
-import ColorConstants from '../../assets/colorConstants';
+import fonts from '../../../assets/fonts';
+import ColorConstants from '../../../assets/colorConstants';
 
 const styles = StyleSheet.create({
   mainView: {

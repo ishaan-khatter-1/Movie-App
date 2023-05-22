@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import SplashScreen from '../components/onboarding';
+import SplashScreen from '../components/onboarding/SplashScreen';
 import GetStarted from '../components/onboarding/getStarted';
 import DrawerNavigation from './drawernavigation';
 
-import MovieScreen from '../components/dashboard/MovieScreens';
 import PopularMovie from '../components/dashboard/MovieScreens/Screens/PopularMovie';
 import HotMovie from '../components/dashboard/MovieScreens/Screens/HotMovie';
 import RecommendedMovie from '../components/dashboard/MovieScreens/Screens/RecommendedMovie';
@@ -19,6 +18,7 @@ import TrendingTv from '../components/dashboard/MovieScreens/Screens/TrendingTv'
 import Favourite from '../components/dashboard/Drawer/DrawerScreens/Favourite';
 import MovieTvDetail from '../components/dashboard/MovieTvDetail';
 import About from '../components/dashboard/Drawer/DrawerScreens/About';
+import routes from '../assets/routes';
 
 const Stack = createStackNavigator();
 
@@ -33,12 +33,12 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SplashScreen"
+        initialRouteName={routes.Onboarding.SplashScreen.path}
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen
-          name="SplashScreen"
+          name={routes.Onboarding.SplashScreen.path}
           component={SplashScreen}
           options={{
             headerShown: false,
@@ -46,28 +46,66 @@ const Navigation = () => {
         />
 
         <Stack.Screen
-          name="GetStarted"
+          name={routes.Onboarding.getStarted.path}
           component={GetStarted}
           options={{
             headerShown: false,
           }}
         />
 
-        <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
+        <Stack.Screen
+          name={routes.root.DrawerNavigation.path}
+          component={DrawerNavigation}
+        />
 
-        <Stack.Screen name="MovieScreen" component={MovieScreen} />
-        <Stack.Screen name="PopularMovie" component={PopularMovie} />
-        <Stack.Screen name="TrendingMovie" component={TrendingMovie} />
-        <Stack.Screen name="HotMovie" component={HotMovie} />
-        <Stack.Screen name="RecommendedMovie" component={RecommendedMovie} />
-        <Stack.Screen name="UpcomingMovie" component={UpcomingMovie} />
-        <Stack.Screen name="DiscoverTv" component={DiscoverTv} />
-        <Stack.Screen name="RecommendedTv" component={RecommendedTv} />
-        <Stack.Screen name="PopularTv" component={PopularTv} />
-        <Stack.Screen name="TrendingTv" component={TrendingTv} />
-        <Stack.Screen name="MovieTvDetail" component={MovieTvDetail} />
-        <Stack.Screen name="Favourite" component={Favourite} />
-        <Stack.Screen name="About" component={About} />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.PopularMovie.path}
+          component={PopularMovie}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.TrendingMovie.path}
+          component={TrendingMovie}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.HotMovie.path}
+          component={HotMovie}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.RecommendedMovie.path}
+          component={RecommendedMovie}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.UpcomingMovie.path}
+          component={UpcomingMovie}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.DiscoverTV.path}
+          component={DiscoverTv}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.RecommendedTv.path}
+          component={RecommendedTv}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.PopularTv.path}
+          component={PopularTv}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieScreens.Screens.TrendingTv.path}
+          component={TrendingTv}
+        />
+        <Stack.Screen
+          name={routes.dashboard.MovieTvDetail.path}
+          component={MovieTvDetail}
+        />
+        <Stack.Screen
+          name={routes.dashboard.Drawer.DrawerScreens.Favourites.path}
+          component={Favourite}
+        />
+        <Stack.Screen
+          name={routes.dashboard.Drawer.DrawerScreens.About.path}
+          component={About}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

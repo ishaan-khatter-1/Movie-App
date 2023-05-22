@@ -41,6 +41,7 @@ import {useQueryClient} from 'react-query';
 import { ScrollView } from 'react-native';
 import ApiUpcomingMovie from './ApiUpcomingMovie';
 import StringConstants from '../../../../assets/stringConstants';
+import routes from '../../../../assets/routes';
 const queryClient = useQueryClient;
 
 interface HorizontalComponent {
@@ -60,39 +61,39 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
   const handleAllMovieTv = () =>{
     if (headerText===StringConstants.TrendingMovies){
 
-      navigate('TrendingMovie');
+      navigate(routes.dashboard.MovieScreens.Screens.TrendingMovie.path);
     }
     if (headerText===StringConstants.UpcomingMovies){
 
-      navigate('UpcomingMovie');
+      navigate(routes.dashboard.MovieScreens.Screens.UpcomingMovie.path);
     }
     if (headerText===StringConstants.PopularMovies){
 
-      navigate('PopularMovie');
+      navigate(routes.dashboard.MovieScreens.Screens.PopularMovie.path);
     }
     if (headerText===StringConstants.Hot){
 
-      navigate('HotMovie');
+      navigate(routes.dashboard.MovieScreens.Screens.HotMovie.path);
     }
     if (headerText===StringConstants.RecommededMovies){
 
-      navigate('RecommendedMovie');
+      navigate(routes.dashboard.MovieScreens.Screens.RecommendedMovie.path);
     }
     if (headerText===StringConstants.DiscoverTv){
 
-      navigate('DiscoverTv');
+      navigate(routes.dashboard.MovieScreens.Screens.DiscoverTV.path);
     }
     if (headerText===StringConstants.RecommendedTv){
 
-      navigate('RecommendedTv');
+      navigate(routes.dashboard.MovieScreens.Screens.RecommendedTv.path);
     }
     if (headerText===StringConstants.PopularTv){
 
-      navigate('PopularTv');
+      navigate(routes.dashboard.MovieScreens.Screens.PopularTv.path);
     }
     if (headerText===StringConstants.TrendingTv){
 
-      navigate('TrendingTv');
+      navigate(routes.dashboard.MovieScreens.Screens.TrendingTv.path);
     }
   }
  
@@ -115,7 +116,7 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
           // console.log(item);
           return (
             <Pressable onPress={()=>{
-              navigate('MovieTvDetail', {item})
+              navigate(routes.dashboard.MovieTvDetail.path, {item})
             }}>
             <View>
               
@@ -158,7 +159,7 @@ const Home = () => {
     return (
       <Pressable
         onPress={() => {
-          navigate('MovieTvDetail', {item});
+          navigate(routes.dashboard.MovieTvDetail.path, {item});
         }}>
         <View>
           {item.backdrop_path && (

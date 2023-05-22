@@ -16,6 +16,7 @@ import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../../../assets/colorConstants';
 import StringConstants from '../../../../../assets/stringConstants';
 import PlainHeader from '../../../../PlainHeader';
+import routes from '../../../../../assets/routes';
 
 const Favourite = () => {
   const [data, setData] = useState([]);
@@ -72,7 +73,7 @@ const Favourite = () => {
             <View key={item.poster_path} style={styles.mainFavView}>
               <Pressable
                 onPress={() => {
-                  navigate('MovieTvDetail', {item});
+                  navigate(routes.dashboard.MovieTvDetail.path, {item});
                 }}>
                 <ImageBackground
                   resizeMode="contain"
@@ -85,7 +86,7 @@ const Favourite = () => {
               <View style={styles.titleTextView}>
                 <Pressable
                   onPress={() => {
-                    navigate('MovieTvDetail', {item});
+                    navigate(routes.dashboard.MovieTvDetail.path, {item});
                   }}>
                   <Text style={styles.titleText}>
                     {item.title ? item.title : item.name}

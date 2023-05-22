@@ -23,6 +23,7 @@ import {useNavigation} from '@react-navigation/native';
 import ColorConstants from '../../../assets/colorConstants';
 import StringConstants from '../../../assets/stringConstants';
 import PlainHeader from '../../PlainHeader';
+import routes from '../../../assets/routes';
 
 const width = Dimensions.get('window').width;
 
@@ -39,7 +40,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
       <View>
         <Pressable
           onPress={() => {
-            navigate('MovieTvDetail', {item});
+            navigate(routes.dashboard.MovieTvDetail.path, {item});
           }}>
           {item.poster_path && (
             <View>
@@ -66,7 +67,7 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
       >
         <TouchableOpacity
           onPress={() => {
-            navigate('MovieTvDetail', {item});
+            navigate(routes.dashboard.MovieTvDetail.path, {item});
           }}
           // onPress={renderDetail}
         >

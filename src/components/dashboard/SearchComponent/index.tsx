@@ -13,6 +13,7 @@ import {useQuery} from 'react-query';
 import styles from './styles';
 import ColorConstants from '../../../assets/colorConstants';
 import {useNavigation} from '@react-navigation/native';
+import routes from '../../../assets/routes';
 
 interface searchText {
   title: string;
@@ -34,7 +35,7 @@ const SearchComponent = ({
   const renderItem = ({item}) => (
     <Pressable
       onPress={() => {
-        navigate('MovieTvDetail', {item});
+        navigate(routes.dashboard.MovieTvDetail.path, {item});
       }}>
       <View style={{margin: 10}}>
         {item.poster_path && (

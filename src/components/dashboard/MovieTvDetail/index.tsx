@@ -20,6 +20,7 @@ import {useQuery} from 'react-query';
 import ColorConstants from '../../../assets/colorConstants';
 import PlainHeader from '../../PlainHeader';
 import StringConstants from '../../../assets/stringConstants';
+import routes from '../../../assets/routes';
 
 const MovieTvDetal = props => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -118,7 +119,7 @@ const MovieTvDetal = props => {
                 <View>
                   <Pressable
                     onPress={() => {
-                      navigate('MovieTvDetail', {item});
+                      navigate(routes.dashboard.MovieTvDetail.path, {item});
                       ScrollViewRef.current?.scrollTo({y: 0});
                     }}>
                     <View style={styles.flatlistImgTextView}>

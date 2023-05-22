@@ -4,7 +4,7 @@ import Lottie from 'lottie-react-native';
 import styles from './styles';
 import {MotiView} from 'moti';
 import {StackActions, useNavigation} from '@react-navigation/native';
-import StringConstants from '../../assets/stringConstants';
+import StringConstants from '../../../assets/stringConstants';
 
 const SplashScreen = () => {
   const [show, setShow] = useState(true);
@@ -67,13 +67,13 @@ const SplashScreen = () => {
         {show ? (
           <Lottie
             style={styles.lottieStyle}
-            source={require('../../assets/lottie/splash2.json')}
+            source={require('../../../assets/lottie/splash2.json')}
             autoPlay
           />
         ) : (
           <Lottie
             style={styles.lottieStyle}
-            source={require('../../assets/lottie/splash2.json')}
+            source={require('../../../assets/lottie/splash2.json')}
           />
         )}
       </View>
