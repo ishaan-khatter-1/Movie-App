@@ -87,7 +87,7 @@ const MovieTvDetal = props => {
           <StarRating width={17} height={17} fill={'yellow'} />
           <Text style={styles.ratingText}>{item.vote_average}</Text>
         </View>
-        <Text style={{marginLeft: 15}}>{item.release_date}</Text>
+        <Text style={styles.releaseDateStyle}>{item.release_date}</Text>
         <Text style={styles.overviewText}>{item.overview}</Text>
         <TouchableOpacity onPress={toggleFavourite}>
           <View style={styles.favIconTextView}>
@@ -97,11 +97,7 @@ const MovieTvDetal = props => {
               fill={ColorConstants.mainBgColor}
               marginLeft={15}
             />
-            {/* <Text style={styles.favText}>
-              {isFavourite
-                ? StringConstants.RemoveFromFav
-                : StringConstants.AddToFav}
-            </Text> */}
+
             {isFavourite ? (
               <Text style={styles.favText}>
                 {StringConstants.RemoveFromFav}
@@ -143,7 +139,9 @@ const MovieTvDetal = props => {
                           <Text style={styles.flatListTitleText}>
                             {item.title ? item.title : item.name}
                           </Text>
-                          <Text style={{marginTop: 5}}>{item.overview}</Text>
+                          <Text style={styles.flatListOverviewText}>
+                            {item.overview}
+                          </Text>
                         </View>
                       )}
                     </View>

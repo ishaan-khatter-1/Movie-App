@@ -199,7 +199,7 @@ const Home = () => {
             <Text style={styles.btnTextStyle}>{StringConstants.Movies}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetTvFunc}>
-            <Text style={styles.btnTextStyle}>{StringConstants.TVShows}</Text>
+            <Text style={[styles.btnTextStyle,{opacity:0.8}]}>{StringConstants.TVShows}</Text>
           </TouchableOpacity></View><View style={{ marginTop: 5 }}>
             
             <MovieTv queryKey='PopularMovies'
@@ -227,7 +227,7 @@ const Home = () => {
 
     (<><View style={styles.btnViewstyle}>
           <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetMovieFunc}>
-            <Text style={styles.btnTextStyle}>Movies</Text>
+            <Text style={[styles.btnTextStyle,{opacity:0.8}]}>Movies</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'orange' }]} onPress={typeSetTvFunc}>
             <Text style={styles.btnTextStyle}>TV Shows</Text>

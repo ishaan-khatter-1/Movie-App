@@ -45,6 +45,10 @@ const styles = StyleSheet.create({
 
     paddingRight: '5%',
   },
+  releaseDateStyle: {
+    marginLeft: 15,
+    color: ColorConstants.textBlack,
+  },
   releaseDateText: {
     fontSize: 16,
 
@@ -91,6 +95,10 @@ const styles = StyleSheet.create({
     color: ColorConstants.textBlack,
     fontSize: 17,
     fontFamily: fonts.BOLD,
+  },
+  flatListOverviewText: {
+    color: ColorConstants.textBlack,
+    marginTop: 5,
   },
 });
 export default styles;

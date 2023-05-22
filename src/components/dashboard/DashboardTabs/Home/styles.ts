@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   btnTextStyle: {
     fontSize: 18,
     fontFamily: fonts.BOLD,
+    color: ColorConstants.textBlack,
   },
   componentHeaderText: {
     color: ColorConstants.mainBgColor,

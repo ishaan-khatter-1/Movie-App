@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     height: 195,
     flex: 1,
     paddingBottom: 10,
-    // backgroundColor: 'red',
   },
   titleText: {
     fontSize: 16,
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     height: 115,
     fontFamily: fonts.REGULAR,
     fontSize: 13,
-    color: ColorConstants.baseColor,
+    color: ColorConstants.textBlack,
   },
   removeBtn: {
     padding: 5,
@@ -60,6 +59,7 @@ const styles = StyleSheet.create({
   noFavText: {
     fontFamily: fonts.BOLD,
     fontSize: 22,
+    color: ColorConstants.textBlack,
   },
 });
 
