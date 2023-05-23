@@ -35,36 +35,9 @@ interface MovieComponent {
 const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
   const {navigate, goBack} = useNavigation();
 
-  const renderFuncCarousel = ({item}) => {
-    return (
-      <View>
-        <Pressable
-          onPress={() => {
-            navigate(routes.dashboard.MovieTvDetail.path, {item});
-          }}>
-          {item.poster_path && (
-            <View>
-              <ImageBackground
-                resizeMode="contain"
-                style={styles.imgCarouselStyle}
-                imageStyle={styles.imageStyle}
-                source={{
-                  uri: item.backdrop_path
-                    ? BASE_IMG_URL + 'w500' + item.backdrop_path
-                    : BASE_IMG_URL + 'w500' + item.poster_path,
-                }}></ImageBackground>
-            </View>
-          )}
-        </Pressable>
-      </View>
-    );
-  };
-
   const renderFuncFlatlist = ({item}) => {
     return (
-      <View
-      // style={styles.renderView}
-      >
+      <View>
         <TouchableOpacity
           onPress={() => {
             navigate(routes.dashboard.MovieTvDetail.path, {item});
@@ -98,21 +71,8 @@ const MovieScreen = ({FetchData, genre}: MovieComponent, prop: any) => {
 
   return (
     <View style={{flex: 1}}>
-      <PlainHeader />
+      <PlainHeader title={genre} />
       <ScrollView style={styles.mainContainer}>
-        <View style={styles.carouselView}>
-          <Carousel
-            data={data}
-            renderItem={renderFuncCarousel}
-            loop
-            autoplay={true}
-            autoplayInterval={3000}
-            sliderWidth={width}
-            itemWidth={width * 0.8}
-          />
-        </View>
-        <Text style={styles.typeTextColor}>{genre}</Text>
-
         <View style={styles.FlatlistView}>
           <FlatList
             data={data}

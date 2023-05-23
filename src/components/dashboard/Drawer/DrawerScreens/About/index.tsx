@@ -8,14 +8,8 @@ import PlainHeader from '../../../../PlainHeader';
 
 const About = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        backgroundColor: ColorConstants.backgroundWhite,
-      }}>
-      <PlainHeader />
-      <Text style={styles.aboutTitle}>{StringConstants.AboutTitle}</Text>
+    <View style={styles.container}>
+      <PlainHeader title="About" />
       <Text style={styles.aboutText}>{StringConstants.AboutContent}</Text>
     </View>
   );

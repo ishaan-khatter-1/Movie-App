@@ -67,7 +67,7 @@ const MovieTvDetal = props => {
 
   return (
     <View style={styles.mainContainer}>
-      <PlainHeader />
+      <PlainHeader title={item.title ? item.title : item.name} />
       <ScrollView ref={ScrollViewRef}>
         <ImageBackground
           resizeMode="stretch"
@@ -140,9 +140,15 @@ const MovieTvDetal = props => {
                           <Text style={styles.flatListTitleText}>
                             {item.title ? item.title : item.name}
                           </Text>
-                          <Text style={styles.flatListOverviewText}>
-                            {item.overview}
-                          </Text>
+                          <View
+                            style={{
+                              flex: 1,
+                              // height: '70%',
+                            }}>
+                            <Text style={styles.flatListOverviewText}>
+                              {item.overview}
+                            </Text>
+                          </View>
                         </View>
                       )}
                     </View>

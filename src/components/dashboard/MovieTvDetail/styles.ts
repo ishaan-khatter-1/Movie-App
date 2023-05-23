@@ -90,7 +90,17 @@ const styles = StyleSheet.create({
   flatlistImgTextView: {
     flexDirection: 'row',
   },
-  flatListTitleTextView: {flex: 1, height: 180, marginRight: 10},
+  flatListTitleTextView: {
+    // flex: 1,
+    width: '55%',
+    // height: 167,
+    // height: '53%',
+    marginRight: 10,
+    paddingBottom: 5,
+    // whiteSpace: 'wrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+  },
   flatListTitleText: {
     color: ColorConstants.textBlack,
     fontSize: 17,
@@ -99,6 +109,9 @@ const styles = StyleSheet.create({
   flatListOverviewText: {
     color: ColorConstants.textBlack,
     marginTop: 5,
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
   },
 });
 export default styles;

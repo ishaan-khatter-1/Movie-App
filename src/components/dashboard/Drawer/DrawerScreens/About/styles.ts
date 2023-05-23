@@ -3,18 +3,17 @@ import ColorConstants from '../../../../../assets/colorConstants';
 import fonts from '../../../../../assets/fonts';
 
 const styles = StyleSheet.create({
-  aboutTitle: {
-    color: ColorConstants.textBlack,
-    fontSize: 22,
-    marginBottom: 20,
-    marginTop: 10,
-    fontFamily: fonts.BOLD,
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: ColorConstants.backgroundWhite,
   },
   aboutText: {
     color: ColorConstants.textBlack,
     marginHorizontal: 20,
     fontSize: 16,
     fontFamily: fonts.SEMIBOLD,
+    paddingTop: 20,
   },
 });
 

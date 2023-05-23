@@ -18,15 +18,17 @@ const styles = StyleSheet.create({
     left: 5,
   },
   pressableSymbol: {
-    margin: 10,
+    marginTop: 17,
+    marginLeft: 5,
+  },
+  HeaderView: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    width: 300,
+    justifyContent: 'center',
   },
   movieName: {
     color: ColorConstants.textWhite,
-    fontSize: 20,
-    fontFamily: fonts.BOLD,
-  },
-  maniaName: {
-    color: ColorConstants.thirdOrange,
     fontSize: 20,
     fontFamily: fonts.BOLD,
   },

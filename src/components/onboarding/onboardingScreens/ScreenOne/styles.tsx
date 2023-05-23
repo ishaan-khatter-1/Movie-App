@@ -15,7 +15,7 @@ const styleOne = StyleSheet.create({
   textView: {
     height: '18%',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     marginRight: '4%',
     marginLeft: '3%',
   },
@@ -26,15 +26,14 @@ const styleOne = StyleSheet.create({
   },
   imgView: {
     justifyContent: 'space-around',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     elevation: 100,
-    resizeMode: 'stretch',
-    width: 260,
-    marginLeft: '5%',
+
+    padding: '15%',
   },
   img: {
-    width: 260,
-    height: 180,
+    width: 300,
+    height: 230,
     borderRadius: 5,
   },
   skipbtn: {

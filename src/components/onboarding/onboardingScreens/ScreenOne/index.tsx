@@ -15,16 +15,17 @@ const ScreenOne = () => {
           <MotiView
             style={styleOne.textView}
             from={{
-              scale: 0,
-              opacity: 0,
-              translateX: 1000,
+              scale: 1,
+              opacity: 1,
+              translateY: 25,
             }}
             animate={{
               scale: 1,
               opacity: 1,
-              translateX: 0,
+              translateY: 0,
             }}
             transition={{
+              loop: true,
               type: 'timing',
               duration: 2000,
             }}>
@@ -32,20 +33,23 @@ const ScreenOne = () => {
               {StringConstants.ScreenOneOnboard}
             </Text>
           </MotiView>
-          <MotiView style={styleOne.textView}></MotiView>
           <MotiView
             style={styleOne.imgView}
             from={{
-              scale: 0,
-              opacity: 0,
-              translateX: -1000,
+              scale: 1,
+              opacity: 1,
+              translateY: -25,
+              // translateX: -50,
             }}
             animate={{
               scale: 1,
               opacity: 1,
-              translateX: 0,
+              translateY: 0,
+              // translateX: 50,
             }}
             transition={{
+              loop: true,
+
               type: 'timing',
               duration: 2000,
             }}>

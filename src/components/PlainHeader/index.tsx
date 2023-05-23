@@ -5,23 +5,21 @@ import BackIcon from '../../assets/svgIcons/BackIcon';
 import {useNavigation} from '@react-navigation/native';
 import StringConstants from '../../assets/stringConstants';
 
-const PlainHeader = () => {
+interface screenHeader {
+  title?: string;
+}
+
+const PlainHeader = ({title}: screenHeader) => {
   const {goBack} = useNavigation();
   return (
     <View style={styles.headerContainer}>
       <TouchableOpacity style={styles.pressableBack} onPress={() => goBack()}>
         <View style={styles.pressableSymbol}>
-          <BackIcon width={30} height={30} fill={'#fff'} />
+          <BackIcon width={17} height={17} fill={'#fff'} />
         </View>
       </TouchableOpacity>
-      {/* <Text style={{color: 'white'}}>Movie Mania</Text> */}
-      <View style={{flexDirection: 'row'}}>
-        <Text style={styles.movieName}>
-          {StringConstants.AppNameFirstLetter}
-        </Text>
-        <Text style={styles.maniaName}>
-          {StringConstants.AppNameSecondLetter}
-        </Text>
+      <View style={styles.HeaderView}>
+        <Text style={styles.movieName}>{title}</Text>
       </View>
     </View>
   );

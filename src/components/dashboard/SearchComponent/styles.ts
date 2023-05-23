@@ -6,11 +6,12 @@ const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
-    marginHorizontal: 15,
-    width: width * 0.7,
+    marginHorizontal: 18,
+    width: width,
 
     color: ColorConstants.baseColor,
     fontFamily: fonts.BOLD,
+    // alignSelf: 'center',
   },
   search: {
     paddingHorizontal: 15,
@@ -19,18 +20,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 25,
     borderColor: ColorConstants.backgorundBlack,
-    opacity: 0.5,
+    opacity: 1,
+    color: ColorConstants.textBlack,
+    fontSize: 14,
+    fontWeight: '500',
   },
   imgStyle: {},
   flatListstyle: {
-    marginHorizontal: 10,
+    // marginHorizontal: 10,
     alignSelf: 'center',
+    marginBottom: 100,
   },
   imageStyle: {
     borderRadius: 5,
-    width: 150,
+    width: 180,
     height: 225,
     alignSelf: 'center',
+    flex: 1,
+    margin: 10,
   },
 });
 export default styles;

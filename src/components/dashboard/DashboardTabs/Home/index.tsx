@@ -42,6 +42,7 @@ import { ScrollView } from 'react-native';
 import ApiUpcomingMovie from './ApiUpcomingMovie';
 import StringConstants from '../../../../assets/stringConstants';
 import routes from '../../../../assets/routes';
+import ColorConstants from '../../../../assets/colorConstants';
 const queryClient = useQueryClient;
 
 interface HorizontalComponent {
@@ -196,11 +197,11 @@ const Home = () => {
       />
       {(type==='Movies')?
       (<><View style={styles.btnViewstyle}>
-          <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'orange' }]} onPress={typeSetMovieFunc}>
+          <TouchableOpacity style={[styles.btnOne, { backgroundColor: ColorConstants.mainBgColor }]} onPress={typeSetMovieFunc}>
             <Text style={styles.btnTextStyle}>{StringConstants.Movies}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetTvFunc}>
-            <Text style={[styles.btnTextStyle,{opacity:0.8}]}>{StringConstants.TVShows}</Text>
+          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: ColorConstants.fadedColor, opacity: 0.6 }]} onPress={typeSetTvFunc}>
+            <Text style={styles.btnTextStyleFaded}>{StringConstants.TVShows}</Text>
           </TouchableOpacity></View><View style={{ marginTop: 5 }}>
             
             <MovieTv queryKey='PopularMovies'
@@ -227,10 +228,10 @@ const Home = () => {
     :
 
     (<><View style={styles.btnViewstyle}>
-          <TouchableOpacity style={[styles.btnOne, { backgroundColor: 'lightgrey', opacity: 0.6 }]} onPress={typeSetMovieFunc}>
-            <Text style={[styles.btnTextStyle,{opacity:0.8}]}>Movies</Text>
+          <TouchableOpacity style={[styles.btnOne, { backgroundColor: ColorConstants.fadedColor, opacity: 0.6 }]} onPress={typeSetMovieFunc}>
+            <Text style={[styles.btnTextStyleFaded]}>Movies</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: 'orange' }]} onPress={typeSetTvFunc}>
+          <TouchableOpacity style={[styles.btnTwo, { backgroundColor: ColorConstants.mainBgColor }]} onPress={typeSetTvFunc}>
             <Text style={styles.btnTextStyle}>TV Shows</Text>
           </TouchableOpacity></View><View style={{ marginTop: 5}}>
 

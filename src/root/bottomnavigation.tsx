@@ -86,29 +86,38 @@ const BottomNavigation = ({navigation}) => {
   );
 };
 
+const tabBarLabelStyle = {
+  fontFamily: fonts.BOLD,
+  fontSize: 14,
+  marginBottom: 3,
+};
+
 const homeTab = {
   tabBarIcon: ({focused}) => (
-    <View>{focused ? <HomeIcon /> : <HomeIconFaded />}</View>
+    <View>
+      {focused ? <HomeIcon width={35} height={35} /> : <HomeIconFaded />}
+    </View>
   ),
   tabBarLabel: 'Home',
-  tabBarLabelStyle: {
-    fontFamily: fonts.SEMIBOLD,
-    fontSize: 11,
-    // marginVertical: 3,
-    marginBottom: 3,
-  },
+  tabBarLabelStyle: {...tabBarLabelStyle},
+
+  tabBarActiveTintColor: ColorConstants.mainBgColor,
 };
 const movieTab = {
   tabBarIcon: ({focused}) => (
-    <View>{focused ? <MovieIcon /> : <MovieIconFaded />}</View>
+    <View>
+      {focused ? (
+        <MovieIcon width={35} height={35} />
+      ) : (
+        <MovieIconFaded width={35} height={35} />
+      )}
+    </View>
   ),
-  tabBarLabel: 'Find Movies',
+  tabBarLabel: 'Movies',
   tabBarLabelStyle: {
-    fontFamily: fonts.SEMIBOLD,
-    fontSize: 11,
-    // marginVertical: 3,
-    marginBottom: 3,
+    ...tabBarLabelStyle,
   },
+  tabBarActiveTintColor: ColorConstants.mainBgColor,
 };
 const televisionTab = {
   tabBarIcon: ({focused}) => (
@@ -120,18 +129,15 @@ const televisionTab = {
       )}
     </View>
   ),
-  tabBarLabel: 'Find TV Shows',
-  tabBarLabelStyle: {
-    fontFamily: fonts.SEMIBOLD,
-    fontSize: 11,
-    // marginVertical: 3,
-    marginBottom: 3,
-  },
+  tabBarLabel: 'TV Shows',
+  tabBarLabelStyle: {...tabBarLabelStyle},
+  tabBarActiveTintColor: ColorConstants.mainBgColor,
 };
 
 const tabBarStyling = {
   backgroundColor: ColorConstants.backgroundWhite,
   height: 65,
+  paddingTop: 7,
 };
 
 export default BottomNavigation;

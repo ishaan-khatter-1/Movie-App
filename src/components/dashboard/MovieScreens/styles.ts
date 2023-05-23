@@ -12,8 +12,9 @@ const styles = StyleSheet.create({
   },
 
   imgFlatlistStyle: {
-    aspectRatio: 1 / 1.5, // width / height
-    width: 150,
+    // aspectRatio: 1 / 1.5, // width / height
+    width: 180,
+    height: 225,
     marginBottom: 10,
     marginHorizontal: 8,
   },
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
   FlatlistView: {
     alignItems: 'center',
     borderRadius: 20,
+    marginTop: 20,
     marginBottom: 20,
   },
 });

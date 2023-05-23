@@ -55,14 +55,14 @@ const Favourite = () => {
         flex: 1,
         backgroundColor: ColorConstants.backgroundWhite,
       }}>
-      <PlainHeader />
+      <PlainHeader title="Favourites:" />
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
-        <View style={styles.favTitleView}>
+        {/* <View style={styles.favTitleView}>
           <Text style={styles.favTitle}>{StringConstants.FavouriteTitle}</Text>
-        </View>
+        </View> */}
 
         {data.length === 0 ? (
           <View style={styles.noFavView}>

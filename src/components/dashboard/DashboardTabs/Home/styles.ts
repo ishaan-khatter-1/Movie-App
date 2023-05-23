@@ -40,7 +40,13 @@ const styles = StyleSheet.create({
   btnTextStyle: {
     fontSize: 18,
     fontFamily: fonts.BOLD,
+    color: ColorConstants.textWhite,
+  },
+  btnTextStyleFaded: {
+    fontSize: 18,
+    fontFamily: fonts.BOLD,
     color: ColorConstants.textBlack,
+    opacity: 0.5,
   },
   componentHeaderText: {
     color: ColorConstants.mainBgColor,

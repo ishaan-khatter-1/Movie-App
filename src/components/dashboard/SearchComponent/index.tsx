@@ -37,9 +37,13 @@ const SearchComponent = ({
       onPress={() => {
         navigate(routes.dashboard.MovieTvDetail.path, {item});
       }}>
-      <View style={{margin: 10}}>
+      <View>
         {item.poster_path && (
-          <Image style={styles.imageStyle} source={{uri: item.poster_path}} />
+          <Image
+            style={styles.imageStyle}
+            source={{uri: item.poster_path}}
+            resizeMode="contain"
+          />
         )}
       </View>
     </Pressable>
