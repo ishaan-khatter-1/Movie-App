@@ -43,6 +43,7 @@ import ApiUpcomingMovie from './ApiUpcomingMovie';
 import StringConstants from '../../../../assets/stringConstants';
 import routes from '../../../../assets/routes';
 import ColorConstants from '../../../../assets/colorConstants';
+import FastImage from 'react-native-fast-image';
 const queryClient = useQueryClient;
 
 interface HorizontalComponent {
@@ -122,13 +123,12 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
             <View>
               
               {item.poster_path &&
-                (<ImageBackground
+                (<FastImage
                 resizeMode="contain"
-                imageStyle={styles.MovieTvImageStyle}
                 style={styles.MovieTvImg}
                 source={{
                   uri: BASE_IMG_URL + 'original' + item.poster_path,
-                }}></ImageBackground>)}
+                }}></FastImage>)}
 
             </View>
             </Pressable>
@@ -164,7 +164,7 @@ const Home = () => {
         }}>
         <View>
           {item.backdrop_path && (
-            <ImageBackground
+            <FastImage
               resizeMode="stretch"
               style={styles.imgStyle}
               source={{uri: item.backdrop_path}}

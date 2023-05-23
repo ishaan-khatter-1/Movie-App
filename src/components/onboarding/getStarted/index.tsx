@@ -12,16 +12,16 @@ import {StackActions, useNavigation} from '@react-navigation/native';
 const GetStarted = () => {
   const [screenShown, setScreenShown] = useState(false);
   const {dispatch} = useNavigation();
-  // useEffect(() => {
-  //   AsyncStorage.getItem('screenShown').then(value => {
-  //     if (value !== null) {
-  //       setScreenShown(true);
-  //       dispatch(StackActions.replace('DrawerNavigation'));
-  //     } else {
-  //       AsyncStorage.setItem('screenShown', 'true');
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    AsyncStorage.getItem('screenShown').then(value => {
+      if (value !== null) {
+        setScreenShown(true);
+        dispatch(StackActions.replace('DrawerNavigation'));
+      } else {
+        AsyncStorage.setItem('screenShown', 'true');
+      }
+    });
+  }, []);
   return (
     <>
       {screenShown ? (

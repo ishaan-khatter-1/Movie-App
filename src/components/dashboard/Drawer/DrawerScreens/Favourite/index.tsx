@@ -17,6 +17,7 @@ import ColorConstants from '../../../../../assets/colorConstants';
 import StringConstants from '../../../../../assets/stringConstants';
 import PlainHeader from '../../../../PlainHeader';
 import routes from '../../../../../assets/routes';
+import FastImage from 'react-native-fast-image';
 
 const Favourite = () => {
   const [data, setData] = useState([]);
@@ -75,13 +76,13 @@ const Favourite = () => {
                 onPress={() => {
                   navigate(routes.dashboard.MovieTvDetail.path, {item});
                 }}>
-                <ImageBackground
+                <FastImage
                   resizeMode="contain"
                   style={styles.imageStyle}
                   imageStyle={{borderRadius: 5}}
                   source={{
                     uri: BASE_IMG_URL + 'original' + item.poster_path,
-                  }}></ImageBackground>
+                  }}></FastImage>
               </Pressable>
               <View style={styles.titleTextView}>
                 <Pressable

@@ -21,6 +21,7 @@ import ColorConstants from '../../../assets/colorConstants';
 import PlainHeader from '../../PlainHeader';
 import StringConstants from '../../../assets/stringConstants';
 import routes from '../../../assets/routes';
+import FastImage from 'react-native-fast-image';
 
 const MovieTvDetal = props => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -69,7 +70,7 @@ const MovieTvDetal = props => {
     <View style={styles.mainContainer}>
       <PlainHeader title={item.title ? item.title : item.name} />
       <ScrollView ref={ScrollViewRef}>
-        <ImageBackground
+        <FastImage
           resizeMode="stretch"
           source={{
             uri: item.backdrop_path
@@ -77,7 +78,7 @@ const MovieTvDetal = props => {
               : BASE_IMG_URL + 'original' + item.poster_path,
           }}
           style={styles.imgStyle}
-          imageStyle={styles.imageStyle}></ImageBackground>
+          imageStyle={styles.imageStyle}></FastImage>
         <View style={styles.rating_titleView}>
           <Text style={styles.original_titleText}>
             {item.title ? item.title : item.name}
@@ -124,7 +125,7 @@ const MovieTvDetal = props => {
                     }}>
                     <View style={styles.flatlistImgTextView}>
                       {item.poster_path && (
-                        <ImageBackground
+                        <FastImage
                           resizeMode="contain"
                           source={{
                             uri: BASE_IMG_URL + 'original' + item.poster_path,
@@ -132,7 +133,7 @@ const MovieTvDetal = props => {
                           imageStyle={{
                             borderRadius: 5,
                           }}
-                          style={styles.flatlistImgText}></ImageBackground>
+                          style={styles.flatlistImgText}></FastImage>
                       )}
 
                       {item.poster_path && (

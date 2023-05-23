@@ -6,14 +6,17 @@ import {
   TextInput,
   Pressable,
   ActivityIndicator,
+  ScrollView,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import axios from 'axios';
 import {useQuery} from 'react-query';
 import styles from './styles';
 import ColorConstants from '../../../assets/colorConstants';
 import {useNavigation} from '@react-navigation/native';
 import routes from '../../../assets/routes';
+import FastImage from 'react-native-fast-image';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 interface searchText {
   title: string;
@@ -31,6 +34,11 @@ const SearchComponent = ({
   const [search, setSearch] = useState('');
   const [press, setPress] = useState(true);
   const {navigate} = useNavigation();
+  // const tvMovieRef = useRef();
+
+  // useEffect(() => {
+  //   tvMovieRef.current.focus();
+  // }, [press]);
 
   const renderItem = ({item}) => (
     <Pressable
@@ -39,10 +47,10 @@ const SearchComponent = ({
       }}>
       <View>
         {item.poster_path && (
-          <Image
+          <FastImage
             style={styles.imageStyle}
             source={{uri: item.poster_path}}
-            resizeMode="contain"
+            resizeMode={FastImage.resizeMode.contain}
           />
         )}
       </View>
@@ -55,10 +63,19 @@ const SearchComponent = ({
   }
 
   const filteredData = data?.filter(item => {
-    return (
-      (item.title && item.title?.toLowerCase().match(search.toLowerCase())) ||
-      (item.name && item.name?.toLowerCase().match(search.toLowerCase()))
-    );
+    if (filteredData?.length !== false) {
+      return (
+        (item.title && item.title?.toLowerCase().match(search.toLowerCase())) ||
+        (item.name && item.name?.toLowerCase().match(search.toLowerCase()))
+      );
+    } else if (filteredData?.length !== true) {
+      console.log('else');
+      return (
+        <View style={{flex: 1, backgroundColor: 'red'}}>
+          <Text>No result Found</Text>
+        </View>
+      );
+    }
   });
 
   return (
@@ -68,29 +85,40 @@ const SearchComponent = ({
         backgroundColor: ColorConstants.backgroundWhite,
       }}>
       {press ? <Text style={styles.headerText}>{title}</Text> : null}
-
       <TextInput
         onFocus={() => {
           setPress(false);
         }}
-        onBlur={() => {
+        onEndEditing={() => {
           setPress(true);
         }}
         placeholder={searchType}
-        clearButtonMode="always"
+        // clearButtonMode="always"
         autoCapitalize="none"
         autoCorrect={false}
         value={search}
+        // ref={tvMovieRef}
         onChangeText={val => setSearch(val)}
         style={styles.search}
       />
 
-      <FlatList
-        data={filteredData}
-        style={styles.flatListstyle}
-        renderItem={renderItem}
-        numColumns={2}
-      />
+      <ScrollView>
+        {filteredData.length === 0 ? (
+          <Text>No result</Text>
+        ) : (
+          <View>
+            <FlatList
+              ListFooterComponent={() => {
+                return <View style={{height: 100}} />;
+              }}
+              data={filteredData}
+              style={styles.flatListstyle}
+              renderItem={renderItem}
+              numColumns={2}
+            />
+          </View>
+        )}
+      </ScrollView>
     </View>
   );
 };

@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   imgStyle: {
-    borderRadius: 10,
     width: '100%',
     height: (width * 1) / 1.7,
     alignSelf: 'center',
@@ -63,8 +62,6 @@ const styles = StyleSheet.create({
 
     marginVertical: 10,
     marginHorizontal: 8,
-  },
-  MovieTvImageStyle: {
     borderRadius: 5,
   },
 });

@@ -29,15 +29,18 @@ const styles = StyleSheet.create({
   flatListstyle: {
     // marginHorizontal: 10,
     alignSelf: 'center',
-    marginBottom: 100,
+    // marginBottom: 100,
+    // flex: 1,
   },
   imageStyle: {
-    borderRadius: 5,
+    borderRadius: 30,
     width: 180,
     height: 225,
     alignSelf: 'center',
-    flex: 1,
-    margin: 10,
+    marginVertical: 10,
+
+    // margin: 10,
+    // backgroundColor: 'green',
   },
 });
 export default styles;
