@@ -79,7 +79,6 @@ const Favourite = () => {
                 <FastImage
                   resizeMode="contain"
                   style={styles.imageStyle}
-                  imageStyle={{borderRadius: 5}}
                   source={{
                     uri: BASE_IMG_URL + 'original' + item.poster_path,
                   }}></FastImage>
@@ -93,7 +92,9 @@ const Favourite = () => {
                     {item.title ? item.title : item.name}
                   </Text>
 
-                  <Text style={styles.overviewText}>{item.overview}</Text>
+                  <Text style={styles.overviewText} numberOfLines={6}>
+                    {item.overview}
+                  </Text>
                 </Pressable>
                 <TouchableOpacity
                   style={styles.removeBtn}

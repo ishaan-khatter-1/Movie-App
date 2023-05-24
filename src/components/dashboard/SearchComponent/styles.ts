@@ -4,15 +4,12 @@ import fonts from '../../../assets/fonts';
 const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
-  headerText: {
-    fontSize: 20,
-    marginHorizontal: 18,
-    width: width,
-
-    color: ColorConstants.baseColor,
-    fontFamily: fonts.BOLD,
-    // alignSelf: 'center',
+  mainContainer: {
+    paddingTop: 10,
+    backgroundColor: ColorConstants.backgroundWhite,
+    flex: 1,
   },
+
   search: {
     paddingHorizontal: 15,
     paddingVertical: 5,
@@ -25,12 +22,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
   },
-  imgStyle: {},
+  noResultView: {
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  noResultText: {
+    color: ColorConstants.textBlack,
+    fontSize: 22,
+    fontFamily: fonts.BOLD,
+  },
   flatListstyle: {
-    // marginHorizontal: 10,
     alignSelf: 'center',
-    // marginBottom: 100,
-    // flex: 1,
   },
   imageStyle: {
     borderRadius: 30,
@@ -38,9 +41,6 @@ const styles = StyleSheet.create({
     height: 225,
     alignSelf: 'center',
     marginVertical: 10,
-
-    // margin: 10,
-    // backgroundColor: 'green',
   },
 });
 export default styles;

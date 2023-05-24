@@ -23,7 +23,7 @@ const CustomDrawer = () => {
         </Text>
       </View>
       <DrawerContentScrollView>
-        <View>
+        <View style={styles.bottomBorder}>
           <TouchableOpacity
             onPress={() => {
               Navigation.navigate(
@@ -44,7 +44,7 @@ const CustomDrawer = () => {
             </Text>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={styles.bottomBorder}>
           <TouchableOpacity
             onPress={() => {
               Navigation.navigate(

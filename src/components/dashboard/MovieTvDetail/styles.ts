@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
 
     color: ColorConstants.textBlack,
     flexWrap: 'wrap',
-    fontFamily: fonts.BOLD,
+    fontFamily: fonts.SEMIBOLD,
+    fontSize: 16,
   },
   favIconTextView: {
     flexDirection: 'row',
@@ -86,19 +87,24 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1.5,
     marginHorizontal: 10,
     marginBottom: 10,
+    borderRadius: 5,
   },
   flatlistImgTextView: {
     flexDirection: 'row',
   },
   flatListTitleTextView: {
-    // flex: 1,
-    width: '55%',
+    flex: 1,
+    // width: '55%',
+    height: 225,
     // height: 167,
     // height: '53%',
-    marginRight: 10,
+    // marginRight: 10,
     paddingBottom: 5,
+    marginRight: 10,
     // whiteSpace: 'wrap',
     textOverflow: 'ellipsis',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     overflow: 'hidden',
   },
   flatListTitleText: {

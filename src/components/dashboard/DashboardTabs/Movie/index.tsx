@@ -14,7 +14,6 @@ const Movie = () => {
   return (
     <SearchComponent
       title={StringConstants.SearchMovieTitle}
-      // FetchData={FetchAllData}
       searchType={StringConstants.FindMoviesPlaceholder}
       FetchData={FetchAllData}
       dataKey="Movie Searching"

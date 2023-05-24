@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  ImageBackground,
   TouchableOpacity,
   Pressable,
   FlatList,
@@ -78,7 +77,8 @@ const MovieTvDetal = props => {
               : BASE_IMG_URL + 'original' + item.poster_path,
           }}
           style={styles.imgStyle}
-          imageStyle={styles.imageStyle}></FastImage>
+        />
+
         <View style={styles.rating_titleView}>
           <Text style={styles.original_titleText}>
             {item.title ? item.title : item.name}
@@ -130,23 +130,29 @@ const MovieTvDetal = props => {
                           source={{
                             uri: BASE_IMG_URL + 'original' + item.poster_path,
                           }}
-                          imageStyle={{
-                            borderRadius: 5,
-                          }}
                           style={styles.flatlistImgText}></FastImage>
                       )}
 
                       {item.poster_path && (
                         <View style={styles.flatListTitleTextView}>
-                          <Text style={styles.flatListTitleText}>
-                            {item.title ? item.title : item.name}
-                          </Text>
+                          <View style={{}}>
+                            <Text style={styles.flatListTitleText}>
+                              {item.title
+                                ? item.title
+                                : item.name
+                                ? item.name
+                                : 'Title Does not exists.'}
+                            </Text>
+                          </View>
                           <View
                             style={{
                               flex: 1,
-                              // height: '70%',
+                              justifyContent: 'flex-end',
                             }}>
-                            <Text style={styles.flatListOverviewText}>
+                            <Text
+                              style={styles.flatListOverviewText}
+                              numberOfLines={11}
+                              ellipsizeMode="tail">
                               {item.overview}
                             </Text>
                           </View>

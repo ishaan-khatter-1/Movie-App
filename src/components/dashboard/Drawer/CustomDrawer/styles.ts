@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
     // fontWeight: '600',
     fontFamily: fonts.BOLD,
   },
+  bottomBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: ColorConstants.mainBgColor,
+  },
   drawerItems: {flexDirection: 'row', alignItems: 'center'},
   labelStyle: {
     fontSize: 15,

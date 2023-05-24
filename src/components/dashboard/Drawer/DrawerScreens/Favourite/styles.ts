@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     // borderWidth: 5,
     // padding: 10,
   },
-  imageStyle: {width: 130, height: 195},
+  imageStyle: {width: 130, height: 195, borderRadius: 5},
   favTitleView: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
   },
   overviewText: {
     marginVertical: 5,
-    height: 115,
+    height: 135,
     fontFamily: fonts.REGULAR,
     fontSize: 13,
     color: ColorConstants.textBlack,
   },
   removeBtn: {
-    padding: 5,
+    padding: 2,
     position: 'absolute',
     bottom: 0,
   },

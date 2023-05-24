@@ -35,6 +35,7 @@ const StringConstants = {
   drawerItemFavourite: 'Favourites',
   drawerItemAbout: 'About',
   MoreText: 'More',
+  NoResult: 'No Result Found.',
 };
 
 export default StringConstants;

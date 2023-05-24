@@ -7,16 +7,12 @@ const styles = StyleSheet.create({
     backgroundColor: ColorConstants.backgroundWhite,
     flex: 1,
   },
-  carouselView: {
-    marginTop: 10,
-  },
 
   imgFlatlistStyle: {
-    // aspectRatio: 1 / 1.5, // width / height
-    width: 180,
-    height: 225,
+    width: 170,
+    height: 235,
     marginBottom: 10,
-    marginHorizontal: 8,
+    borderRadius: 20,
   },
 
   typeTextColor: {
@@ -27,16 +23,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontFamily: fonts.BOLD,
   },
-  imgCarouselStyle: {
-    aspectRatio: 1.5 / 1,
-    borderRadius: 20,
-  },
-  imageStyle: {
-    borderRadius: 5,
+
+  FlatListStyle: {
+    alignSelf: 'center',
   },
   FlatlistView: {
     alignItems: 'center',
-    borderRadius: 20,
     marginTop: 20,
     marginBottom: 20,
   },

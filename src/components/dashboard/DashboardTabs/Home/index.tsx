@@ -44,7 +44,10 @@ import StringConstants from '../../../../assets/stringConstants';
 import routes from '../../../../assets/routes';
 import ColorConstants from '../../../../assets/colorConstants';
 import FastImage from 'react-native-fast-image';
+import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
+import LinearGradient from 'react-native-linear-gradient';
 const queryClient = useQueryClient;
+const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient)
 
 interface HorizontalComponent {
   headerText: string;
@@ -56,10 +59,6 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
   const {navigate} = useNavigation();
   const [screen, setScreen] =useState('')
   const {data,isLoading} = useQuery(queryKey, {queryFn: FetchData});
-  if(isLoading) {
-    return <ActivityIndicator size={"large"}/>
-
-  }
   const handleAllMovieTv = () =>{
     if (headerText===StringConstants.TrendingMovies){
 
@@ -110,7 +109,24 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
         <Text style={[styles.componentHeaderText,{fontSize:15}]}>See All ></Text>
         </Pressable>
       </View>
-      <FlatList
+
+      {isLoading?(
+        <FlatList data={[1,2,3,4,5]} horizontal renderItem={({item})=>{
+          return(
+            <ShimmerPlaceholder style={{
+              width: 125,
+            height: 125 * 1.5,
+        
+            marginVertical: 10,
+            marginHorizontal: 8,
+            borderRadius: 5,
+            }} 
+            // shimmerColors={['#A9A9A9','#7393B3','#808080']}
+            ></ShimmerPlaceholder>
+          )
+        }}/>
+      ):(
+<FlatList
         data={data}
         maxToRenderPerBatch={4}
         horizontal
@@ -135,6 +151,8 @@ export const MovieTv = ({FetchData, headerText, queryKey}: HorizontalComponent) 
           );
         }}
       />
+      )}
+      
     </View>
   );
 };
@@ -153,7 +171,13 @@ const Home = () => {
   
   const {data, isLoading} = useQuery('HomeCarousel', {queryFn:FetchHomeCarouselData})
   if(isLoading){
-    return <ActivityIndicator size={"large"}/>
+    // return <ActivityIndicator size={"large"}/>
+    return <ShimmerPlaceholder style={{
+      width:width,
+      height: width *1/1.9,
+    }}
+    // shimmerColors={['#808080','#A9A9A9','#808080']}
+    ></ShimmerPlaceholder>
   }
   const {navigate} = useNavigation();
   const renderFunc = ({item}) => {
