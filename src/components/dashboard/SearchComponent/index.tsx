@@ -7,6 +7,7 @@ import {
   Pressable,
   ActivityIndicator,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import axios from 'axios';
@@ -63,12 +64,12 @@ const SearchComponent = ({
   }
 
   const filteredData = data?.filter(item => {
-    if (filteredData?.length !== false) {
+    if (filteredData?.length !== 0) {
       return (
         (item.title && item.title?.toLowerCase().match(search.toLowerCase())) ||
         (item.name && item.name?.toLowerCase().match(search.toLowerCase()))
       );
-    } else if (filteredData?.length !== true) {
+    } else {
       console.log('else');
       return (
         <View style={{flex: 1, backgroundColor: 'red'}}>
@@ -79,12 +80,13 @@ const SearchComponent = ({
   });
 
   return (
-    <View
+    <SafeAreaView
       style={{
         paddingTop: 10,
         backgroundColor: ColorConstants.backgroundWhite,
+        flex: 1,
       }}>
-      {press ? <Text style={styles.headerText}>{title}</Text> : null}
+      {/* {press ? <Text style={styles.headerText}>{title}</Text> : null} */}
       <TextInput
         onFocus={() => {
           setPress(false);
@@ -92,7 +94,7 @@ const SearchComponent = ({
         onEndEditing={() => {
           setPress(true);
         }}
-        placeholder={searchType}
+        placeholder={title}
         // clearButtonMode="always"
         autoCapitalize="none"
         autoCorrect={false}
@@ -101,25 +103,26 @@ const SearchComponent = ({
         onChangeText={val => setSearch(val)}
         style={styles.search}
       />
-
-      <ScrollView>
+      <View>
         {filteredData.length === 0 ? (
-          <Text>No result</Text>
+          <View style={{flex: 1}}>
+            <Text style={{alignSelf: 'center'}}>No Result Found.</Text>
+          </View>
         ) : (
-          <View>
+          <ScrollView>
             <FlatList
               ListFooterComponent={() => {
-                return <View style={{height: 100}} />;
+                return <View style={{height: 80}} />;
               }}
               data={filteredData}
               style={styles.flatListstyle}
               renderItem={renderItem}
               numColumns={2}
             />
-          </View>
+          </ScrollView>
         )}
-      </ScrollView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

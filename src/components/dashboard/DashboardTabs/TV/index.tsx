@@ -11,16 +11,12 @@ import StringConstants from '../../../../assets/stringConstants';
 
 const Television = () => {
   return (
-    <View>
-      <View>
-        <SearchComponent
-          title={StringConstants.SearchTvTitle}
-          searchType={StringConstants.FindTVShowsPlaceholder}
-          FetchData={FetchAllDataTv}
-          dataKey="Tv Searching"
-        />
-      </View>
-    </View>
+    <SearchComponent
+      title={StringConstants.SearchTvTitle}
+      searchType={StringConstants.FindTVShowsPlaceholder}
+      FetchData={FetchAllDataTv}
+      dataKey="Tv Searching"
+    />
   );
 };
 
