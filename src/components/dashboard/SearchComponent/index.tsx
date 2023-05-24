@@ -86,7 +86,7 @@ const SearchComponent = ({
           </View>
         ) : (
           <ScrollView>
-            {isLoading ? (
+            {/* {isLoading ? (
               <FlatList
                 data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
                 numColumns={2}
@@ -117,7 +117,17 @@ const SearchComponent = ({
                 renderItem={renderItem}
                 numColumns={2}
               />
-            )}
+            )} */}
+
+            <FlatList
+              ListFooterComponent={() => {
+                return <View style={{height: 80}} />;
+              }}
+              data={filteredData}
+              style={styles.flatListstyle}
+              renderItem={renderItem}
+              numColumns={2}
+            />
           </ScrollView>
         )}
       </View>
