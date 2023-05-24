@@ -15,7 +15,7 @@ const SplashScreen = () => {
       setShow(false);
       console.log(show);
       dispatch(StackActions.replace('GetStarted'));
-    }, 2400);
+    }, 2500);
 
     return () => clearTimeout(timeoutId);
   }, []);
