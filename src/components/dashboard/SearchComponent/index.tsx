@@ -86,27 +86,29 @@ const SearchComponent = ({
           </View>
         ) : (
           <ScrollView>
-            {/* {isLoading ? (
-              <FlatList
-                data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-                numColumns={2}
-                renderItem={({item}) => {
-                  return (
-                    <ShimmerPlaceholder
-                      style={{
-                        marginHorizontal: 8,
+            {isLoading ? (
+              <View style={{alignItems: 'center'}}>
+                <FlatList
+                  data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+                  numColumns={2}
+                  renderItem={({item}) => {
+                    return (
+                      <ShimmerPlaceholder
+                        style={{
+                          marginHorizontal: 8,
 
-                        borderRadius: 5,
-                        width: 160,
-                        height: 225,
-                        alignSelf: 'center',
-                        marginVertical: 10,
-                      }}
-                      // shimmerColors={['#A9A9A9','#7393B3','#808080']}
-                    ></ShimmerPlaceholder>
-                  );
-                }}
-              />
+                          borderRadius: 5,
+                          width: 160,
+                          height: 225,
+                          alignSelf: 'center',
+                          marginVertical: 10,
+                        }}
+                        // shimmerColors={['#A9A9A9','#7393B3','#808080']}
+                      ></ShimmerPlaceholder>
+                    );
+                  }}
+                />
+              </View>
             ) : (
               <FlatList
                 ListFooterComponent={() => {
@@ -117,9 +119,9 @@ const SearchComponent = ({
                 renderItem={renderItem}
                 numColumns={2}
               />
-            )} */}
+            )}
 
-            <FlatList
+            {/* <FlatList
               ListFooterComponent={() => {
                 return <View style={{height: 80}} />;
               }}
@@ -127,7 +129,7 @@ const SearchComponent = ({
               style={styles.flatListstyle}
               renderItem={renderItem}
               numColumns={2}
-            />
+            /> */}
           </ScrollView>
         )}
       </View>
